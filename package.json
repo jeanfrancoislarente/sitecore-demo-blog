@@ -1,10 +1,10 @@
 {
-  "name": "blog-starter",
-  "version": "1.0.0",
+  "name": "sitecore-demo-blog",
+  "version": "0.0.1",
   "scripts": {
     "dev": "next",
-    "build": "next build && next export",
-    "start": "next start"
+    "build": "next build",
+    "postbuild": "next-on-netlify"
   },
   "dependencies": {
     "classnames": "2.2.6",
