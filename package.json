@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "postbuild": "next-on-netlify"
+    "build": "next build"
   },
   "dependencies": {
     "classnames": "2.2.6",
