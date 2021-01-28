@@ -1,4 +1,4 @@
 {
     "markdown-image.base.fileNameFormat": "${mdname}/${filename}",
-    "markdown-image.local.path": "/public/assets/blog"
+    "markdown-image.local.path": "/assets/blog"
 }
