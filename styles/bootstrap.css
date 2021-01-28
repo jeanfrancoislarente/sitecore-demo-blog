@@ -147,7 +147,14 @@ address {
 ol,
 ul {
   padding-left: 2rem;
+}
+
+ul {
   list-style: disc;
+}
+
+ol {
+  list-style: decimal;
 }
 
 ol,
@@ -155,6 +162,14 @@ ul,
 dl {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+.markdown ol ol,
+.markdown ul ul,
+.markdown ol ul,
+.markdown ul ol {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 ol ol,
