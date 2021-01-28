@@ -73,7 +73,7 @@ xConnect is at the heart of Sitecore's data analytics strategy and it is importa
 
 In the demo, the goal is to create a known contact. We can use the contact's email address as a unique identifier to surface their previous visitor data whenever they return and can be identified.
 
-There are 3 ways to identify a visitor in Sitecore:
+**There are 3 ways to identify a visitor in Sitecore:**
 1. The visitor self-identifies in some way such as:
    - Submits their email address in a simple form
    - Register/Login
