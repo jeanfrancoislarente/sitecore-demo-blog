@@ -8,6 +8,10 @@
 
 /* Write you own custom component styles here */
 
+.repositoriesList a + a:before {
+  content: ', '
+}
+
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
