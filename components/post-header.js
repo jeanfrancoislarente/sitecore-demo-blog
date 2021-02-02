@@ -20,7 +20,14 @@ export default function PostHeader({ title, coverImage, date, author, repositori
         </div>
         { repositories && repositories.length > 0 && (
           <div className="mb-6 text-lg repositoriesList">
-            Related repositories: { repositories.map(repository => <Link href={`/repositories/${repository}`}><a className="hover:underline">{repository}</a></Link>) }
+            Related repositories: { repositories.map(repository => (
+              <Link
+                href={`/repositories/${repository}`}
+                key={repository}
+              >
+                <a className="hover:underline">{repository}</a>
+              </Link>
+            ))}
           </div>
         )}
         <div className="mb-6 text-lg fst-italic">

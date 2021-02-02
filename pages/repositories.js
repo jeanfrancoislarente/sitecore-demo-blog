@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import { getAllRepositories } from '../lib/api'
 import Head from 'next/head'
 
-export default function Repositories({ allRepos }) {
+export default function Repositories({ allRepositories }) {
   return (
     <>
       <Layout>
@@ -14,7 +14,15 @@ export default function Repositories({ allRepos }) {
         </Head>
         <Container>
           <PageTitle>Our Repositories.</PageTitle>
-          {allRepos.map(repo => <RepositoryPreview key={repo.title} title={repo.title} url={repo.url} excerpt={repo.excerpt} slug={repo.slug} />)}
+          {allRepositories.map(repository => (
+            <RepositoryPreview
+              key={repository.slug}
+              title={repository.title}
+              url={repository.url}
+              excerpt={repository.excerpt}
+              slug={repository.slug}
+            />
+          ))}
         </Container>
       </Layout>
     </>
@@ -22,7 +30,7 @@ export default function Repositories({ allRepos }) {
 }
 
 export async function getStaticProps() {
-  const allRepos = getAllRepositories([
+  const allRepositories = getAllRepositories([
     'title',
     'url',
     'excerpt',
@@ -31,6 +39,6 @@ export async function getStaticProps() {
   ])
 
   return {
-    props: { allRepos: allRepos },
+    props: { allRepositories },
   }
 }
