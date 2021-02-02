@@ -1,5 +1,6 @@
 {
   "name": "sitecore-demo-blog",
+  "repository": "https://github.com/jeanfrancoislarente/sitecore-demo-blog",
   "version": "0.0.1",
   "scripts": {
     "dev": "next",

@@ -4,13 +4,14 @@ import PageTitle from '../components/page-title'
 import Layout from '../components/layout'
 import { getAllRepositories } from '../lib/api'
 import Head from 'next/head'
+import { BLOG_NAME } from '../lib/constants'
 
 export default function Repositories({ allRepositories }) {
   return (
     <>
       <Layout>
         <Head>
-          <title>Our Repositories</title>
+          <title>Our Repositories | { BLOG_NAME }</title>
         </Head>
         <Container>
           <PageTitle>Our Repositories.</PageTitle>
