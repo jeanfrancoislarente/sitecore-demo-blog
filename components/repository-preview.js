@@ -7,7 +7,7 @@ export default function RepositoryPreview({
 }) {
   return (
     <>
-      <h2>
+      <h2 className="text-3xl mb-3 leading-snug">
         <Link href={`/repositories/${slug}`}>
           <a className="hover:underline">{title}</a>
         </Link>
