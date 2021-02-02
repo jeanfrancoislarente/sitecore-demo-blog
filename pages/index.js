@@ -2,13 +2,11 @@ import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
+import { getAllNonFeaturedPosts, getAllFeaturedPosts } from '../lib/api'
 import Head from 'next/head'
 import { BLOG_NAME } from '../lib/constants'
 
-export default function Index({ allPosts }) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+export default function Index({ heroPosts, morePosts }) {
   return (
     <>
       <Layout>
@@ -16,7 +14,7 @@ export default function Index({ allPosts }) {
           <title>{BLOG_NAME}</title>
         </Head>
         <Container>
-          {heroPost && (
+          {heroPosts && heroPosts.length > 0 && heroPosts.map(heroPost => (
             <HeroPost
               title={heroPost.title}
               coverImage={heroPost.coverImage}
@@ -24,9 +22,15 @@ export default function Index({ allPosts }) {
               author={heroPost.author}
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
+              key={heroPost.slug}
+            />
+          ))}
+          {morePosts && morePosts.length > 0 && (
+            <MoreStories
+              posts={morePosts}
+              title="More Stories"
             />
           )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} title="More Stories" />}
         </Container>
       </Layout>
     </>
@@ -34,16 +38,37 @@ export default function Index({ allPosts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts([
+  const featuredPosts = getAllFeaturedPosts([
     'title',
     'date',
     'slug',
     'author',
     'coverImage',
     'excerpt',
+    'featuredOrder',
+  ])
+  const nonFeaturedPosts = getAllNonFeaturedPosts([
+    'title',
+    'date',
+    'slug',
+    'author',
+    'coverImage',
+    'excerpt',
+    'featuredOrder',
   ])
 
+  let heroPosts, morePosts
+  if (featuredPosts.length > 0) {
+    heroPosts = featuredPosts;
+    morePosts = nonFeaturedPosts
+  } else {
+    [heroPosts, ...morePosts] = nonFeaturedPosts
+  }
+
   return {
-    props: { allPosts },
+    props: {
+      heroPosts,
+      morePosts
+    },
   }
 }
