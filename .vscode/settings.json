@@ -3,6 +3,7 @@
     "markdown-image.local.path": "/assets/blog",
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
-    "pasteImage.path": "${projectRoot}/public/assets/blog/${currentFileNameWithoutExt}",
-    "pasteImage.insertPattern": "${imageSyntaxPrefix}../assets/blog/${currentFileNameWithoutExt}/${imageFileName}${imageSyntaxSuffix}"
+    "markdownlint.config": {
+        "MD033": false
+    }
 }

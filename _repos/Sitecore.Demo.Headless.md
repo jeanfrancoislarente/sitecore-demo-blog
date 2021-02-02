@@ -2,7 +2,7 @@
 title: 'Sitecore.Demo.Headless'
 url: 'https://github.com/Sitecore/Sitecore.Demo.Headless'
 excerpt: 'Our JSS demo.'
-order: 3
+order: 2
 ---
 
 Sitecore.Demo.Headless hosts 2 demos:

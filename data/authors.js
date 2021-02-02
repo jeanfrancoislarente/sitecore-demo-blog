@@ -3,5 +3,20 @@ export const authors = [
     id: 'scottmulligan',
     name: 'Scott Mulligan',
     picture: '/assets/blog/authors/scottmulligan.png'
+  },
+  {
+    id: 'jeanfrancoislarente',
+    name: 'Jean-Francois (J.F.) Larente',
+    picture: '/assets/blog/authors/jeanfrancoislarente.png'
+  },
+  {
+    id: 'jefflheureux',
+    name: "Jeff L'Heureux",
+    picture: '/assets/blog/authors/jefflheureux.jpg'
+  },
+  {
+    id: 'topazahmed',
+    name: "Topaz Ahmed",
+    picture: '/assets/blog/authors/topazahmed.jpg'
   }
 ]
