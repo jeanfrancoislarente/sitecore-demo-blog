@@ -71,7 +71,7 @@ If the visitor drops off and doesn't complete all three questionnaire steps, the
 
 ## Identifying Contacts
 
-xConnect is at the heart of Sitecore's data analytics strategy and it is important to understand how visitor data is managed across different visitor sessions. The demo was build to help showcase how Sitecore can tie visitor data together in an omni-channel world where visitors are intereating on different devices, different channels such as email and offline, and across multiple web properties.
+xConnect is at the heart of Sitecore's data analytics strategy and it is important to understand how visitor data is managed across different visitor sessions. The demo was build to help showcase how Sitecore can tie visitor data together in an omni-channel world where visitors are interacting on different devices, different channels such as email and offline, and across multiple web properties.
 
 In the demo, the goal is to create a known contact. We can use the contact's email address as a unique identifier to surface their previous visitor data whenever they return and can be identified.
 
@@ -121,8 +121,8 @@ Open the demo sidebar in order to see the results. In this visit we have only gi
 
 As another example, The total engagment value for this contact is now calculated based on the current and previous visits combined.
 
-In the scenario described above, the initial and return visits both occured in the same browser (different browser sessions) but it is easy to understand how this scenario could take place across different devices or channels such as return visits on a mobile device.
+In the scenario described above, the initial and return visits both occurred in the same browser (different browser sessions) but it is easy to understand how this scenario could take place across different devices or channels such as return visits on a mobile device.
 
 ## In Closing
 
-That's all for now! Hopfully this post will give you a solid base to explore the demo. There are so many more marketing features to explore such as **Goals, Campaigns, Marketing Automation Plans, Dynamic Contact Lists, and more**. Once you feel comfortable with the basic marketing features available in the demo, you can move on to more complex and in depth demo scenarios.
+That's all for now! Hopefully this post will give you a solid base to explore the demo. There are so many more marketing features to explore such as **Goals, Campaigns, Marketing Automation Plans, Dynamic Contact Lists, and more**. Once you feel comfortable with the basic marketing features available in the demo, you can move on to more complex and in depth demo scenarios.
