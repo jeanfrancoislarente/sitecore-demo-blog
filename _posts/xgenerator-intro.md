@@ -98,7 +98,7 @@ In order to work with ExmGenerator, you need to start by creating and sending an
 
 In order to send an EXM email blast don't you need a list of contacts? Correct. The ExmGenerator application can help by running the "List Generation" tool. This will populate a new contact list available in Sitecore's List Manager tool and be usable when sending EXM emails (Of course, you can use the list for other purposes if you want). 
 
-  ![picture 11](../assets/blog/xgenerator-intro/xgenerator8.png)  
+![picture 11](/assets/blog/xgenerator-intro/xgenerator8.png)  
 
 The next step is to select this list of contancts and send an EXM email blast. After the dispatch is complete you can open up the ExmGenerator app and start generating some data.
 
@@ -113,7 +113,7 @@ The next step is to select this list of contancts and send an EXM email blast. A
 
 You can find all of the released version of xGenerator at the following location:
 
-- [https://github.com/Sitecore/xGenerator/releases]: https://github.com/Sitecore/xGenerator/releases
+- [https://github.com/Sitecore/xGenerator/releases](https://github.com/Sitecore/xGenerator/releases)
 
 With each release, you can download the corresponding *zip* package in order to install xGenerator as a standard Sitecore package. With the Sitecore 10 release we now offer the *scwdp* version for use in containers as well.
 
