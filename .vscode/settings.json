@@ -3,6 +3,7 @@
     "markdown-image.local.path": "/assets/blog",
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
+    "css.validate": false,
     "markdownlint.config": {
         "MD033": false
     }
