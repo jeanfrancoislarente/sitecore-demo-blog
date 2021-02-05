@@ -34,7 +34,7 @@ export default function Meta() {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`Sitecore Demo Team blog.`}
+        content={BLOG_NAME}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>

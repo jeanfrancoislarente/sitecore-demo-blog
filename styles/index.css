@@ -8,6 +8,17 @@
 
 /* Write you own custom component styles here */
 
+.site-title-image {
+  width: 100%;
+  max-width: none;
+}
+
+@screen md {
+  .site-title-image {
+    width: 560px;
+  }
+}
+
 .repositoriesList a + a:before {
   content: ', '
 }

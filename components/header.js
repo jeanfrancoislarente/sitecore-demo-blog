@@ -6,23 +6,20 @@ export default function Header() {
   return (
     <header>
       <Container>
-        <nav className="navbar navbar-expand-sm mb-10">
+        <nav className="navbar mb-6 sm:mb-10">
           <div className="container-fluid pe-0 ps-0">
-            <Link className="" href="/">
-              <a className="text-2xl md:text-4xl lg:text-6xl xl:text-7xl whitespace-nowrap font-bold tracking-tight md:tracking-tighter leading-tight mt-2 mb-2 hover:underline">{BLOG_NAME}.</a>
+            <Link href="/">
+              <a className="mt-2 mb-2">
+                <img src="/assets/blog/shared/site-title-web.png" alt={BLOG_NAME} className="site-title-image" />
+              </a>
             </Link>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav ms-auto mb-2 mb-sm-0">
-                <li className="nav-item">
-                  <Link href={`/repositories`}>
-                    <a className="nav-link">Our Repositories</a>
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <ul className="navbar-nav ms-auto mb-2 sm:mb-0">
+              <li className="nav-item">
+                <Link href={`/repositories`}>
+                  <a className="nav-link">Our Repositories</a>
+                </Link>
+              </li>
+            </ul>
           </div>
         </nav>
       </Container>
