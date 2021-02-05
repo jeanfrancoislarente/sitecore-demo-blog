@@ -20,13 +20,13 @@ The Sitecore demo team is the maintainer of an open source tool named **Experien
 
 It does stuff. You know, analytics stuff.
 
-OK, more specifically xGnerator will generate analytics data by making page requests to a Sitecore webite, JSS app, whatever you're running on Sitecore.
+OK, more specifically xGnerator will generate analytics data by making page requests to a Sitecore website, JSS app, whatever you're running on Sitecore.
 
 But in the end, it is supposed to produce fancy looking charts like this! Oops, don't look at the "Bounce rate" in the top right... we need to look into that one.
 
 ![picture 3](/assets/blog/xgenerator-intro/xgenerator5.png)  
 
-There is definitely more to it but you get the idea. How can you properly demonstrate Sitecore's analytics reporting and insight capabilies without data and charts with pretty colors?
+There is definitely more to it but you get the idea. How can you properly demonstrate Sitecore's analytics reporting and insight capabilities without data and charts with pretty colors?
 
 Don't forget to review the 360 degree view of customers in xProfile. Hello Mr. Olaf Cormier from Cairo (pst, he's not real).
 
@@ -119,7 +119,7 @@ With each release, you can download the corresponding *zip* package in order to 
 
 ## How Does It Work?
 
-How is this thing generating analytics data? Is it jamming stuff into the database or is it actually visiting the site? The great part about the tool is that it is actually visiting your site. Of course, making real page requests means the tool is quite a bit slower compared to other approaches but it also makes it much more versatile. You don't need to programatically define a set of pages to visit in advance, you just run the tool against a Sitecore website/app and it will do the rest.
+How is this thing generating analytics data? Is it jamming stuff into the database or is it actually visiting the site? The great part about the tool is that it is actually visiting your site. Of course, making real page requests means the tool is quite a bit slower compared to other approaches but it also makes it much more versatile. You don't need to programmatically define a set of pages to visit in advance, you just run the tool against a Sitecore website/app and it will do the rest.
 
 And since xGenerator is making real page requests, all of the analytics data is triggered just like you would expect from a real visitor. Personalization conditions will be evaluated, MV tests will be run, page goals will be triggered, and errors will be thrown if they exist (your site doesn't have any errors does it?).
 
