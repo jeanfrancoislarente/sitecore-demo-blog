@@ -44,7 +44,6 @@ xGenerator is more than a single tool. It is actually made up of a series of thr
 - **Profile Experience Generator (xProfileGenerator)** - Create deep analytics for individual visitors to show robust data in xProfile.
 - **EXM Experience Generator (ExmGenerator)** - Create analytics data for EXM messages.
 
-_
 ![picture 1](/assets/blog/xgenerator-intro/xgenerator1.png)  
 
 ### Experience Generator (xGenerator)
@@ -136,7 +135,7 @@ This concept of auto-generating analytics data can be used for spinning up QA in
 
 ## Contributions Welcome
 
-We absolutely encourage contributions. The tool is great and works for our needs but it is far from perfect. Could the generated analytics be better? Probably, yes. Could the tool run faster? Probably, yes. Is the code completely up to date for the latest xConnect standards? Definitely not. It is awesome at generating pretty looking charts and graphs but I'm sure the tool could go down another level and generate deeper and more meaningful data. If you have ideas, please reach out.
+We absolutely encourage contributions. The tool is great and works for our needs but it is far from perfect. Could the generated analytics be better? Probably, yes. Could the tool run faster? Probably, yes. Is the code completely up to date for the latest xConnect standards? Definitely not. If you have ideas, please reach out.
 
 Long story short, this aint our day job bit it's cool and we enjoy working with xGenerator. We hope you do as well.
 
