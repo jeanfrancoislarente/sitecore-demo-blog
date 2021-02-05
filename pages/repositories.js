@@ -14,7 +14,7 @@ export default function Repositories({ allRepositories }) {
           <title>Our Repositories | { BLOG_NAME }</title>
         </Head>
         <Container>
-          <PageTitle>Our Repositories.</PageTitle>
+          <PageTitle>Our Repositories</PageTitle>
           {allRepositories.map(repository => (
             <RepositoryPreview
               key={repository.slug}

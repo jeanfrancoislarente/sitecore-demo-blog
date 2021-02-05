@@ -10,7 +10,7 @@ export default function Header() {
           <div className="container-fluid pe-0 ps-0">
             <Link href="/">
               <a className="mt-2 mb-2">
-                <img src="/assets/blog/shared/blog-title.png" alt={BLOG_NAME} className="blog-title-image" />
+                <img src="/assets/blog/shared/site-title-web.png" alt={BLOG_NAME} className="site-title-image" />
               </a>
             </Link>
             <ul className="navbar-nav ms-auto mb-2 sm:mb-0">

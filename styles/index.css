@@ -8,13 +8,13 @@
 
 /* Write you own custom component styles here */
 
-.blog-title-image {
+.site-title-image {
   width: 100%;
   max-width: none;
 }
 
 @screen md {
-  .blog-title-image {
+  .site-title-image {
     width: 560px;
   }
 }
