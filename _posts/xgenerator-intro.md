@@ -12,7 +12,7 @@ repositories:
 featuredOrder:
 ---
 
-One of the most important value propositions of Sitecore is the ability to collect analytics data for the purpose of real time personalization and deep analytics reporting. But how do can you generate realistic analytics data for testing, demos, or other purposes?
+One of the most important value propositions of Sitecore is the ability to collect analytics data for the purpose of real time personalization and deep analytics reporting. But how can you generate realistic analytics data for testing, demos, or other purposes?
 
 The Sitecore demo team is the maintainer of an open source tool named **Experience Generator (xGenerator)**. While we were not the original creators of xGenerator, we quickly identified the importance of this tool (both for our needs and the community). We ensure xGenerator is upgraded and usable with each new Sitecore release. And of course, being the demo team, we made xGenerator container ready (thank you @adoprog).
 
@@ -20,15 +20,15 @@ The Sitecore demo team is the maintainer of an open source tool named **Experien
 
 It does stuff. You know, analytics stuff.
 
-OK, more specifically xGnerator will generate analytics data by making page requests to a Sitecore website, JSS app, whatever you're running on Sitecore.
+OK, more specifically xGenerator will generate analytics data by making page requests to a Sitecore website, JSS app, whatever you're running on Sitecore.
 
 But in the end, it is supposed to produce fancy looking charts like this! Oops, don't look at the "Bounce rate" in the top right... we need to look into that one.
 
 ![picture 3](/assets/blog/xgenerator-intro/xgenerator5.png)  
 
-There is definitely more to it but you get the idea. How can you properly demonstrate Sitecore's analytics reporting and insight capabilities without data and charts with pretty colors?
+There is definitely more to it but you get the idea.
 
-Don't forget to review the 360 degree view of customers in xProfile. Hello Mr. Olaf Cormier from Cairo (pst, he's not real).
+Don't forget to review the 360 degree view of a customer in xProfile. Hello Mr. Olaf Cormier from Cairo (*pst, he's not real*).
 
 ![picture 4](/assets/blog/xgenerator-intro/xgenerator7.png)  
 
@@ -58,10 +58,10 @@ Let's start with the main xGenerator app. There are tons of tabs to review (in o
 - What is the average time viewed per page? 
 - Which sites do you want to hit and at what distribution?
 - Which languages do you want to hit and at what distribution?
-- How many visitors are anonymous vs. identified? (Very useful if your Sitecore instance does not enable indexing of anonymous contacts)
-- What is your date range for analytics data to be generated?
+- How many visitors are anonymous vs. identified? (*Very useful if your Sitecore instance does not enable indexing of anonymous contacts*)
+- What is the date range for analytics data to be generated?
 
-That's a lot of configuration options. And that's only the first tab!
+That's a lot of configuration options. And that's just the first tab!
 
 When your configuration is set, go ahead and click the "**Start**" button to begin the data generation process.
 
@@ -75,20 +75,20 @@ Create your visitor and their contact details... first name, last name, email, e
 
 ![picture 6](/assets/blog/xgenerator-intro/xgenerator3.png)  
 
-And then you can go a level deeper build out the customer journey.
+Then you can go a level deeper and build out the customer journey.
 
 - How many individual visits did this journey contain?
 - Which webpages did they view in each visit?
-- Which goals did they trigger on individual page visits? (Yes, Engagment Value!)
+- Which goals did they trigger on individual page visits? (*Yes, Engagment Value!*)
 - What was their incoming channel?
-- What Outcomes did they trigger per visit? (Yes, Engagment Value!)
-- Where are they located?
+- What outcomes did they trigger per visit? (*Yes, Engagment Value!*)
+- Where were they located?
 - When did the individual visits occur in their journey?
 - And finally, did they trigger a campaign per visit?
 
 ![picture 8](/assets/blog/xgenerator-intro/xgenerator4.png)  
 
-You can open up the journey in Experience Profile and view the awesomeness!
+After generating the data you can open up the journey in Experience Profile and view the awesomeness!
 
 ### EXM Experience Generator (ExmGenerator)
 
@@ -96,9 +96,9 @@ Ah, yes. The forgotten child that is *ExmGenerator*. Working with ExmGenerator i
 
 In order to work with ExmGenerator, you need to start by creating and sending an EXM email. Sounds easy... but not really.
 
-In order to send an EXM email blast, don't I need a list of contacts? Correct. The ExmGenerator application can help by running the "List Generation" tool. This will populate a new contact list available in Sitecore's List Manager tool and be usable when sending EXM emails (Of course, you can use the list for other purposes if you want). 
+In order to send an EXM email blast don't you need a list of contacts? Correct. The ExmGenerator application can help by running the "List Generation" tool. This will populate a new contact list available in Sitecore's List Manager tool and be usable when sending EXM emails (Of course, you can use the list for other purposes if you want). 
 
-![picture 9](/assets/blog/xgenerator-intro/xgenerator9.png)  
+  ![picture 11](../assets/blog/xgenerator-intro/xgenerator8.png)  
 
 The next step is to select this list of contancts and send an EXM email blast. After the dispatch is complete you can open up the ExmGenerator app and start generating some data.
 
@@ -113,7 +113,7 @@ The next step is to select this list of contancts and send an EXM email blast. A
 
 You can find all of the released version of xGenerator at the following location:
 
-- https://github.com/Sitecore/xGenerator/releases
+- [https://github.com/Sitecore/xGenerator/releases]: https://github.com/Sitecore/xGenerator/releases
 
 With each release, you can download the corresponding *zip* package in order to install xGenerator as a standard Sitecore package. With the Sitecore 10 release we now offer the *scwdp* version for use in containers as well.
 
