@@ -2,7 +2,7 @@
 title: 'An Introduction to Experience Generator (xGenerator)'
 excerpt: "How does the demo team generate realistic looking analytics data? This post will serve as an introduction to Experience Generator (xGenerator)."
 coverImage: '/assets/blog/xgenerator-intro/xgen.jpg'
-date: '2021-02-06T07:00:00.322Z'
+date: '2021-02-05T20:00:00.322Z'
 author: 'scottmulligan'
 ogImage:
   url: '/assets/blog/xgenerator-intro/xgen.jpg'
