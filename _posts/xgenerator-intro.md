@@ -137,7 +137,7 @@ This concept of auto-generating analytics data can be used for spinning up QA in
 
 We absolutely encourage contributions. The tool is great and works for our needs but it is far from perfect. Could the generated analytics be better? Probably, yes. Could the tool run faster? Probably, yes. Is the code completely up to date for the latest xConnect standards? Definitely not. If you have ideas, please reach out.
 
-Long story short, this aint our day job bit it's cool and we enjoy working with xGenerator. We hope you do as well.
+Long story short, this aint our day job but it's cool and we enjoy working with xGenerator. We hope you do as well.
 
 ## Help, Errors!
 
@@ -145,4 +145,4 @@ If for some reason you hit an error when running xGenerator, the best way to fin
 
 ## In Closing
 
-xGenerator is an useful tool. We use it for generating realistic analytics data for demo purposes but I'm sure the Sitecore community can discover some fun and practical use cases to expand the potential for xGenerator.
+xGenerator is a useful tool. We use it for generating realistic analytics data for demo purposes but I'm sure the Sitecore community can discover some fun and practical use cases for xGenerator.
