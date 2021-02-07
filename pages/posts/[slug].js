@@ -30,12 +30,14 @@ export default function Post({ post, morePosts, preview }) {
               </Head>
               <PostHeader
                 title={post.title}
+                primaryTopic={post.primaryTopic}
+              />
+              <PostBody 
+                content={post.content}
                 date={post.date}
                 author={post.author}
                 repositories={post.repositories}
-                primaryTopic={post.primaryTopic}
               />
-              <PostBody content={post.content} />
             </article>
           </>
         )}
@@ -51,7 +53,6 @@ export async function getStaticProps({ params }) {
     'slug',
     'author',
     'content',
-    'ogImage',
     'repositories',
     'primaryTopic',
   ])
