@@ -3,7 +3,7 @@ title: 'An Intro to Marketing Features in the Demo'
 excerpt: "So you've just got your hands on a Sitecore instance running the Lighthouse demo - what next? This post will help you explore some of the marketing features available in the demo (Yes, those mythical phase 2 marketing features!)."
 coverImage: '/assets/blog/introduction-marketing-features/14-Phones-01-Hero.jpg'
 date: '2021-02-04T07:00:00.322Z'
-author: 'scottmulligan'
+author: 'Scott-Mulligan'
 ogImage:
   url: '/assets/blog/introduction-marketing-features/14-Phones-01-Hero.jpg'
 repositories:

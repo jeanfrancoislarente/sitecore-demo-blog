@@ -2,7 +2,7 @@ import Container from '../components/container'
 import RepositoryPreview from '../components/repository-preview'
 import PageTitle from '../components/page-title'
 import Layout from '../components/layout'
-import { getAllRepositories } from '../lib/api'
+import { getAllRepositories } from '../lib/repositoriesService'
 import Head from 'next/head'
 import { BLOG_NAME } from '../lib/constants'
 

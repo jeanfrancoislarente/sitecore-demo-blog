@@ -3,7 +3,7 @@ title: 'What''s in Sitecore''s Official Container Registry (scr.sitecore.com)?'
 excerpt: "scr.sitecore.com is the official Sitecore container registry, great. Where are all of these images coming from?"
 coverImage: '/assets/blog/shared/sitecore-containers.png'
 date: '2021-02-04T19:00:00.322Z'
-author: 'jeanfrancoislarente'
+author: 'Jean-Francois-Larente'
 ogImage:
   url: '/assets/blog/shared/sitecore-containers.png'
 repositories:

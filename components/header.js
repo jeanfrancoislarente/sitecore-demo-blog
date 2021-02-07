@@ -6,21 +6,20 @@ export default function Header() {
   return (
     <header>
       <Container>
-        <nav className="navbar mb-6 sm:mb-10">
-          <div className="container-fluid pe-0 ps-0">
+        <nav className="navbar navbar-expand mb-6 sm:mb-10" style={{flexWrap:'wrap'}}>
             <Link href="/">
               <a className="mt-2 mb-2">
                 <img src="/assets/blog/shared/site-title-web.png" alt={BLOG_NAME} className="site-title-image" />
               </a>
             </Link>
-            <ul className="navbar-nav ms-auto mb-2 sm:mb-0">
-              <li className="nav-item">
+            <div className="navbar-nav ms-auto mb-2 sm:mb-0">
                 <Link href={`/repositories`}>
-                  <a className="nav-link">Our Repositories</a>
+                  <a className="nav-item nav-link">Our Repositories</a>
                 </Link>
-              </li>
-            </ul>
-          </div>
+                <Link href={`/team`}>
+                  <a className="nav-item nav-link">Our Team</a>
+                </Link>
+            </div>
         </nav>
       </Container>
     </header>

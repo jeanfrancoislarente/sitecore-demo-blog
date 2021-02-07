@@ -3,7 +3,7 @@ title: 'Welcome to Our Humble Blog'
 excerpt: "Yes, we exist. Yes, we build cool things. Here's a quick intro about what types of posts you may find contained herein!"
 coverImage: '/assets/blog/welcome/lighthouse-main.png'
 date: '2021-02-04T07:00:00.322Z'
-author: 'jeanfrancoislarente'
+author: 'Jean-Francois-Larente'
 ogImage:
   url: '/assets/blog/welcome/lighthouse-main.png'
 repositories:
