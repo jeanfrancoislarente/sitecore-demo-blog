@@ -16,7 +16,7 @@ export default function Header() {
             <ul className="navbar-nav ms-auto mb-2 sm:mb-0">
               <li className="nav-item">
                 <Link href={`/repositories`}>
-                  <a className="nav-link">Our Repositories</a>
+                  <a className="nav-link text-xl">Our Repositories</a>
                 </Link>
               </li>
             </ul>

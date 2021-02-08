@@ -27,14 +27,13 @@ export default function Post({ post, morePosts, preview }) {
                 <title>
                   {post.title} | {BLOG_NAME}
                 </title>
-                <meta property="og:image" content={post.ogImage.url} />
               </Head>
               <PostHeader
                 title={post.title}
-                coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
                 repositories={post.repositories}
+                primaryTopic={post.primaryTopic}
               />
               <PostBody content={post.content} />
             </article>
@@ -53,8 +52,8 @@ export async function getStaticProps({ params }) {
     'author',
     'content',
     'ogImage',
-    'coverImage',
     'repositories',
+    'primaryTopic',
   ])
   const content = await markdownToHtml(post.content || '')
 
