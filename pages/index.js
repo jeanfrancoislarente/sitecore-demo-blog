@@ -17,12 +17,12 @@ export default function Index({ heroPosts, morePosts }) {
           {heroPosts && heroPosts.length > 0 && heroPosts.map(heroPost => (
             <HeroPost
               title={heroPost.title}
-              coverImage={heroPost.coverImage}
               date={heroPost.date}
               author={heroPost.author}
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
               key={heroPost.slug}
+              primaryTopic={heroPost.primaryTopic}
             />
           ))}
           {morePosts && morePosts.length > 0 && (
@@ -43,18 +43,18 @@ export async function getStaticProps() {
     'date',
     'slug',
     'author',
-    'coverImage',
     'excerpt',
     'featuredOrder',
+    'primaryTopic',
   ])
   const nonFeaturedPosts = getAllNonFeaturedPosts([
     'title',
     'date',
     'slug',
     'author',
-    'coverImage',
     'excerpt',
     'featuredOrder',
+    'primaryTopic',
   ])
 
   let heroPosts, morePosts
