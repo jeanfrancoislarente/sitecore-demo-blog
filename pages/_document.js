@@ -6,7 +6,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-        <Fragment>
               {/* Global Site Tag (gtag.js) - Google Analytics */}
               <script
                 async
@@ -25,7 +24,6 @@ export default class MyDocument extends Document {
                   `,
                 }}
               />
-            </Fragment>
         </Head>
         <body>
           <Main />
