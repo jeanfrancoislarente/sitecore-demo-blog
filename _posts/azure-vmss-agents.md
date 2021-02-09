@@ -1,7 +1,7 @@
 ---
 title: 'Walkthrough: Add Parallel Build Power to your Azure Pipelines with Virtual Machine Scale Sets'
 excerpt: "We've discovered the beauty of Virtual Machine Scale Sets (VMSS) in Azure. This is a step-by-step guide on how you can create scale sets for different Windows or Linux versions and configure Azure pipeline agent pools to use them - it's built in!"
-date: '2021-02-08T07:00:00.322Z'
+date: '2021-02-09T16:00:00.322Z'
 author: 'jeanfrancoislarente'
 primaryTopic: 'DevOps'
 repositories:
