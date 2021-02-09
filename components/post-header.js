@@ -17,16 +17,16 @@ export default function PostHeader({ title, date, author, repositories, primaryT
         <div className="block md:hidden mb-6">
           <Avatar name={author.name} picture={author.picture} />
         </div>
-        { repositories && repositories.length > 0 && (
+        {repositories && repositories.length > 0 && (
           <div className="mb-6 text-lg repositoriesList">
             Related repositories: { repositories.map(repository => (
-              <Link
-                href={`/repositories/${repository}`}
-                key={repository}
-              >
-                <a className="hover:underline">{repository}</a>
-              </Link>
-            ))}
+            <Link
+              href={`/repositories/${repository}`}
+              key={repository}
+            >
+              <a className="hover:underline">{repository}</a>
+            </Link>
+          ))}
           </div>
         )}
         <div className="mb-6 text-lg fst-italic">

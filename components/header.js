@@ -1,6 +1,6 @@
 import Container from './container'
 import Link from 'next/link'
-import {BLOG_NAME} from '../lib/constants'
+import { BLOG_NAME } from '../lib/constants'
 
 export default function Header() {
   return (

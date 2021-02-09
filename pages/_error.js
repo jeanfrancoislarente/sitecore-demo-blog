@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 import Head from 'next/head'
 import Link from 'next/link'
 
-export default function Error() { 
+export default function Error() {
   return (
     <Layout>
       <Head>
@@ -11,7 +11,7 @@ export default function Error() {
       </Head>
       <Container>
         <h1>Oops!</h1>
-        <h3>There was an unforeseen error </h3>
+        <h3>There was an unforeseen error</h3>
         <p>
           Trust us, we will fix it.
           <ul>
