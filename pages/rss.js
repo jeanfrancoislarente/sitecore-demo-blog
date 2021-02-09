@@ -83,4 +83,8 @@ export async function getServerSideProps(context) {
   res.setHeader("Content-Type", "text/xml")
   res.write(rssFeedContent)
   res.end()
+
+  return {
+    props: {}
+  }
 }
