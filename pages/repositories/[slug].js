@@ -56,7 +56,8 @@ export async function getStaticProps({ params }) {
     'slug',
     'author',
     'excerpt',
-    'repositories'
+    'repositories',
+    'primaryTopic'
   ])
 
   return {
