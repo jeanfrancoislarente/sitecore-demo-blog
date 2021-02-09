@@ -6,5 +6,18 @@
     "css.validate": false,
     "markdownlint.config": {
         "MD033": false
-    }
+    },
+    "cSpell.words": [
+        "Sitecore",
+        "VMSS",
+        "datacenter",
+        "deallocate",
+        "jeanfrancoislarente",
+        "ltsc",
+        "msiexec",
+        "nanoserver",
+        "overprovision",
+        "smalldisk",
+        "windowsserver"
+    ]
 }

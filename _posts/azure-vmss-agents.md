@@ -19,9 +19,9 @@ We had two problems to solve, actually. We needed to add *burst* capacity to our
 
 The first problem is simple. Like any other team, our cycles vary and sometimes we need additional build capacity and other times we're coding and don't need the servers running.
 
-The second challenge is a side-effect of the containerization (that's a word, right?) of the demo. Sitecore chose to provide support for Windows LTSC2019 as well as two SAC releases (at the time of this post, this is 2004 and 20H2). The demo team also decided to leverage the Linux OS for various roles. In case you're keeping count, this is 4 different operating systems to support.
+The second challenge is a side-effect of the containerization (that's a word, right?) of the demo. Sitecore chose to provide support for Windows ltsc2019 as well as two SAC releases (at the time of this post, this is 2004 and 20H2). The demo team also decided to leverage the Linux OS for various roles. In case you're keeping count, this is 4 different operating systems to support.
 
-Now, *technically* we could build 2004 and LTSC2019 images on a newer Windows host OS (e.g. Windows 20H2) using Hyper-V isolation mode ([more on isolation modes](https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/hyperv-container)). However, we found technical instabilities and decreased performance when building using Hyper-V, so we chose to work in *process isolation* mode. The downfall, you need to run Docker builds on the matching host OS version. That is, you need to build a Windows 20H2 image on a Windows 20H2 host OS and a Windows 2004 image on a 2004 host, and... Ok, I'll stop.
+Now, *technically* we could build 2004 and ltsc2019 images on a newer Windows host OS (e.g. Windows 20H2) using Hyper-V isolation mode ([more on isolation modes](https://docs.microsoft.com/en-us/virtualization/windowscontainers/manage-containers/hyperv-container)). However, we found technical instabilities and decreased performance when building using Hyper-V, so we chose to work in *process isolation* mode. The downfall, you need to run Docker builds on the matching host OS version. That is, you need to build a Windows 20H2 image on a Windows 20H2 host OS and a Windows 2004 image on a 2004 host, and... Ok, I'll stop.
 
 Let's get down to the brass tax and go through the process. In this post we'll be:
 
@@ -29,7 +29,7 @@ Let's get down to the brass tax and go through the process. In this post we'll b
 - Customizing the VM with a script.
 - Creating an image from the VM.
 - Creating a VMSS from the Image.
-- Adding an Azure Pipepline agent pool.
+- Adding an Azure Pipelines agent pool.
 
 ## The VMs
 
@@ -95,7 +95,7 @@ Let's set up a couple of variables now, I use two resource groups to keep things
 
 - **imageResourceGroup**: this is where we store all VM images
 - **agentResourceGroup**: this is where the vmss (Azure DevOps agent scale sets) are created
-- **vmName**: should be set to a short name to identy, for example, the version. This will be used to create other resource names
+- **vmName**: should be set to a short name to identify, for example, the version. This will be used to create other resource names
 
 ```powershell
   $imageResourceGroup = "DevOps-Images"
@@ -107,13 +107,13 @@ Let's set up a couple of variables now, I use two resource groups to keep things
 
 Windows:
 
-```azcli
+```powershell
   az vm create -g $imageResourceGroup -n "$vmName-vm" --image $urn --os-disk-size-gb 500 --admin-username myadmin --admin-password ChooseY0urP@ssword! --size Standard_D16s_v3
 ```
 
 Linux:
 
-```azcli
+```powershell
   az vm create -g $imageResourceGroup -n "$vmName-vm" --image $urn --os-disk-size-gb 500 --generate-ssh-keys --size Standard_D8s_v3
 ```
 
@@ -219,22 +219,22 @@ For Linux, you can ssh and run:
 
 What we've all been waiting for, right?
 
-1. Deallocate and Generalize VM
+1. De-allocate and Generalize VM
 
-   ```azcli
+   ```powershell
    az vm deallocate --resource-group $imageResourceGroup --name "$vmName-vm"
    az vm generalize --resource-group $imageResourceGroup --name "$vmName-vm"
    ```
 
 1. Get the ID for the VM
 
-   ```azcli
+   ```powershell
    $vmId = ((az vm show -g $imageResourceGroup -n "$vmName-vm") |ConvertFrom-Json).id
    ```
 
 1. Create image from VM
 
-   ```azcli
+   ```powershell
    az image create  --resource-group $imageResourceGroup --name "$vmName-image" --source $vmId --hyper-v-gen v2
 
    #Get the Id
@@ -248,7 +248,7 @@ Ok, so THIS is probably what we've been waiting for. To sum up what we've done s
 
 - created a VM
 - customized it by running a script against it
-- generalized, stopped and deallocated it
+- generalized, stopped and de-allocated it
 - created an image and retrieved its id (`$imgId`)
 
 The naming convention I use for our team's scale sets is simply a prefix of `vmss-` followed by the `$vmName`. For Windows 2004, my `$vmName` would be 2004 and the result would be `vmss-2004`.
@@ -261,7 +261,7 @@ Ok, before we create the VMSS, here's *another note*! We have some networking gu
 
 When creating the scale set, you're passing (yet another) admin username/password. You can use the same one as you did earlier, but the primary admin user created earlier got wiped (on purpose) during the generalize step (but the AzDevOps user we created did not - but you can't reuse that user here).
 
-```azcli
+```powershell
 az vmss create --resource-group $agentResourceGroup --name $scaleSetName --image $imgId --admin-username myAdminUser --admin-password ChooseY0urP@ssword! --instance-count 1 --disable-overprovision --upgrade-policy-mode manual --load-balancer '""' --vm-sku Standard_D16s_v3
 ```
 
@@ -271,7 +271,7 @@ That's it! If all went well (and you followed along carefully) you have a VMSS i
 
 Next step, the Azure Pipelines agent pool.
 
-## The Agent Pools
+## Adding an Azure Pipelines agent pool
 
 Well, you can't be surprised we're here - I just said this was next!
 
@@ -303,7 +303,7 @@ In the Add agent pool dialog, you can set the following settings (I'll shared ou
 
 What's the beauty here? Did you have to install the Azure Pipelines agent during the process? You didn't! Do you now have unlimited, custom build power at your fingertips? You do!
 
-Azure Pipelines and Azure virtual machine scale sets work together to *automatically* spin up a build agent inside the VMSS, deploy the pipeline agent software and start processing builds! When builds arent' running and your idle settings are met, the instance(s) are deleted!
+Azure Pipelines and Azure virtual machine scale sets work together to *automatically* spin up a build agent inside the VMSS, deploy the pipeline agent software and start processing builds! When builds aren't running and your idle settings are met, the instance(s) are deleted!
 
 In an upcoming post I will provide some details about how we maximize the efficiency of our parallel builds by taking advantage of the Azure Pipeline **matrix strategy** which, as described on the [Microsoft site](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema%2Cparameter-schema#strategies) *generates copies of a job, each with different input*.
 
@@ -311,8 +311,7 @@ In an upcoming post I will provide some details about how we maximize the effici
 
 ![picture 4](/assets/blog/azure-vmss-agents/current-agent-pools.png)
 
-
-![picture 5](/assets/blog/azure-vmss-agents/matrix-strategy.png)  
+![picture 5](/assets/blog/azure-vmss-agents/matrix-strategy.png)
 
 ```yaml
 - stage: Docker_Windows
