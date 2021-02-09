@@ -6,7 +6,7 @@ import markdownStyles from './markdown-styles.module.css'
 export default function PostBody({ date, author, repositories, content }) {
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-8 gap-4">
         <div className="col-span-2 pt-6">
           <div className="block mb-6">
             <Avatar name={author.name} picture={author.picture} />
@@ -31,7 +31,7 @@ export default function PostBody({ date, author, repositories, content }) {
             <DateFormatter dateString={date} />
           </div>
         </div>
-        <div className="col-span-3">
+        <div className="col-span-3 lg:col-span-6">
           <div
             className={markdownStyles['markdown']}
             dangerouslySetInnerHTML={{ __html: content }}
