@@ -13,6 +13,10 @@ There are two agent options when building with Azure Pipelines: **Microsoft host
 
 The detailed documentation for setting this up is on [docs.microsoft.com](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/scale-set-agents?view=azure-devops), so once you've read how we do it, you can refer to the original docs for additional details and customizing it for your needs.
 
+## TL;DR
+
+If you know your way around Azure, the az cli and all of that good DevOps stuff, you may be able to get through this by going directly to **[my gist](https://gist.github.com/jeanfrancoislarente/251c8b61db6b538d3cb04efcca8a9564)** entry.
+
 ## The Problem
 
 We had two problems to solve, actually. We needed to add *burst* capacity to our build agents and we needed to support multiple OS versions, including Linux and Windows' semi-annual versions.
