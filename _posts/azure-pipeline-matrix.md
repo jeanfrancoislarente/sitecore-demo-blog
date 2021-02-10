@@ -62,7 +62,7 @@ In my previous [VMSS post](/posts/azure-vmss-agents) I mentioned that you should
 
 The other important portion of the snippet is the fact that we're now able to specify the pool `name` with `$(poolName)` variable which we set in the matrix.
 
-That's one of the variables we defined in the matrix above. That means that this job will run *concurrently* [(depending on your Azure Parallel job licensing)](https://docs.microsoft.com/en-us/azure/devops/pipelines/licensing/concurrent-jobs?view=azure-devops&tabs=self-hosted)
+The above is now configured to run this job *concurrently* across different agent pools [(depending on your Azure Parallel job licensing)](https://docs.microsoft.com/en-us/azure/devops/pipelines/licensing/concurrent-jobs?view=azure-devops&tabs=self-hosted)
 
 ## Conclusion
 
