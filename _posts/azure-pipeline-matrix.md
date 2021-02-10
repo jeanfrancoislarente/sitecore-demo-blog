@@ -1,7 +1,7 @@
 ---
 title: 'Parallel Multi-OS Builds Using Azure Pipelines Matrix Strategy'
 excerpt: "The Sitecore demo team builds Linux, Windows Server 2019 (ltsc2019), and two semi-annual releases (2004 and 20H2 at the moment). This post shows how we achieve this feat without adding additional build time!"
-date: '2021-02-09T16:00:00.322Z'
+date: '2021-02-10T08:00:00.322Z'
 author: 'jeanfrancoislarente'
 primaryTopic: 'DevOps'
 repositories:
@@ -62,7 +62,7 @@ In my previous [VMSS post](/posts/azure-vmss-agents) I mentioned that you should
 
 The other important portion of the snippet is the fact that we're now able to specify the pool `name` with `$(poolName)` variable which we set in the matrix.
 
-The above is now configured to run this job *concurrently* across different agent pools [(depending on your Azure Parallel job licensing)](https://docs.microsoft.com/en-us/azure/devops/pipelines/licensing/concurrent-jobs?view=azure-devops&tabs=self-hosted)
+The above is now configured to run this job *concurrently* across different agent pools [(depending on your Azure Parallel job licensing)](https://docs.microsoft.com/en-us/azure/devops/pipelines/licensing/concurrent-jobs?view=azure-devops&tabs=self-hosted).
 
 ## Conclusion
 
