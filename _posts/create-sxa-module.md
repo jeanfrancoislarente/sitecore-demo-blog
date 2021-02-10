@@ -38,8 +38,6 @@ We have a created a Resources section as shown below on our site that we wanted 
 
     ![picture 4](/assets/blog/create-sxa-module/sxa-module-dialog.png)
 
-<!--![picture 5](../assets/blog/create-sxa-module/sxa-module-created.png)-->
-
 - Next is setting up the actual items.
 - Create a bucket in a logical location inside Templates > Buckets > ….
 - In the bucket add the resources parent page. Inside the parent page add all the individual pages that will be installed with the module.
