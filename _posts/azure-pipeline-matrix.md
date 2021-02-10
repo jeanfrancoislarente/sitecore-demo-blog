@@ -1,6 +1,6 @@
 ---
-title: 'Parallel Multi-OS Builds Using Azure Pipelines Matrix Strategy'
-excerpt: "The Sitecore demo team builds Linux, Windows Server 2019 (ltsc2019), and two semi-annual releases (2004 and 20H2 at the moment). This post shows how we achieve this feat without adding additional build time!"
+title: 'Using the Matrix Strategy to Build Multiple OS Container Images in Parallel'
+excerpt: "The Sitecore demo team builds container images with many base operating systems. We build on Linux, Windows Server 2019 (ltsc2019), and two semi-annual releases (2004 and 20H2 at the moment). See how we achieve this without adding additional build time, by leveraging the Microsoft Azure Pipelines Matrix Strategy to run the same job in parallel against different agent pools."
 date: '2021-02-10T08:00:00.322Z'
 author: 'jeanfrancoislarente'
 primaryTopic: 'DevOps'
