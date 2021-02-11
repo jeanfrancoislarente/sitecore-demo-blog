@@ -1,6 +1,6 @@
 ---
-title: 'Create a SXA module to import content to new sites from scratch.'
-excerpt: "A step by step guide with screenshots on how we create SXA modules, that bundles up content for us which can easily be added to a site on demand."
+title: 'Create a new SXA module to create content in a new site from scratch.'
+excerpt: "A step by step guide with screenshots on how we create an SXA modules, that bundles up content for us which can easily be added to a site on demand."
 date: '2021-02-11T20:00:00.322Z'
 author: 'topazahmed'
 primaryTopic: 'General'
