@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header>
       <Container>
-        <nav className="navbar mb-6 sm:mb-10">
+        <nav className="navbar">
           <div className="container-fluid pe-0 ps-0">
             <Link href="/">
               <a className="mt-2 mb-2">

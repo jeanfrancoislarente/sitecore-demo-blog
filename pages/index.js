@@ -2,6 +2,8 @@ import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Layout from '../components/layout'
+import Intro from '../components/intro'
+import Footer from '../components/footer'
 import { getAllNonFeaturedPosts, getAllFeaturedPosts } from '../lib/api'
 import Head from 'next/head'
 import { BLOG_NAME } from '../lib/constants'
@@ -13,6 +15,7 @@ export default function Index({ heroPosts, morePosts }) {
         <Head>
           <title>{BLOG_NAME}</title>
         </Head>
+        <Intro />
         <Container>
           {heroPosts && heroPosts.length > 0 && heroPosts.map(heroPost => (
             <HeroPost
@@ -32,6 +35,7 @@ export default function Index({ heroPosts, morePosts }) {
             />
           )}
         </Container>
+        <Footer />
       </Layout>
     </>
   )

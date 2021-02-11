@@ -2,6 +2,8 @@ import Container from '../components/container'
 import Layout from '../components/layout'
 import Head from 'next/head'
 import Link from 'next/link'
+import Intro from '../components/intro'
+import Footer from '../components/footer'
 
 export default function Error() {
   return (
@@ -9,6 +11,7 @@ export default function Error() {
       <Head>
         <title>Sitecore Demo Blog - Sorry about the mess...</title>
       </Head>
+      <Intro />
       <Container>
         <h1>Oops!</h1>
         <h3>There was an unforeseen error</h3>
@@ -29,6 +32,7 @@ export default function Error() {
           </Link>
         </p>
       </Container>
+      <Footer />
     </Layout>
   )
 }
