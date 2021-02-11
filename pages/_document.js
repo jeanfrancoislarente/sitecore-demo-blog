@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '../lib/gtag'
+
 const isProduction = process.env.VERCEL_ENV === 'production';
 
 export default class MyDocument extends Document {
