@@ -11,7 +11,7 @@ featuredOrder:
 
 Our Sitecore instances are served on a plate of SXA to have customizable, easy to use, modularized front end components. SXA is Sitecore Experience Accelerator, and once you get to know it, your sitecore journey will change for the better. Here are the steps we use to create an SXA module so that you can import a "bucket" of items easily to any site with just five clicks once it's set up properly.
 
-We have a created a Resources section as shown below on our site that we wanted to turn into a module so that it can be installed into other sites easily. The Resources section has a bunch of different articles with different templates, media items, tags, and other related items. All these items will need to move with the module to make sure all the pages are functional on the new site. For simplicity’s sake, we have a global site that we use to store these types of shared items. That is where we store all the common templates, data, and media items so these can be shared by all the sites.
+We have created a Resources section as shown below on our site that we wanted to turn into a module so that it can be installed into other sites easily. The Resources section has a bunch of different articles with different templates, media items, tags, and other related items. All these items will need to move with the module to make sure all the pages are functional on the new site. For simplicity’s sake, we have a global site that we use to store these items. That is where we store all the common templates, data, and media items so these can be shared by all the sites.
 
 ![picture 1](/assets/blog/create-sxa-module/sxa-module1.png)
 
@@ -19,11 +19,10 @@ We have a created a Resources section as shown below on our site that we wanted 
 
 - From the Content Editor, Go to System > Settings on the content tree
 - Create a folder where we want the module to be created. In our case it was under Settings > Feature > Demo > Resources
-- Right-click on settings > Insert > Module
+- Right-click on settings, then select Insert > Module
 
   ![picture 2](/assets/blog/create-sxa-module/sxa-module-create-feature.png)
 
-- Create a feature
 - Pick a descriptive "Module Name"
 - Pick the folder that was just created as the "Module Group". This is just a logical place for the module to stay.
 - "System Areas" are where the module will create a folder to save all the related items.
