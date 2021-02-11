@@ -1,12 +1,16 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '../lib/gtag'
 
+const isProduction = process.env.VERCEL_ENV === 'production';
+
 export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
         <Head>
-              {/* Global Site Tag (gtag.js) - Google Analytics */}
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          {isProduction && (
+            <>
               <script
                 async
                 src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
@@ -24,6 +28,8 @@ export default class MyDocument extends Document {
                   `,
                 }}
               />
+            </>
+          )}
         </Head>
         <body>
           <Main />
