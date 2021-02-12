@@ -1,7 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '../lib/gtag'
-
-const isProduction = process.env.VERCEL_ENV === 'production';
+import { IS_PRODUCTION } from '../lib/constants'
 
 export default class MyDocument extends Document {
   render() {
@@ -9,7 +8,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
-          {isProduction && (
+          {IS_PRODUCTION && (
             <>
               <script
                 async
@@ -21,10 +20,6 @@ export default class MyDocument extends Document {
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
-
-                    gtag('config', '${GA_TRACKING_ID}', {
-                      page_path: window.location.pathname,
-                    });
                   `,
                 }}
               />

@@ -7,8 +7,10 @@ import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
-import { BLOG_NAME } from '../../lib/constants'
+import { BLOG_NAME, IS_PRODUCTION } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
+import { GA_TRACKING_ID } from '../../lib/gtag'
+
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
@@ -21,26 +23,39 @@ export default function Post({ post, morePosts, preview }) {
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
-          <>
-            <article className="mb-32">
-              <Head>
-                <title>
-                  {post.title} | {BLOG_NAME}
-                </title>
-              </Head>
-              <PostHeader
-                title={post.title}
-                primaryTopic={post.primaryTopic}
-              />
-              <PostBody 
-                content={post.content}
-                date={post.date}
-                author={post.author}
-                repositories={post.repositories}
-              />
-            </article>
-          </>
-        )}
+            <>
+              <article className="mb-32">
+                <Head>
+                  <title>
+                    {post.title} | {BLOG_NAME}
+                  </title>
+                  {/* Global Site Tag (gtag.js) - Google Analytics */}
+                  {IS_PRODUCTION && (
+                      <script
+                        dangerouslySetInnerHTML={{
+                          __html: `
+                    gtag('config', '${GA_TRACKING_ID}', {
+                      page_path: window.location.pathname,
+                      page_type:  '${post.primaryTopic}',
+                    });
+                  `,
+                        }}
+                      />
+                  )}
+                </Head>
+                <PostHeader
+                  title={post.title}
+                  primaryTopic={post.primaryTopic}
+                />
+                <PostBody
+                  content={post.content}
+                  date={post.date}
+                  author={post.author}
+                  repositories={post.repositories}
+                />
+              </article>
+            </>
+          )}
       </Container>
     </Layout>
   )

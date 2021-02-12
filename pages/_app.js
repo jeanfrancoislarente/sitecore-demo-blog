@@ -9,7 +9,7 @@ const isProduction = process.env.VERCEL_ENV === 'production';
 
 if (isProduction) {
   // Notice how we track pageview when route is changed
-  Router.events.on('routeChangeComplete', (url) => gtag.pageview(url))
+  //Router.events.on('routeChangeComplete', (url) => gtag.pageview(url))
 }
 export default function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
