@@ -10,7 +10,6 @@ import PageTitle from '../../components/page-title'
 import Head from 'next/head'
 import { BLOG_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
-import Intro from '../../components/intro'
 import Footer from '../../components/footer'
 
 export default function Repository({ repo, posts }) {
@@ -20,7 +19,6 @@ export default function Repository({ repo, posts }) {
   }
   return (
     <Layout>
-      <Intro />
       <Container>
         {router.isFallback ? (
           <PageTitle>Loading…</PageTitle>

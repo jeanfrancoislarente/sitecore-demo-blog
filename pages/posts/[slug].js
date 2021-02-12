@@ -9,7 +9,6 @@ import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { BLOG_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
-import Intro from '../../components/intro'
 import Footer from '../../components/footer'
 
 export default function Post({ post, morePosts, preview }) {
@@ -19,7 +18,6 @@ export default function Post({ post, morePosts, preview }) {
   }
   return (
     <Layout preview={preview}>
-      <Intro />
       <Container>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>

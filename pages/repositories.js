@@ -5,7 +5,6 @@ import Layout from '../components/layout'
 import { getAllRepositories } from '../lib/api'
 import Head from 'next/head'
 import { BLOG_NAME } from '../lib/constants'
-import Intro from '../components/intro'
 import Footer from '../components/footer'
 
 export default function Repositories({ allRepositories }) {
@@ -15,7 +14,6 @@ export default function Repositories({ allRepositories }) {
         <Head>
           <title>Our Repositories | { BLOG_NAME }</title>
         </Head>
-        <Intro />
         <Container>
           <PageTitle>Our Repositories</PageTitle>
           {allRepositories.map(repository => (
