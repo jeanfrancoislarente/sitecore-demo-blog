@@ -5,8 +5,11 @@ import Layout from '../components/layout'
 import { getAllNonFeaturedPosts, getAllFeaturedPosts } from '../lib/api'
 import Head from 'next/head'
 import { BLOG_NAME } from '../lib/constants'
+import { pageview } from '../lib/gtag'
 
 export default function Index({ heroPosts, morePosts }) {
+  pageview('Home')
+
   return (
     <>
       <Layout>

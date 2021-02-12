@@ -1,21 +1,25 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
+import Head from 'next/head'
 import Container from '../../components/container'
 import RepositoryHeader from '../../components/repository-header'
 import RepositoryBody from '../../components/repository-body'
 import MoreStories from '../../components/more-stories'
 import Layout from '../../components/layout'
-import { getRepositoryBySlug, getAllRepositories, getPostsByRepository } from '../../lib/api'
 import PageTitle from '../../components/page-title'
-import Head from 'next/head'
-import { BLOG_NAME } from '../../lib/constants'
+import { getRepositoryBySlug, getAllRepositories, getPostsByRepository } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
+import { BLOG_NAME } from '../../lib/constants'
+import { pageview } from '../../lib/gtag'
 
 export default function Repository({ repo, posts }) {
   const router = useRouter()
   if (!router.isFallback && !repo?.slug) {
     return <ErrorPage statusCode={404} />
   }
+
+  pageview('Repository')
+
   return (
     <Layout>
       <Container>
