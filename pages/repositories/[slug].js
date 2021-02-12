@@ -10,6 +10,7 @@ import PageTitle from '../../components/page-title'
 import Head from 'next/head'
 import { BLOG_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
+import Footer from '../../components/footer'
 
 export default function Repository({ repo, posts }) {
   const router = useRouter()
@@ -22,21 +23,22 @@ export default function Repository({ repo, posts }) {
         {router.isFallback ? (
           <PageTitle>Loading…</PageTitle>
         ) : (
-          <>
-            <article className="mb-32">
-              <Head>
-                <title>{repo.title} | {BLOG_NAME}</title>
-              </Head>
-              <RepositoryHeader
-                title={repo.title}
-                url={repo.url}
-              />
-              <RepositoryBody content={repo.content} />
-              {posts && posts.length > 0 && <MoreStories posts={posts} title="Related posts" />}
-            </article>
-          </>
-        )}
+            <>
+              <article className="mb-32">
+                <Head>
+                  <title>{repo.title} | {BLOG_NAME}</title>
+                </Head>
+                <RepositoryHeader
+                  title={repo.title}
+                  url={repo.url}
+                />
+                <RepositoryBody content={repo.content} />
+                {posts && posts.length > 0 && <MoreStories posts={posts} title="Related posts" />}
+              </article>
+            </>
+          )}
       </Container>
+      <Footer />
     </Layout>
   )
 }

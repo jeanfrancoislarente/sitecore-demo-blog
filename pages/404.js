@@ -2,6 +2,8 @@ import Container from '../components/container'
 import Layout from '../components/layout'
 import Head from 'next/head'
 import Link from 'next/link'
+import Intro from '../components/intro'
+import Footer from '../components/footer'
 
 export default function Four0four() {
   return (
@@ -9,6 +11,7 @@ export default function Four0four() {
       <Head>
         <title>Sitecore Demo Blog - This is not the page you are looking for...</title>
       </Head>
+      <Intro />
       <Container>
         <h1>Uh Oh!</h1>
         <h3>We know this is not the page you want to see. </h3>
@@ -29,6 +32,7 @@ export default function Four0four() {
           </Link>
         </p>
       </Container>
+      <Footer />
     </Layout>
   )
 }

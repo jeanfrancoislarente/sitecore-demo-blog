@@ -184,6 +184,10 @@
   color: black;
 }
 
+.site-footer {
+  background-color: #666;
+  color:white;
+}
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
