@@ -1,22 +1,25 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
+import Head from 'next/head'
+import markdownToHtml from '../../lib/markdownToHtml'
+import Layout from '../../components/layout'
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
 import PostHeader from '../../components/post-header'
-import Layout from '../../components/layout'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
-import Head from 'next/head'
-import { BLOG_NAME, IS_PRODUCTION } from '../../lib/constants'
-import markdownToHtml from '../../lib/markdownToHtml'
-import { GA_TRACKING_ID } from '../../lib/gtag'
-
+import { getPostBySlug, getAllPosts } from '../../lib/api'
+import { pageview } from '../../lib/gtag'
+import { BLOG_NAME } from '../../lib/constants'
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
+
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+
+  pageview(post.primaryTopic)
+
   return (
     <Layout preview={preview}>
       <Container>
@@ -29,19 +32,6 @@ export default function Post({ post, morePosts, preview }) {
                   <title>
                     {post.title} | {BLOG_NAME}
                   </title>
-                  {/* Global Site Tag (gtag.js) - Google Analytics */}
-                  {IS_PRODUCTION && (
-                      <script
-                        dangerouslySetInnerHTML={{
-                          __html: `
-                    gtag('config', '${GA_TRACKING_ID}', {
-                      page_path: window.location.pathname,
-                      page_type:  '${post.primaryTopic}',
-                    });
-                  `,
-                        }}
-                      />
-                  )}
                 </Head>
                 <PostHeader
                   title={post.title}
