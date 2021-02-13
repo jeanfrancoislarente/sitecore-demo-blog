@@ -9,7 +9,6 @@ import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import { BLOG_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
-import Footer from '../../components/footer'
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
@@ -43,7 +42,6 @@ export default function Post({ post, morePosts, preview }) {
             </>
           )}
       </Container>
-      <Footer />
     </Layout>
   )
 }
