@@ -18,5 +18,10 @@ export const authors = [
     id: 'topazahmed',
     name: "Topaz Ahmed",
     picture: '/assets/blog/authors/topazahmed.jpg'
+  },
+  {
+    id: 'adoprog',
+    name: "Alexander Doroshenko",
+    picture: '/assets/blog/authors/alexander.jpg'
   }
 ]
