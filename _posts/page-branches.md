@@ -24,21 +24,13 @@ With page branches you can:
 
 ## Editable in Experience Editor (and Horizon)
 
-Standard Sitecore Branches cannot not be properly edited using Experience Editor when used in SXA sites. You could use some tricks like moving them under the site context and back, but that was really inconvenient. SXA Page Branches are stored under the site definition and therefore inherit all off the Page Design, Theme, Variants and look exactly as they would look at your website front-end.
+Standard Sitecore Branches cannot be properly edited using Experience Editor when used in SXA sites. You could use some tricks like moving them under the site context and back, but that was really inconvenient. SXA Page Branches are stored under the site definition and therefore inherit all off the Page Design, Theme, Variants and look exactly as they would look at your website front-end.
 
 ![Experience Editor](/assets/blog/page-branches/ee.png)
 
 I had some issues locating the Page Branch in a Horizon Site tree, but they are indeed editable in Horizon UI
 
 ![Horizon](/assets/blog/page-branches/horizon.png)
-
-## No longer "developer-owned"
-
-We are now able to shift from "developer-owned" to "marketer-owned" Branches. It was never a good idea to give non-technical people control over the /templates section, but now that Templates and Branches are separate - it makes a lot of sense to give more control to the marketers instead of storing them in a version control system.
-
-![Branch Structure](/assets/blog/page-branches/structure.png)
-
-What I've seen in some implementations is that the users used existing pre-built page (i.e. landing one) as a source item and copied it. It has its own disadvantages. One could easily forget to clear some field values or update translated versions, the copies would quickly diverge from it's original source (a copy of a copy of a copy, etc.).
 
 ## Rules Engine to rule them all
 
@@ -49,3 +41,16 @@ What I've seen in some implementations is that the users used existing pre-built
 Use the "Rule" field on each of the Page Branch folders to define where they should appear as Insert Options.
 
 ![Rules Editor](/assets/blog/page-branches/rules-editor.png)
+
+## No longer "developer-owned"
+
+We are now able to shift from "developer-owned" to "marketer-owned" Branches. It was never a good idea to give non-technical people control over the /templates section, but now that Templates and Branches are separate - it makes a lot of sense to give more control to the marketers instead of storing them in a version control system.
+
+![Branch Structure](/assets/blog/page-branches/structure.png)
+
+What I've seen in some implementations is that the users used existing pre-built page (i.e. landing one) as a source item and copied it. It has its own disadvantages. One could easily forget to clear some field values or update translated versions, the copies would quickly diverge from it's original source (a copy of a copy of a copy, etc.).
+
+## See it in action
+
+Want to learn more? Check out this short video where I show how to work with SXA Page Branches.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lr5ZbKSNjjs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
