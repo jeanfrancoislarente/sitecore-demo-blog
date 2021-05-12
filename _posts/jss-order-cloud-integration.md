@@ -13,7 +13,7 @@ Our team has recently updated Sitecore Headless demo site to include OrderCloud 
 
 ## Take into account
 
-The example is based on WIP version of the [https://github.com/ordercloud-api/headstart-nextjs](https://github.com/ordercloud-api/headstart-nextjs) repo, so instead of referencing NPM packages I will copy some code from there. Once the packages are released to NPM, I will update this blog post and simplify sample code.
+The example is based on WIP version of the [https://github.com/ordercloud-api/headstart-nextjs](https://github.com/ordercloud-api/headstart-nextjs) repo, so instead of referencing NPM packages I will copy some code from there. Once the packages are released to NPM, I will update this blog post and simplify the sample code.
 
 ## Configuring Dependencies
 
