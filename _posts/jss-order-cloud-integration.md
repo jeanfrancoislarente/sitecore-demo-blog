@@ -23,7 +23,7 @@ I will be using TypeScript to build OrderCloud components, so if you don't have 
 npm install ordercloud-javascript-sdk --save
 ```
 
-Also, I will be using Redux in this example, so you'll need to install:
+Also, the sample OrderCloud components use Redux, so you'll need to install:
 
 ```bash
 npm install @reduxjs/toolkit
