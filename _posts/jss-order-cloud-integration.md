@@ -9,7 +9,7 @@ repositories:
 featuredOrder:
 ---
 
-Our team has recently updated Sitecore Headless demo site to include OrderCloud and Boxever integrations and in this this blog post I'll provide step by step instructions on how to integrate Four51 into your new or existing Sitecore JSS website. I will use the latest version of the Styleguide JSS sample (NextJS variant) as an example.
+Our team has recently updated Sitecore Headless demo site to include new integrations and in this this blog post I'll provide step by step instructions on how to integrate Four51 OrderCloud into your new or existing Sitecore JSS website. I will use the latest version of the Styleguide JSS sample (NextJS variant) as an example.
 
 ## Take into account
 
