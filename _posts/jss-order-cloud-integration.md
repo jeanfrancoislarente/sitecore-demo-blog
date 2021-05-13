@@ -1,5 +1,5 @@
 ---
-title: 'Adding Four51 OrderCloud™ to your Sitecore JSS website'
+title: 'Adding Four51 OrderCloud to your Sitecore JSS website'
 excerpt: "In this this blog post I'll provide step by step instructions on how to integrate Four51 into your new or existing Sitecore JSS website. I will use the latest version of the Styleguide JSS sample (NextJS variant) as an example."
 date: '2021-05-12T08:00:00.000Z'
 author: 'adoprog'
