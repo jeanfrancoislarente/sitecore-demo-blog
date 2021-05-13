@@ -20,7 +20,7 @@ The example is based on WIP version of the [https://github.com/ordercloud-api/he
 I will be using TypeScript to build OrderCloud components, so if you don't have it enabled yet (it lives alongside standard .js components), you will start with:
 
 ```bash
-npm install ordercloud-javascript-sdk --save
+npm install --save typescript @types/node @types/react @types/react-dom @types/jest
 ```
 
 Also, the sample OrderCloud components use Redux, so you'll need to install:
