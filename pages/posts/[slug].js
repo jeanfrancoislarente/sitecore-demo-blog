@@ -38,6 +38,7 @@ export default function Post({ post, morePosts, preview }) {
                   primaryTopic={post.primaryTopic}
                 />
                 <PostBody
+                  key={post.key}
                   content={post.content}
                   date={post.date}
                   author={post.author}
