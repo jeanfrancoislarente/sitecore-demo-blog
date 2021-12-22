@@ -1,6 +1,6 @@
 ---
-title: 'The Play! Summit Content Hub instance'
-excerpt: "In this blog post I'll provide the details of how to create a content hun instance to run Play! Summit properly."
+title: 'The PLAY! Summit Content Hub instance'
+excerpt: "In this blog post I'll provide the details of how to create a content hun instance to run PLAY! Summit properly."
 date: '2021-12-21T08:00:00.000Z'
 author: 'topazahmed'
 primaryTopic: 'Content Hub'
@@ -17,11 +17,11 @@ This content hub instance has to be used with the Edge demo example which is bas
 
 ## Creating the Content hub instance
 
-Go to [https://create.stylelabs.io/](https://create.stylelabs.io/) to create a new content hub instance. Here when you want to create a new instance to use with the Play! Summit demo, You must fulfil the following criteria:
+Go to [https://create.stylelabs.io/](https://create.stylelabs.io/) to create a new content hub instance. Here when you want to create a new instance to use with the PLAY! Summit demo, You must fulfil the following criteria:
 
 - Basic Tab
   - Version: 4.1.3
-  - Template: Play! Summit Demo Template
+  - Template: PLAY! Summit Demo Template
   - Usage: sitecoresandbox.cloud (cdn enabled)
 
     ![Create instance](../assets/blog/play-summit-content-hub/create-instance.png)
