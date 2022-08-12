@@ -9,7 +9,7 @@ repositories:
 featuredOrder:
 ---
 
-In this video we are using the Sitecore Demo Portal to spin up and instance of Sitecore 10.2 with the latest versions of:
+In this video, we are using the Sitecore Demo Portal to spin up and instance of Sitecore 10.2 with the latest versions of:
   - Headless Services (20.0.0)
   - Experience Edge (20.0.0)
   - Sitecore Experience Accelerator (10.2.0)
@@ -26,4 +26,4 @@ This video walkthrough focuses on the following:
 
 ## Sitecore Demo Portal - Exploring Headless Services and Experience Edge
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/szpNKwxtzVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" src="https://www.youtube.com/embed/szpNKwxtzVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
