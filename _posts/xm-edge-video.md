@@ -14,9 +14,9 @@ In this video we are using the Sitecore Demo Portal to spin up and instance of S
   - Experience Edge (20.0.0)
   - Sitecore Experience Accelerator (10.2.0)
 
-While the video walkthrough uses the Sitecore Demo Portal, you can use any instance of Sitecore 10.2 that has a publically available URL and the listed modules installed.
+While the video walkthrough uses the Sitecore Demo Portal, you can use any instance of Sitecore 10.2 that has a publicly available URL and the listed modules installed.
 
-This video walkthrough focusses on the following:
+This video walkthrough focuses on the following:
   - Use the latest version of the Sitecore JSS CLI (version 20.0.3) to initialize a new JSS app
   - Configure the JSS app with SXA (item based configuration) instead of using the standard JSS app configuration (file based configuration)
   - Push JSS app items to a remote instance of Sitecore XM
