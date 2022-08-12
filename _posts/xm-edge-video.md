@@ -26,4 +26,4 @@ This video walkthrough focuses on the following:
 
 ## Sitecore Demo Portal - Exploring Headless Services and Experience Edge
 
-<iframe width="800" src="https://www.youtube.com/embed/szpNKwxtzVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/szpNKwxtzVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
