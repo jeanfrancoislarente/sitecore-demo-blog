@@ -4,7 +4,7 @@ import { BLOG_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
 export default function Meta() {
   return (
     <Head>
-      <link rel="shortcut icon" href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png" />
+      <link rel="shortcut icon" href="https://wwwsitecorecom.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png" />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
