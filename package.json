@@ -1,10 +1,11 @@
 {
   "name": "sitecore-demo-blog",
   "repository": "https://github.com/jeanfrancoislarente/sitecore-demo-blog",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "export": "next build && next export"
   },
@@ -16,12 +17,13 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "remark": "13.0.0",
-    "remark-html": "13.0.1"
+    "remark-html": "^13.0.2"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^1.1.0",
+    "@netlify/plugin-nextjs": "^4.20.0",
     "autoprefixer": "^10.2.1",
     "critters": "^0.0.6",
+    "next-sitemap": "^3.1.21",
     "postcss": "^8.2.4",
     "tailwindcss": "^2.0.2"
   },
