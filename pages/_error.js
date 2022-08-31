@@ -24,7 +24,7 @@ export default function Error() {
         <p>
           <Link href="/">
             <a>
-              Please click here and go back to the home page if that's even possible at this moment.
+              Please click here and go back to the home page if that&apos;s even possible at this moment.
             </a>
           </Link>
         </p>
