@@ -1,6 +1,6 @@
 ---
-title: 'Unlock the Full Potential of Content Hub ONE with Play! Media'
-excerpt: "Play! Media offers a comprehensive demo solution that takes showcasing the capabilities of Content Hub ONE to new heights."
+title: 'Unlock the Full Potential of Sitecore Content Hub ONE with Play! Media'
+excerpt: "Play! Media offers a comprehensive demo solution that takes showcasing the capabilities of Sitecore Content Hub ONE to new heights."
 date: '2023-04-19T07:00:00.322Z'
 author: 'todorstoyanov'
 primaryTopic: 'General'
@@ -9,7 +9,7 @@ repositories:
 featuredOrder:
 ---
 
-In today's fast-paced world of content creation and display, staying ahead of the curve is crucial. That is where the Play! Media demo shines, offering a comprehensive solution that takes showcasing the capabilities of Content Hub ONE to new heights. Let us delve into why Play! Media is the ultimate demo for Content Hub ONE and why you will not want to miss its unique features.
+In today's fast-paced world of content creation and display, staying ahead of the curve is crucial. That is where the Play! Media demo shines, offering a comprehensive solution that takes showcasing the capabilities of Sitecore Content Hub ONE to new heights. Let us delve into why Play! Media is the ultimate demo for Content Hub ONE and why you will not want to miss its unique features.
 
 ## Elevating content presentation to new heights
 
