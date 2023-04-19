@@ -1,5 +1,10 @@
 export const authors = [
   {
+    id: 'todorstoyanov',
+    name: 'Todor Stoyanovn',
+    picture: '/assets/blog/authors/todorstoyanov.png'
+  },
+  {
     id: 'scottmulligan',
     name: 'Scott Mulligan',
     picture: '/assets/blog/authors/scottmulligan.png'
