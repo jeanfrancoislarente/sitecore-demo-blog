@@ -1,4 +1,5 @@
 import { AUTHOR_QUERY } from "./author-query";
+import { REPOSITORY_QUERY } from "./repository-query";
 
 export const BLOG_QUERY = `
   id
@@ -15,13 +16,18 @@ export const BLOG_QUERY = `
   }
   isFeatured
   primaryTopic
+  repositories {
+    results {
+      ... on Repository {
+        ${REPOSITORY_QUERY}
+      }
+    }
+  }
 `;
 
 export const ALL_BLOG_QUERY = `{
   data: allSampleArticle
   {
-    __typename
-    total
     results {
       ${BLOG_QUERY}
     }
@@ -32,8 +38,6 @@ export const ALL_BLOG_QUERY = `{
 export const ALL_FEATURED_BLOG_QUERY = `{
   data: allSampleArticle (where: {isFeatured_eq: true })
   {
-    __typename
-    total
     results {
       ${BLOG_QUERY}
     }
@@ -44,8 +48,6 @@ export const ALL_FEATURED_BLOG_QUERY = `{
 export const ALL_NON_FEATURED_BLOG_QUERY = `{
   data: allSampleArticle (where: {isFeatured_neq: true })
   {
-    __typename
-    total
     results {
       ${BLOG_QUERY}
     }

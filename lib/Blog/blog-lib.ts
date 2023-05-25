@@ -23,19 +23,29 @@ export async function getAllNonFeaturedBlogs(): Promise<Blog[]> {
 }
 
 export async function getBlogById(id: string): Promise<Blog> {
-  const queryRecipe = `{
+  const blogQuery = `{
     data: sampleArticle (id: "${id}")
     {
       ${BLOG_QUERY}
     }
   }`;
 
-  const data = await fetchAPI(queryRecipe);
+  const data = await fetchAPI(blogQuery);
   return data.data.data;
 }
 
+export async function getBlogsByRepository(
+  repositoryId: string
+): Promise<Blog[]> {
+  const blogs = await getAllBlogs();
+  return blogs.filter(
+    (blog) =>
+      blog?.repositories?.results?.filter(
+        (repository) => repository?.id === repositoryId
+      ).length > 0
+  );
+}
+
 function extractBlogs({ data }: { data: BlogResults }) {
-  return data.results.map((blog: Blog) => {
-    return blog;
-  });
+  return data.results.map((blog: Blog) => blog);
 }

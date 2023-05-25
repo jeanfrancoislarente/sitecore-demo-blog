@@ -1,6 +1,11 @@
 import PostTitle from "./PostTitle";
 
-export default function PostHeader({ title, primaryTopic }) {
+type PostHeaderProps = {
+  title: string;
+  primaryTopic: string;
+};
+
+export default function PostHeader({ title, primaryTopic }: PostHeaderProps) {
   return (
     <>
       <PostTitle>{title}</PostTitle>

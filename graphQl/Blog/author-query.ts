@@ -13,8 +13,6 @@ export const AUTHOR_QUERY = `
 export const ALL_AUTHOR_QUERY = `{
   data: allAuthor
   {
-    __typename
-    total
     results {
       ${AUTHOR_QUERY}
     }

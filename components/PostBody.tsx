@@ -3,11 +3,12 @@ import DateFormatter from "./DateFormatter";
 import Link from "next/link";
 import markdownStyles from "./markdown-styles.module.css";
 import Author from "../types/author-type";
+import Repository from "../types/repository-type";
 
 type PostBodyProps = {
   date: string;
   author: Author;
-  repositories: string[];
+  repositories: Repository[];
   body: string;
 };
 
@@ -28,16 +29,17 @@ export default function PostBody({
         </div>
         {repositories && repositories.length > 0 && (
           <div className="mb-6 text-lg repositoriesList">
-            <strong>Related repositories:</strong>
-            <br />
-            {/* {repositories.map((repository) => (
-              <>
-                <Link href={`/repositories/${repository}`} key={repository}>
-                  <a className="hover:underline">{repository}</a>
+            <div className="font-bold">Related repositories:</div>
+            {repositories.map((repository) => (
+              <div key={repository.id}>
+                <Link
+                  href={`/repositories/${repository.id}`}
+                  className="hover:underline"
+                >
+                  {repository.name}
                 </Link>
-                <br />
-              </>
-            ))} */}
+              </div>
+            ))}
           </div>
         )}
         <div className="mb-6 text-lg fst-italic">

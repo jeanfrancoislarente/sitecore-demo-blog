@@ -9,6 +9,5 @@ type Author = {
 export default Author;
 
 export type AuthorResults = {
-  total: string;
   results: Author[];
 };

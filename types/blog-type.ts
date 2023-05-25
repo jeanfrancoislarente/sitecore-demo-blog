@@ -1,5 +1,6 @@
 import { JSONContent } from "@tiptap/core";
 import { AuthorResults } from "./author-type";
+import { RepositoryResults } from "./repository-type";
 
 type Blog = {
   id: string;
@@ -10,11 +11,11 @@ type Blog = {
   author: AuthorResults;
   isFeatured: boolean;
   primaryTopic: string;
+  repositories: RepositoryResults;
 };
 
 export default Blog;
 
 export type BlogResults = {
-  total: string;
   results: Blog[];
 };

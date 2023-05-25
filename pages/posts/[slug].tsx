@@ -44,12 +44,13 @@ type Props = {
 };
 
 const Post = ({ blog }: Props) => {
-  console.log(blog);
   const router = useRouter();
 
   if (!router.isFallback && !blog?.id) {
     return <ErrorPage statusCode={404} />;
   }
+
+  // pageview("Post");
 
   const body = generateHTML(blog?.body, [richTextProfile]);
 
@@ -70,7 +71,7 @@ const Post = ({ blog }: Props) => {
               body={body}
               date={blog.issueDate}
               author={blog.author.results[0]}
-              // repositories={blog.repositories}
+              repositories={blog.repositories.results}
             />
           </article>
         )}
