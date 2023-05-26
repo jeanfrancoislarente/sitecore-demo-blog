@@ -4,7 +4,6 @@ import PageTitle from "../components/PageTitle";
 import Layout from "../components/Layout";
 import Head from "next/head";
 import { BLOG_NAME } from "../lib/constants";
-import { pageview } from "../lib/gtag";
 import { getAllRepositories } from "../lib/Blog/repository-lib";
 import Repository from "../types/repository-type";
 
@@ -23,12 +22,10 @@ type RepositoriesPageProps = {
 export default function RepositoriesPage({
   repositories,
 }: RepositoriesPageProps) {
-  // pageview("Repositories");
-
   return (
     <Layout>
       <Head>
-        <title>Our Repositories | {BLOG_NAME}</title>
+        <title>{`Our Repositories | ${BLOG_NAME}`}</title>
       </Head>
       <Container>
         <PageTitle>Our Repositories</PageTitle>

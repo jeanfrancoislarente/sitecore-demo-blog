@@ -6,9 +6,7 @@ import RepositoryHeader from "../../components/RepositoryHeader";
 import RepositoryBody from "../../components/RepositoryBody";
 import MoreStories from "../../components/MoreStories";
 import Layout from "../../components/Layout";
-import PageTitle from "../../components/PageTitle";
 import { BLOG_NAME } from "../../lib/constants";
-import { pageview } from "../../lib/gtag";
 import {
   getAllRepositories,
   getRepositoryById,
@@ -56,7 +54,7 @@ export async function getStaticPaths() {
         },
       };
     }),
-    fallback: false,
+    fallback: "blocking",
   };
 }
 
@@ -68,34 +66,25 @@ type Props = {
 export default function RepositoryPage({ repo, posts }: Props) {
   const router = useRouter();
 
-  if (!router.isFallback && !repo?.id) {
-    console.log(repo);
+  if (!repo || (!router.isFallback && !repo?.id)) {
     return <ErrorPage statusCode={404} />;
   }
-
-  // pageview("Repository");
 
   const body = generateHTML(repo?.body, [richTextProfile]);
 
   return (
     <Layout>
+      <Head>
+        <title>{`${repo.name} | ${BLOG_NAME}`}</title>
+      </Head>
       <Container>
-        {router.isFallback ? (
-          <PageTitle>Loading…</PageTitle>
-        ) : (
-          <article className="mb-32">
-            <Head>
-              <title>
-                {repo.name} | {BLOG_NAME}
-              </title>
-            </Head>
-            <RepositoryHeader title={repo.name} url={repo.url} />
-            <RepositoryBody content={body} />
-            {posts && posts.length > 0 && (
-              <MoreStories posts={posts} title="Related posts" />
-            )}
-          </article>
-        )}
+        <article className="mb-32">
+          <RepositoryHeader title={repo.name} url={repo.url} />
+          <RepositoryBody content={body} />
+          {posts && posts.length > 0 && (
+            <MoreStories posts={posts} title="Related posts" />
+          )}
+        </article>
       </Container>
     </Layout>
   );
