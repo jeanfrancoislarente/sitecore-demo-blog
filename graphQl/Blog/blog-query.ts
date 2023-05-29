@@ -3,6 +3,7 @@ import { REPOSITORY_QUERY } from "./repository-query";
 
 export const BLOG_QUERY = `
   id
+  lastUpdateDate: __sysUpdatedAt
   title
   summary
   body

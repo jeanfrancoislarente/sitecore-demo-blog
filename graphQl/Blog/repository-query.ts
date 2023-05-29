@@ -1,5 +1,6 @@
 export const REPOSITORY_QUERY = `
   id
+  lastUpdateDate: __sysUpdatedAt
   name
   url
   summary
@@ -9,7 +10,6 @@ export const REPOSITORY_QUERY = `
 export const REPOSITORIES_QUERY = `{
   data: repositories (id: "-zEfrwok5kGxyf7g504yYw") {
     repositories {
-      total
       results {
         ... on Repository {
           ${REPOSITORY_QUERY}

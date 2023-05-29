@@ -2,6 +2,7 @@ import { JSONContent } from "@tiptap/core";
 
 type Repository = {
   id: string;
+  lastUpdateDate: string;
   name: string;
   url: string;
   summary: string;

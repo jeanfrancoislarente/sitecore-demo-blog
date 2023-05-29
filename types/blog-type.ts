@@ -4,6 +4,7 @@ import { RepositoryResults } from "./repository-type";
 
 type Blog = {
   id: string;
+  lastUpdateDate: string;
   title: string;
   summary: string;
   body: JSONContent;
