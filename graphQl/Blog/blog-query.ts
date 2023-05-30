@@ -1,3 +1,4 @@
+import MEDIA_QUERY from "../Common/media-query";
 import { AUTHOR_QUERY } from "./author-query";
 import { REPOSITORY_QUERY } from "./repository-query";
 
@@ -7,6 +8,20 @@ export const BLOG_QUERY = `
   title
   summary
   body
+  content {
+    results {
+      ... on BlogTextSection {
+        text
+      }
+      ... on BlogImagesSection {
+        images {
+          results {
+            ${MEDIA_QUERY}
+          }
+        }
+      }
+    }
+  }
   issueDate
   author {
     results {

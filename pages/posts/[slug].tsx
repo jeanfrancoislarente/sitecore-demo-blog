@@ -1,6 +1,10 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Blog from "../../types/blog-type";
+import Blog, {
+  Content,
+  ImagesContent,
+  TextContent,
+} from "../../types/blog-type";
 import { getBlogById, getAllBlogs } from "../../lib/Blog/blog-lib";
 import Head from "next/head";
 import { richTextProfile } from "../../lib/Common/richTextConfiguration";
@@ -49,7 +53,25 @@ const Post = ({ blog }: Props) => {
     return <ErrorPage statusCode={404} />;
   }
 
-  const body = generateHTML(blog?.body, [richTextProfile]);
+  const body = blog?.body ? generateHTML(blog.body, [richTextProfile]) : "";
+
+  const content = blog?.content?.results
+    ? blog.content.results
+        .map((contentSection) => {
+          if ("text" in contentSection) {
+            const textContent = contentSection as TextContent;
+            return textContent?.text
+              ? generateHTML(textContent.text, [richTextProfile])
+              : "";
+          } else {
+            const imagesContent = contentSection as ImagesContent;
+            return imagesContent.images.results
+              .map((image) => `<p><img src="${image.fileUrl}" /></p>`)
+              .join("");
+          }
+        })
+        .join("")
+    : "";
 
   return (
     <Layout>
@@ -60,7 +82,7 @@ const Post = ({ blog }: Props) => {
         <article className="mb-32">
           <PostHeader title={blog.title} primaryTopic={blog.primaryTopic} />
           <PostBody
-            body={body}
+            body={content || body}
             date={blog.issueDate}
             author={blog.author.results[0]}
             repositories={blog.repositories.results}
