@@ -70,7 +70,7 @@ export default function RepositoryPage({ repo, posts }: Props) {
     return <ErrorPage statusCode={404} />;
   }
 
-  const body = generateHTML(repo?.body, [richTextProfile]);
+  const body = repo?.body ? generateHTML(repo.body, [richTextProfile]) : "";
 
   return (
     <Layout>
