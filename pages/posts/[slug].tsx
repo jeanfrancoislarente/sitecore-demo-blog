@@ -65,9 +65,11 @@ const Post = ({ blog }: Props) => {
               : "";
           } else {
             const imagesContent = contentSection as ImagesContent;
-            return imagesContent.images.results
-              .map((image) => `<p><img src="${image.fileUrl}" /></p>`)
-              .join("");
+            return imagesContent?.images?.results
+              ? imagesContent.images.results
+                  .map((image) => `<p><img src="${image.fileUrl}" /></p>`)
+                  .join("")
+              : "";
           }
         })
         .join("")
