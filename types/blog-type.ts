@@ -11,8 +11,14 @@ export type ImagesContent = {
   images: MediaResults;
 };
 
+export type SectionContent = {
+  text: JSONContent;
+  images: MediaResults;
+  text2: JSONContent;
+};
+
 export type Content = {
-  results: (TextContent | ImagesContent)[];
+  results: SectionContent[];
 };
 
 type Blog = {

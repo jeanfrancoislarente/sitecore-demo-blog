@@ -6,5 +6,5 @@ type DateFormatterProps = {
 
 export default function DateFormatter({ dateString }: DateFormatterProps) {
   const date = parseISO(dateString);
-  return <time dateTime={dateString}>{format(date, "LLLL	d, yyyy")}</time>;
+  return <time dateTime={dateString}>{dateString && format(date, "LLLL	d, yyyy")}</time>;
 }

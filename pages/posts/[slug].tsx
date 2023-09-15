@@ -1,10 +1,6 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Blog, {
-  Content,
-  ImagesContent,
-  TextContent,
-} from "../../types/blog-type";
+import Blog from "../../types/blog-type";
 import { getBlogById, getAllBlogs } from "../../lib/Blog/blog-lib";
 import Head from "next/head";
 import { richTextProfile } from "../../lib/Common/richTextConfiguration";
@@ -53,27 +49,24 @@ const Post = ({ blog }: Props) => {
     return <ErrorPage statusCode={404} />;
   }
 
-  const body = blog?.body ? generateHTML(blog.body, [richTextProfile]) : "";
-
-  const content = blog?.content?.results
-    ? blog.content.results
-        .map((contentSection) => {
-          if ("text" in contentSection) {
-            const textContent = contentSection as TextContent;
-            return textContent?.text
-              ? generateHTML(textContent.text, [richTextProfile])
-              : "";
-          } else {
-            const imagesContent = contentSection as ImagesContent;
-            return imagesContent?.images?.results
-              ? imagesContent.images.results
+  const content = `${blog?.body ? generateHTML(blog.body, [richTextProfile]) : ""}${
+    blog?.content?.results
+      ? blog.content.results
+          .map(
+            (contentSection) => `${
+              !!contentSection.text ? generateHTML(contentSection.text, [richTextProfile]) : ""
+            }
+          ${
+            !!contentSection.images
+              ? contentSection.images.results
                   .map((image) => `<p><img src="${image.fileUrl}" /></p>`)
                   .join("")
-              : "";
-          }
-        })
-        .join("")
-    : "";
+              : ""
+          }${!!contentSection.text2 ? generateHTML(contentSection.text2, [richTextProfile]) : ""}`
+          )
+          .join("")
+      : ""
+  }`;
 
   return (
     <Layout>
@@ -84,7 +77,7 @@ const Post = ({ blog }: Props) => {
         <article className="mb-32">
           <PostHeader title={blog.title} primaryTopic={blog.primaryTopic} />
           <PostBody
-            body={content || body}
+            body={content}
             date={blog.issueDate}
             author={blog.author.results[0]}
             repositories={blog.repositories.results}

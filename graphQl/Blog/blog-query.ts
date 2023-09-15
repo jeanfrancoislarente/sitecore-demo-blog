@@ -8,17 +8,16 @@ export const BLOG_QUERY = `
   title
   summary
   body
-  content {
+  content (first: 100) {
     results {
-      ... on BlogTextSection {
+      ... on BlogSection {
         text
-      }
-      ... on BlogImagesSection {
         images {
           results {
             ${MEDIA_QUERY}
           }
         }
+        text2
       }
     }
   }
@@ -41,31 +40,48 @@ export const BLOG_QUERY = `
   }
 `;
 
+export const LISTING_BLOG_QUERY = `
+  id
+  lastUpdateDate: __sysUpdatedAt
+  title
+  summary
+  issueDate
+  author {
+    results {
+      ... on Author {
+        ${AUTHOR_QUERY}
+      }
+    }
+  }
+  isFeatured
+  primaryTopic
+`;
+
 export const ALL_BLOG_QUERY = `{
-  data: allSampleArticle
+  data: allSampleArticle (orderBy: ISSUEDATE_DESC)
   {
     results {
-      ${BLOG_QUERY}
+      ${LISTING_BLOG_QUERY}
     }
   }
 }
 `;
 
 export const ALL_FEATURED_BLOG_QUERY = `{
-  data: allSampleArticle (where: {isFeatured_eq: true })
+  data: allSampleArticle (where: {isFeatured_eq: true }, orderBy: ISSUEDATE_DESC)
   {
     results {
-      ${BLOG_QUERY}
+      ${LISTING_BLOG_QUERY}
     }
   }
 }
 `;
 
 export const ALL_NON_FEATURED_BLOG_QUERY = `{
-  data: allSampleArticle (where: {isFeatured_neq: true })
+  data: allSampleArticle (where: {isFeatured_neq: true }, orderBy: ISSUEDATE_DESC)
   {
     results {
-      ${BLOG_QUERY}
+      ${LISTING_BLOG_QUERY}
     }
   }
 }
