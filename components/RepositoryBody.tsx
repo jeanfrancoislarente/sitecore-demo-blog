@@ -6,9 +6,6 @@ type RepositoryBodyProps = {
 
 export default function RepositoryBody({ content }: RepositoryBodyProps) {
   return (
-    <div
-      className={markdownStyles["markdown"]}
-      dangerouslySetInnerHTML={{ __html: content }}
-    />
+    <div className={markdownStyles["markdown"]} dangerouslySetInnerHTML={{ __html: content }} />
   );
 }

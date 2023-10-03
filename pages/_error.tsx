@@ -23,8 +23,8 @@ export default function Error() {
         </p>
         <p>
           <Link href="/">
-            Please click here and go back to the home page if that&apos;s even
-            possible at this moment.
+            Please click here and go back to the home page if that&apos;s even possible at this
+            moment.
           </Link>
         </p>
       </Container>

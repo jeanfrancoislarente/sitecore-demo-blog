@@ -10,16 +10,10 @@ import { Gapcursor } from "@tiptap/extension-gapcursor";
 import { HardBreak, HardBreakOptions } from "@tiptap/extension-hard-break";
 import { Heading, HeadingOptions } from "@tiptap/extension-heading";
 import { History, HistoryOptions } from "@tiptap/extension-history";
-import {
-  HorizontalRule,
-  HorizontalRuleOptions,
-} from "@tiptap/extension-horizontal-rule";
+import { HorizontalRule, HorizontalRuleOptions } from "@tiptap/extension-horizontal-rule";
 import { Italic, ItalicOptions } from "@tiptap/extension-italic";
 import { ListItem, ListItemOptions } from "@tiptap/extension-list-item";
-import {
-  OrderedList,
-  OrderedListOptions,
-} from "@tiptap/extension-ordered-list";
+import { OrderedList, OrderedListOptions } from "@tiptap/extension-ordered-list";
 import { Paragraph, ParagraphOptions } from "@tiptap/extension-paragraph";
 import { Strike, StrikeOptions } from "@tiptap/extension-strike";
 import { Link, LinkOptions } from "@tiptap/extension-link";

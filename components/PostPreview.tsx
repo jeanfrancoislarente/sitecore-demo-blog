@@ -7,17 +7,11 @@ export default function PostPreview(blog: Blog) {
   return (
     <div>
       <h3 className="text-3xl mb-3 leading-snug">
-        <Link
-          as={`/posts/${blog.id}`}
-          href="/posts/[slug]"
-          className="hover:underline"
-        >
+        <Link as={`/posts/${blog.id}`} href="/posts/[slug]" className="hover:underline">
           {blog.title}
         </Link>
       </h3>
-      <div
-        className={`mb-8 blog-title-block blog-title-block-${blog.primaryTopic}`}
-      >
+      <div className={`mb-8 blog-title-block blog-title-block-${blog.primaryTopic}`}>
         {blog.primaryTopic}
       </div>
       <div className="text-lg mb-4 fst-italic">

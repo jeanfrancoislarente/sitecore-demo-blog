@@ -34,15 +34,12 @@ export async function getBlogById(id: string): Promise<Blog> {
   return data.data.data;
 }
 
-export async function getBlogsByRepository(
-  repositoryId: string
-): Promise<Blog[]> {
+export async function getBlogsByRepository(repositoryId: string): Promise<Blog[]> {
   const blogs = await getAllBlogs();
   return blogs.filter(
     (blog) =>
-      blog?.repositories?.results?.filter(
-        (repository) => repository?.id === repositoryId
-      ).length > 0
+      blog?.repositories?.results?.filter((repository) => repository?.id === repositoryId).length >
+      0
   );
 }
 

@@ -19,9 +19,7 @@ type RepositoriesPageProps = {
   repositories: Repository[];
 };
 
-export default function RepositoriesPage({
-  repositories,
-}: RepositoriesPageProps) {
+export default function RepositoriesPage({ repositories }: RepositoriesPageProps) {
   return (
     <Layout>
       <Head>

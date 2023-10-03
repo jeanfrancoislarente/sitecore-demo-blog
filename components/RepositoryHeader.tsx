@@ -6,10 +6,7 @@ type RepositoryHeaderProps = {
   url: string;
 };
 
-export default function RepositoryHeader({
-  title,
-  url,
-}: RepositoryHeaderProps) {
+export default function RepositoryHeader({ title, url }: RepositoryHeaderProps) {
   return (
     <>
       <PageTitle>{title}</PageTitle>

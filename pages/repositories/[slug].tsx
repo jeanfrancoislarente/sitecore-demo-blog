@@ -7,10 +7,7 @@ import RepositoryBody from "../../components/RepositoryBody";
 import MoreStories from "../../components/MoreStories";
 import Layout from "../../components/Layout";
 import { BLOG_NAME } from "../../lib/constants";
-import {
-  getAllRepositories,
-  getRepositoryById,
-} from "../../lib/Blog/repository-lib";
+import { getAllRepositories, getRepositoryById } from "../../lib/Blog/repository-lib";
 import Repository from "../../types/repository-type";
 import { richTextProfile } from "../../lib/Common/richTextConfiguration";
 import { generateHTML } from "@tiptap/html";
@@ -81,9 +78,7 @@ export default function RepositoryPage({ repo, posts }: Props) {
         <article className="mb-32">
           <RepositoryHeader title={repo.name} url={repo.url} />
           <RepositoryBody content={body} />
-          {posts && posts.length > 0 && (
-            <MoreStories posts={posts} title="Related posts" />
-          )}
+          {posts && posts.length > 0 && <MoreStories posts={posts} title="Related posts" />}
         </article>
       </Container>
     </Layout>

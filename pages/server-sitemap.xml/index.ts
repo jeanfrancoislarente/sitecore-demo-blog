@@ -5,10 +5,7 @@ import { getAllRepositories } from "../../lib/Blog/repository-lib";
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   // Method to source urls from cms
-  const [allBlogs, repos] = await Promise.all([
-    getAllBlogs(),
-    getAllRepositories(),
-  ]);
+  const [allBlogs, repos] = await Promise.all([getAllBlogs(), getAllRepositories()]);
 
   const fields: ISitemapField[] = [
     ...allBlogs.map((blog) => {

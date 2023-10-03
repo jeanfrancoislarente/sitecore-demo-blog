@@ -1,8 +1,5 @@
 import Head from "next/head";
-import {
-  getAllFeaturedBlogs,
-  getAllNonFeaturedBlogs,
-} from "../lib/Blog/blog-lib";
+import { getAllFeaturedBlogs, getAllNonFeaturedBlogs } from "../lib/Blog/blog-lib";
 import Blog from "../types/blog-type";
 import { BLOG_NAME } from "../lib/constants";
 import Layout from "../components/Layout";
@@ -38,9 +35,7 @@ const Homepage = ({ allFeaturedBlogs, allNonFeaturedBlogs }: Props) => {
       <Container>
         {allFeaturedBlogs &&
           allFeaturedBlogs.length > 0 &&
-          allFeaturedBlogs.map((heroPost) => (
-            <HeroPost key={heroPost.id} {...heroPost} />
-          ))}
+          allFeaturedBlogs.map((heroPost) => <HeroPost key={heroPost.id} {...heroPost} />)}
         {allNonFeaturedBlogs && allNonFeaturedBlogs.length > 0 && (
           <MoreStories posts={allNonFeaturedBlogs} title="More Stories" />
         )}

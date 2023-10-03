@@ -6,11 +6,7 @@ type RepositoryPreviewProps = {
   excerpt: string;
 };
 
-export default function RepositoryPreview({
-  title,
-  slug,
-  excerpt,
-}: RepositoryPreviewProps) {
+export default function RepositoryPreview({ title, slug, excerpt }: RepositoryPreviewProps) {
   return (
     <div className="mb-8">
       <h2 className="text-3xl leading-snug">

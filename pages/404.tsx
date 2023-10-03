@@ -7,9 +7,7 @@ export default function Four0four() {
   return (
     <Layout>
       <Head>
-        <title>
-          Sitecore Demo Blog - This is not the page you are looking for...
-        </title>
+        <title>Sitecore Demo Blog - This is not the page you are looking for...</title>
       </Head>
       <Container>
         <h1>Uh Oh!</h1>
@@ -23,8 +21,8 @@ export default function Four0four() {
         </ul>
         <p>
           <Link href="/">
-            Please click here and go back to the home page and read all the
-            other useful blogs we have to offer.
+            Please click here and go back to the home page and read all the other useful blogs we
+            have to offer.
           </Link>
         </p>
       </Container>

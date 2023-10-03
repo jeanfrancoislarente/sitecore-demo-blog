@@ -1,9 +1,6 @@
 import Repository from "../../types/repository-type";
 import { fetchAPI } from "../Common/api";
-import {
-  REPOSITORY_QUERY,
-  REPOSITORIES_QUERY,
-} from "../../graphQl/Blog/repository-query";
+import { REPOSITORY_QUERY, REPOSITORIES_QUERY } from "../../graphQl/Blog/repository-query";
 
 export async function getAllRepositories(): Promise<Repository[]> {
   const data = await fetchAPI(`${REPOSITORIES_QUERY}`);

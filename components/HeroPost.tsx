@@ -9,17 +9,11 @@ export default function HeroPost(blog: Blog) {
       <div className="md:grid md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>
           <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
-            <Link
-              as={`/posts/${blog.id}`}
-              href="/posts/[slug]"
-              className="hover:underline"
-            >
+            <Link as={`/posts/${blog.id}`} href="/posts/[slug]" className="hover:underline">
               {blog.title}
             </Link>
           </h3>
-          <div
-            className={`mb-8 blog-title-block blog-title-block-${blog.primaryTopic}`}
-          >
+          <div className={`mb-8 blog-title-block blog-title-block-${blog.primaryTopic}`}>
             {blog.primaryTopic}
           </div>
           <div className="mb-4 md:mb-0 text-lg fst-italic">
