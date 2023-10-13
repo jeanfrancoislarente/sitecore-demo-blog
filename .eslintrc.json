@@ -1,8 +1,14 @@
 {
   "extends": [
     "next",
-    "next/core-web-vitals"],
-  "rules": {
-    "@next/next/no-img-element": "off"
-  }
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "ignorePatterns": ["**/*.d.ts"]
 }
