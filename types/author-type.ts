@@ -4,6 +4,7 @@ type Author = {
   id: string;
   authorName: string;
   authorFace: MediaResults;
+  jobTitle: string;
 };
 
 export default Author;
