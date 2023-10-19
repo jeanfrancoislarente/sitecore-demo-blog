@@ -6,6 +6,7 @@ import { BLOG_NAME } from "../lib/constants";
 import AuthorPreview from "../components/AuthorPreview";
 import { getAllAuthors } from "../lib/Blog/author-lib";
 import Author from "../types/author-type";
+import { useCallback, useEffect, useState } from "react";
 
 export async function getStaticProps() {
   const allAuthors = await getAllAuthors();
@@ -20,6 +21,28 @@ type TeamPageProps = {
 };
 
 export default function TeamPage({ authors }: TeamPageProps) {
+  const [sortedAuthors, setSortedAuthors] = useState<Author[]>(authors);
+
+  const sortAuthorsByNames = useCallback((authors: Author[]) => {
+    const names = ["J.F.", "Scott", "Alexander", "Neli", "Christos", "Todor"];
+
+    const matchingAuthors = names.reduce((result: Author[], name: string) => {
+      const author = authors.find((author) => author.authorName.includes(name));
+      if (author) {
+        result.push(author);
+      }
+      return result;
+    }, []);
+
+    const remainingAuthors = authors.filter((author) => !matchingAuthors.includes(author));
+
+    return [...matchingAuthors, ...remainingAuthors];
+  }, []);
+
+  useEffect(() => {
+    setSortedAuthors(sortAuthorsByNames(authors));
+  }, [authors, sortAuthorsByNames]);
+
   return (
     <Layout>
       <Head>
@@ -27,7 +50,7 @@ export default function TeamPage({ authors }: TeamPageProps) {
       </Head>
       <Container>
         <PageTitle>Our Team</PageTitle>
-        {authors.map((author) => (
+        {sortedAuthors.map((author) => (
           <AuthorPreview
             key={author.id}
             name={author.authorName}
