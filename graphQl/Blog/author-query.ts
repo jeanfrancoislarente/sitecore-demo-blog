@@ -8,6 +8,7 @@ export const AUTHOR_QUERY = `
       ${MEDIA_QUERY}
     }
   }
+  jobTitle
 `;
 
 export const ALL_AUTHOR_QUERY = `{
@@ -19,5 +20,3 @@ export const ALL_AUTHOR_QUERY = `{
   }
 }
 `;
-
-export default ALL_AUTHOR_QUERY;

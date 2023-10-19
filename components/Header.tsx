@@ -18,10 +18,15 @@ export default function Header() {
                 className="site-title-image"
               />
             </Link>
-            <ul className="navbar-nav ms-auto mb-2 sm:mb-0">
+            <ul className="navbar-nav flex flex-row flex-wrap ms-auto gap-x-4">
               <li className="nav-item">
                 <Link href={`/repositories`} className="nav-link text-xl">
                   Our Repositories
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href={`/team`} className="nav-link text-xl">
+                  Our Team
                 </Link>
               </li>
             </ul>
