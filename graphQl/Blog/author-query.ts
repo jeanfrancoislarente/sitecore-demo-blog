@@ -9,6 +9,7 @@ export const AUTHOR_QUERY = `
     }
   }
   jobTitle
+  bio
 `;
 
 export const ALL_AUTHOR_QUERY = `{
