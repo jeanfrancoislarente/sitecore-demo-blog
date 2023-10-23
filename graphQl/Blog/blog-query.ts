@@ -55,6 +55,13 @@ export const LISTING_BLOG_QUERY = `
   }
   isFeatured
   primaryTopic
+  repositories {
+    results {
+      ... on Repository {
+        ${REPOSITORY_QUERY}
+      }
+    }
+  }
 `;
 
 export const ALL_BLOG_QUERY = `{

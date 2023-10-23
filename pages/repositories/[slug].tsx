@@ -78,8 +78,8 @@ export default function RepositoryPage({ repo, posts }: Props) {
         <article className="mb-32">
           <RepositoryHeader title={repo.name} url={repo.url} />
           <RepositoryBody content={body} />
-          {posts && posts.length > 0 && <MoreStories posts={posts} title="Related posts" />}
         </article>
+        {posts && posts.length > 0 && <MoreStories posts={posts} title="Related posts" />}
       </Container>
     </Layout>
   );

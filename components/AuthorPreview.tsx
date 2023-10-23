@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Media } from "../types/Common/media-type";
 import Image from "next/image";
 
@@ -6,9 +7,10 @@ type AuthorPreviewProps = {
   photo: Media;
   jobTitle: string;
   bio: string;
+  slug: string;
 };
 
-export default function AuthorPreview({ name, photo, jobTitle, bio }: AuthorPreviewProps) {
+export default function AuthorPreview({ name, photo, jobTitle, bio, slug }: AuthorPreviewProps) {
   return (
     <div className="flex flex-col items-start gap-4 mb-12 md:flex-row">
       {photo && (
@@ -21,7 +23,11 @@ export default function AuthorPreview({ name, photo, jobTitle, bio }: AuthorPrev
         />
       )}
       <div className="w-full">
-        <h2 className="text-3xl leading-snug">{name}</h2>
+        <h2 className="text-3xl leading-snug">
+          <Link href={`/team/${slug}`} className="hover:underline">
+            {name}
+          </Link>
+        </h2>
         <h5 className="bg-[#dfdfdf] px-2 py-1">{jobTitle}</h5>
         <p className="mt-4">{bio}</p>
       </div>

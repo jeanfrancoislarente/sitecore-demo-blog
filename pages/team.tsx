@@ -57,6 +57,7 @@ export default function TeamPage({ authors }: TeamPageProps) {
             photo={author.authorFace.results[0]}
             jobTitle={author.jobTitle}
             bio={author.bio}
+            slug={author.id}
           />
         ))}
       </Container>
