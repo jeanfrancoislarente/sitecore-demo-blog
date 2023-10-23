@@ -51,5 +51,5 @@ export async function getBlogsByAuthor(authorId: string): Promise<Blog[]> {
 }
 
 function extractBlogs({ data }: { data: BlogResults }) {
-  return data.results.map((blog: Blog) => blog);
+  return data?.results?.map((blog: Blog) => blog);
 }
