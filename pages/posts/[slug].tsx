@@ -21,7 +21,9 @@ export async function getStaticProps({ params }: Params) {
   const blog = await getBlogById(params.slug);
 
   return {
-    props: { blog: blog },
+    props: {
+      blog,
+    },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds

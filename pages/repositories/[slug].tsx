@@ -28,9 +28,7 @@ export async function getStaticProps({ params }: Params) {
 
   return {
     props: {
-      repo: {
-        ...repo,
-      },
+      repo,
       posts,
     },
     // Next.js will attempt to re-generate the page:

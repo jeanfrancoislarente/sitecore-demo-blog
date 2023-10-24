@@ -25,9 +25,7 @@ export async function getStaticProps({ params }: Params) {
 
   return {
     props: {
-      author: {
-        ...author,
-      },
+      author,
       posts,
     },
     // Next.js will attempt to re-generate the page:
@@ -57,7 +55,7 @@ type Props = {
   posts: Blog[];
 };
 
-export default function RepositoryPage({ author, posts }: Props) {
+export default function AuthorPage({ author, posts }: Props) {
   const router = useRouter();
 
   if (!author || (!router.isFallback && !author?.id)) {

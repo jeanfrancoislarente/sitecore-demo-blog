@@ -9,10 +9,12 @@ import Author from "../types/author-type";
 import { useCallback, useEffect, useState } from "react";
 
 export async function getStaticProps() {
-  const allAuthors = await getAllAuthors();
+  const authors = await getAllAuthors();
 
   return {
-    props: { authors: allAuthors },
+    props: {
+      authors,
+    },
   };
 }
 
