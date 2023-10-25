@@ -1,11 +1,11 @@
-import Head from "next/head";
-import { getAllFeaturedBlogs, getAllNonFeaturedBlogs } from "../lib/Blog/blog-lib";
-import Blog from "../types/blog-type";
-import { BLOG_NAME } from "../lib/constants";
-import Layout from "../components/Layout";
-import Container from "../components/Container";
-import MoreStories from "../components/MoreStories";
-import HeroPost from "../components/HeroPost";
+import Head from 'next/head';
+import { getAllFeaturedBlogs, getAllNonFeaturedBlogs } from '../lib/Blog/blog-lib';
+import Blog from '../types/blog-type';
+import { BLOG_NAME } from '../lib/constants';
+import Layout from '../components/Layout';
+import Container from '../components/Container';
+import MoreStories from '../components/MoreStories';
+import HeroPost from '../components/HeroPost';
 
 export async function getStaticProps() {
   const [allFeaturedBlogs, allNonFeaturedBlogs] = await Promise.all([

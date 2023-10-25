@@ -1,15 +1,15 @@
-import { useRouter } from "next/router";
-import ErrorPage from "next/error";
-import Blog from "../../types/blog-type";
-import { getBlogById, getAllBlogs } from "../../lib/Blog/blog-lib";
-import Head from "next/head";
-import { richTextProfile } from "../../lib/Common/richTextConfiguration";
-import { generateHTML } from "@tiptap/html";
-import Layout from "../../components/Layout";
-import Container from "../../components/Container";
-import { BLOG_NAME } from "../../lib/constants";
-import PostHeader from "../../components/PostHeader";
-import PostBody from "../../components/PostBody";
+import { useRouter } from 'next/router';
+import ErrorPage from 'next/error';
+import Blog from '../../types/blog-type';
+import { getBlogById, getAllBlogs } from '../../lib/Blog/blog-lib';
+import Head from 'next/head';
+import { richTextProfile } from '../../lib/Common/richTextConfiguration';
+import { generateHTML } from '@tiptap/html';
+import Layout from '../../components/Layout';
+import Container from '../../components/Container';
+import { BLOG_NAME } from '../../lib/constants';
+import PostHeader from '../../components/PostHeader';
+import PostBody from '../../components/PostBody';
 
 type Params = {
   params: {
@@ -36,7 +36,7 @@ export async function getStaticPaths() {
 
   return {
     paths: allBlogs.map(({ id }) => `/posts/${id}`) ?? [],
-    fallback: "blocking",
+    fallback: 'blocking',
   };
 }
 
@@ -51,23 +51,23 @@ const Post = ({ blog }: Props) => {
     return <ErrorPage statusCode={404} />;
   }
 
-  const content = `${blog?.body ? generateHTML(blog.body, [richTextProfile]) : ""}${
+  const content = `${blog?.body ? generateHTML(blog.body, [richTextProfile]) : ''}${
     blog?.content?.results
       ? blog.content.results
           .map(
             (contentSection) => `${
-              !!contentSection.text ? generateHTML(contentSection.text, [richTextProfile]) : ""
+              !!contentSection.text ? generateHTML(contentSection.text, [richTextProfile]) : ''
             }
           ${
             !!contentSection.images
               ? contentSection.images.results
                   .map((image) => `<p><img src="${image.fileUrl}" /></p>`)
-                  .join("")
-              : ""
-          }${!!contentSection.text2 ? generateHTML(contentSection.text2, [richTextProfile]) : ""}`
+                  .join('')
+              : ''
+          }${!!contentSection.text2 ? generateHTML(contentSection.text2, [richTextProfile]) : ''}`
           )
-          .join("")
-      : ""
+          .join('')
+      : ''
   }`;
 
   return (

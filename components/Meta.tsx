@@ -1,5 +1,5 @@
-import Head from "next/head";
-import { BLOG_NAME } from "../lib/constants";
+import Head from 'next/head';
+import { BLOG_NAME } from '../lib/constants';
 
 export default function Meta() {
   return (

@@ -1,4 +1,4 @@
-import { MediaResults } from "./Common/media-type";
+import { MediaResults } from './Common/media-type';
 
 type Author = {
   id: string;

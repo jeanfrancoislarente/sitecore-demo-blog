@@ -1,15 +1,15 @@
-import { useRouter } from "next/router";
-import ErrorPage from "next/error";
-import Head from "next/head";
-import Container from "../../components/Container";
-import MoreStories from "../../components/MoreStories";
-import Layout from "../../components/Layout";
-import { BLOG_NAME } from "../../lib/constants";
-import Blog from "../../types/blog-type";
-import { getBlogsByAuthor } from "../../lib/Blog/blog-lib";
-import { getAllAuthors, getAuthorById } from "../../lib/Blog/author-lib";
-import Author from "../../types/author-type";
-import Image from "next/image";
+import { useRouter } from 'next/router';
+import ErrorPage from 'next/error';
+import Head from 'next/head';
+import Container from '../../components/Container';
+import MoreStories from '../../components/MoreStories';
+import Layout from '../../components/Layout';
+import { BLOG_NAME } from '../../lib/constants';
+import Blog from '../../types/blog-type';
+import { getBlogsByAuthor } from '../../lib/Blog/blog-lib';
+import { getAllAuthors, getAuthorById } from '../../lib/Blog/author-lib';
+import Author from '../../types/author-type';
+import Image from 'next/image';
 
 type Params = {
   params: {
@@ -46,7 +46,7 @@ export async function getStaticPaths() {
         },
       };
     }),
-    fallback: "blocking",
+    fallback: 'blocking',
   };
 }
 

@@ -1,7 +1,7 @@
-import { JSONContent } from "@tiptap/core";
-import { AuthorResults } from "./author-type";
-import { RepositoryResults } from "./repository-type";
-import { MediaResults } from "./Common/media-type";
+import { JSONContent } from '@tiptap/core';
+import { AuthorResults } from './author-type';
+import { RepositoryResults } from './repository-type';
+import { MediaResults } from './Common/media-type';
 
 export type TextContent = {
   text: JSONContent;

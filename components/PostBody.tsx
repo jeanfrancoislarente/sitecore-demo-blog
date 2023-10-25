@@ -1,9 +1,9 @@
-import Avatar from "./Avatar";
-import DateFormatter from "./DateFormatter";
-import Link from "next/link";
-import markdownStyles from "./markdown-styles.module.css";
-import Author from "../types/author-type";
-import Repository from "../types/repository-type";
+import Avatar from './Avatar';
+import DateFormatter from './DateFormatter';
+import Link from 'next/link';
+import markdownStyles from './markdown-styles.module.css';
+import Author from '../types/author-type';
+import Repository from '../types/repository-type';
 
 type PostBodyProps = {
   date: string;
@@ -36,7 +36,7 @@ export default function PostBody({ date, author, repositories, body }: PostBodyP
         </div>
       </div>
       <div className="col-span-3 lg:col-span-6">
-        <div className={markdownStyles["markdown"]} dangerouslySetInnerHTML={{ __html: body }} />
+        <div className={markdownStyles['markdown']} dangerouslySetInnerHTML={{ __html: body }} />
       </div>
     </div>
   );

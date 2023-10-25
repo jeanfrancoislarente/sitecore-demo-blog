@@ -1,12 +1,12 @@
-import "../styles/index.css";
-import "../styles/bootstrap.css";
+import '../styles/index.css';
+import '../styles/bootstrap.css';
 // TODO: Get rid of bootstrap by converting the little things that use it to Tailwind
-import type { AppProps } from "next/app";
-import { useRouter } from "next/router";
-import { IS_PRODUCTION } from "../lib/constants";
-import * as gtag from "../lib/gtag";
-import { useEffect } from "react";
-import Script from "next/script";
+import type { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
+import { IS_PRODUCTION } from '../lib/constants';
+import * as gtag from '../lib/gtag';
+import { useEffect } from 'react';
+import Script from 'next/script';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -15,9 +15,9 @@ export default function App({ Component, pageProps }: AppProps) {
       const handleRouteChange = (url: string) => {
         gtag.pageview(url);
       };
-      router.events.on("routeChangeComplete", handleRouteChange);
+      router.events.on('routeChangeComplete', handleRouteChange);
       return () => {
-        router.events.off("routeChangeComplete", handleRouteChange);
+        router.events.off('routeChangeComplete', handleRouteChange);
       };
     }
   }, [router.events]);

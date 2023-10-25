@@ -1,12 +1,12 @@
-import Container from "../components/Container";
-import PageTitle from "../components/PageTitle";
-import Layout from "../components/Layout";
-import Head from "next/head";
-import { BLOG_NAME } from "../lib/constants";
-import AuthorPreview from "../components/AuthorPreview";
-import { getAllAuthors } from "../lib/Blog/author-lib";
-import Author from "../types/author-type";
-import { useCallback, useEffect, useState } from "react";
+import Container from '../components/Container';
+import PageTitle from '../components/PageTitle';
+import Layout from '../components/Layout';
+import Head from 'next/head';
+import { BLOG_NAME } from '../lib/constants';
+import AuthorPreview from '../components/AuthorPreview';
+import { getAllAuthors } from '../lib/Blog/author-lib';
+import Author from '../types/author-type';
+import { useCallback, useEffect, useState } from 'react';
 
 export async function getStaticProps() {
   const authors = await getAllAuthors();
@@ -26,7 +26,7 @@ export default function TeamPage({ authors }: TeamPageProps) {
   const [sortedAuthors, setSortedAuthors] = useState<Author[]>(authors);
 
   const sortAuthorsByNames = useCallback((authors: Author[]) => {
-    const names = ["J.F.", "Scott", "Alexander", "Neli", "Christos", "Todor"];
+    const names = ['J.F.', 'Scott', 'Alexander', 'Neli', 'Christos', 'Todor'];
 
     const matchingAuthors = names.reduce((result: Author[], name: string) => {
       const author = authors.find((author) => author.authorName.includes(name));

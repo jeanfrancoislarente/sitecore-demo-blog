@@ -1,18 +1,18 @@
-import { useRouter } from "next/router";
-import ErrorPage from "next/error";
-import Head from "next/head";
-import Container from "../../components/Container";
-import RepositoryHeader from "../../components/RepositoryHeader";
-import RepositoryBody from "../../components/RepositoryBody";
-import MoreStories from "../../components/MoreStories";
-import Layout from "../../components/Layout";
-import { BLOG_NAME } from "../../lib/constants";
-import { getAllRepositories, getRepositoryById } from "../../lib/Blog/repository-lib";
-import Repository from "../../types/repository-type";
-import { richTextProfile } from "../../lib/Common/richTextConfiguration";
-import { generateHTML } from "@tiptap/html";
-import Blog from "../../types/blog-type";
-import { getBlogsByRepository } from "../../lib/Blog/blog-lib";
+import { useRouter } from 'next/router';
+import ErrorPage from 'next/error';
+import Head from 'next/head';
+import Container from '../../components/Container';
+import RepositoryHeader from '../../components/RepositoryHeader';
+import RepositoryBody from '../../components/RepositoryBody';
+import MoreStories from '../../components/MoreStories';
+import Layout from '../../components/Layout';
+import { BLOG_NAME } from '../../lib/constants';
+import { getAllRepositories, getRepositoryById } from '../../lib/Blog/repository-lib';
+import Repository from '../../types/repository-type';
+import { richTextProfile } from '../../lib/Common/richTextConfiguration';
+import { generateHTML } from '@tiptap/html';
+import Blog from '../../types/blog-type';
+import { getBlogsByRepository } from '../../lib/Blog/blog-lib';
 
 type Params = {
   params: {
@@ -49,7 +49,7 @@ export async function getStaticPaths() {
         },
       };
     }),
-    fallback: "blocking",
+    fallback: 'blocking',
   };
 }
 
@@ -65,7 +65,7 @@ export default function RepositoryPage({ repo, posts }: Props) {
     return <ErrorPage statusCode={404} />;
   }
 
-  const body = repo?.body ? generateHTML(repo.body, [richTextProfile]) : "";
+  const body = repo?.body ? generateHTML(repo.body, [richTextProfile]) : '';
 
   return (
     <Layout>
