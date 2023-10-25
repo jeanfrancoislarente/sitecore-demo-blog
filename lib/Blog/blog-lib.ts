@@ -43,6 +43,13 @@ export async function getBlogsByRepository(repositoryId: string): Promise<Blog[]
   );
 }
 
+export async function getBlogsByAuthor(authorId: string): Promise<Blog[]> {
+  const blogs = await getAllBlogs();
+  return blogs.filter(
+    (blog) => blog?.author?.results?.filter((author) => author?.id === authorId).length > 0
+  );
+}
+
 function extractBlogs({ data }: { data: BlogResults }) {
-  return data.results.map((blog: Blog) => blog);
+  return data?.results?.map((blog: Blog) => blog);
 }

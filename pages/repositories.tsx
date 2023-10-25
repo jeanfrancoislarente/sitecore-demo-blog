@@ -8,10 +8,12 @@ import { getAllRepositories } from "../lib/Blog/repository-lib";
 import Repository from "../types/repository-type";
 
 export async function getStaticProps() {
-  const allRepositories = await getAllRepositories();
+  const repositories = await getAllRepositories();
 
   return {
-    props: { repositories: allRepositories },
+    props: {
+      repositories,
+    },
   };
 }
 

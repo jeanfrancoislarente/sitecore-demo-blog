@@ -9,10 +9,12 @@ import Author from "../types/author-type";
 import { useCallback, useEffect, useState } from "react";
 
 export async function getStaticProps() {
-  const allAuthors = await getAllAuthors();
+  const authors = await getAllAuthors();
 
   return {
-    props: { authors: allAuthors },
+    props: {
+      authors,
+    },
   };
 }
 
@@ -56,6 +58,8 @@ export default function TeamPage({ authors }: TeamPageProps) {
             name={author.authorName}
             photo={author.authorFace.results[0]}
             jobTitle={author.jobTitle}
+            bio={author.bio}
+            slug={author.id}
           />
         ))}
       </Container>
