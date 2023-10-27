@@ -1,11 +1,11 @@
-import Blog, { BlogResults } from "../../types/blog-type";
-import { fetchAPI } from "../Common/api";
+import Blog, { BlogResults } from '../../types/blog-type';
+import { fetchAPI } from '../Common/api';
 import {
   BLOG_QUERY,
   ALL_BLOG_QUERY,
   ALL_FEATURED_BLOG_QUERY,
   ALL_NON_FEATURED_BLOG_QUERY,
-} from "../../graphQl/Blog/blog-query";
+} from '../../graphQl/Blog/blog-query';
 
 export async function getAllBlogs(): Promise<Blog[]> {
   const data = await fetchAPI(`${ALL_BLOG_QUERY}`);

@@ -1,7 +1,7 @@
-import Container from "../markdown/components/container";
-import Link from "next/link";
-import { BLOG_NAME } from "../markdown/lib/constants";
-import Image from "next/image";
+import Container from '../markdown/components/container';
+import Link from 'next/link';
+import { BLOG_NAME } from '../markdown/lib/constants';
+import Image from 'next/image';
 
 export default function Header() {
   return (

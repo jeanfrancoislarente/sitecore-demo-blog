@@ -1,4 +1,4 @@
-import MEDIA_QUERY from "../Common/media-query";
+import MEDIA_QUERY from '../Common/media-query';
 
 export const AUTHOR_QUERY = `
   id

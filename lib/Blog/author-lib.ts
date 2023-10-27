@@ -1,6 +1,6 @@
-import Author from "../../types/author-type";
-import { fetchAPI } from "../Common/api";
-import { ALL_AUTHOR_QUERY, AUTHOR_QUERY } from "../../graphQl/Blog/author-query";
+import Author from '../../types/author-type';
+import { fetchAPI } from '../Common/api';
+import { ALL_AUTHOR_QUERY, AUTHOR_QUERY } from '../../graphQl/Blog/author-query';
 
 export async function getAllAuthors(): Promise<Author[]> {
   const data = await fetchAPI(`${ALL_AUTHOR_QUERY}`);

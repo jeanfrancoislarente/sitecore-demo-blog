@@ -1,5 +1,5 @@
-import Link from "next/link";
-import PageTitle from "../components/PageTitle";
+import Link from 'next/link';
+import PageTitle from '../components/PageTitle';
 
 type RepositoryHeaderProps = {
   title: string;

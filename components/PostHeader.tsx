@@ -1,4 +1,4 @@
-import PostTitle from "./PostTitle";
+import PostTitle from './PostTitle';
 
 type PostHeaderProps = {
   title: string;

@@ -1,6 +1,6 @@
-import { PropsWithChildren } from "react";
-import Header from "../components/Header";
-import Meta from "../components/Meta";
+import { PropsWithChildren } from 'react';
+import Header from '../components/Header';
+import Meta from '../components/Meta';
 
 export default function Layout({ children }: PropsWithChildren) {
   return (

@@ -1,7 +1,7 @@
-import Avatar from "../components/Avatar";
-import DateFormatter from "./DateFormatter";
-import Link from "next/link";
-import Blog from "../types/blog-type";
+import Avatar from '../components/Avatar';
+import DateFormatter from './DateFormatter';
+import Link from 'next/link';
+import Blog from '../types/blog-type';
 
 export default function HeroPost(blog: Blog) {
   return (

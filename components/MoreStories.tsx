@@ -1,5 +1,5 @@
-import PostPreview from "./PostPreview";
-import Blog from "../types/blog-type";
+import PostPreview from './PostPreview';
+import Blog from '../types/blog-type';
 
 type MoreStoriesProps = {
   posts: Blog[];

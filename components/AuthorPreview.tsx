@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { Media } from "../types/Common/media-type";
-import Image from "next/image";
+import Link from 'next/link';
+import { Media } from '../types/Common/media-type';
+import Image from 'next/image';
 
 type AuthorPreviewProps = {
   name: string;

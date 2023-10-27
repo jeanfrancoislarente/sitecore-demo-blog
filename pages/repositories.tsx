@@ -1,11 +1,11 @@
-import Container from "../components/Container";
-import RepositoryPreview from "../components/RepositoryPreview";
-import PageTitle from "../components/PageTitle";
-import Layout from "../components/Layout";
-import Head from "next/head";
-import { BLOG_NAME } from "../lib/constants";
-import { getAllRepositories } from "../lib/Blog/repository-lib";
-import Repository from "../types/repository-type";
+import Container from '../components/Container';
+import RepositoryPreview from '../components/RepositoryPreview';
+import PageTitle from '../components/PageTitle';
+import Layout from '../components/Layout';
+import Head from 'next/head';
+import { BLOG_NAME } from '../lib/constants';
+import { getAllRepositories } from '../lib/Blog/repository-lib';
+import Repository from '../types/repository-type';
 
 export async function getStaticProps() {
   const repositories = await getAllRepositories();
