@@ -73,7 +73,7 @@ export default function RepositoryPage({ repo, posts }: Props) {
         <title>{`${repo.name} | ${BLOG_NAME}`}</title>
       </Head>
       <Container>
-        <article className="mb-32">
+        <article>
           <RepositoryHeader title={repo.name} url={repo.url} />
           <RepositoryBody content={body} />
         </article>

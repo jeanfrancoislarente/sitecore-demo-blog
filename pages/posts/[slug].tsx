@@ -76,7 +76,7 @@ const Post = ({ blog }: Props) => {
         <title>{`${blog.title} | ${BLOG_NAME}`}</title>
       </Head>
       <Container>
-        <article className="mb-32">
+        <article>
           <PostHeader title={blog.title} primaryTopic={blog.primaryTopic} />
           <PostBody
             body={content}

@@ -8,11 +8,9 @@ type RepositoryPreviewProps = {
 
 export default function RepositoryPreview({ title, slug, excerpt }: RepositoryPreviewProps) {
   return (
-    <div className="mb-8">
-      <h2 className="text-3xl leading-snug">
-        <Link href={`/repositories/${slug}`} className="hover:underline">
-          {title}
-        </Link>
+    <div>
+      <h2>
+        <Link href={`/repositories/${slug}`}>{title}</Link>
       </h2>
       <p>{excerpt}</p>
     </div>

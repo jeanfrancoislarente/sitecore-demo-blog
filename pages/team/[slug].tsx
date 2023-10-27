@@ -68,21 +68,20 @@ export default function AuthorPage({ author, posts }: Props) {
         <title>{`${author.authorName} | ${BLOG_NAME}`}</title>
       </Head>
       <Container>
-        <article className="mb-32 w-full">
-          <div className="flex flex-col items-start gap-4 mb-12 md:flex-row">
+        <article>
+          <div>
             {author.authorFace && (
               <Image
                 src={author.authorFace.results[0].fileUrl}
                 width={100}
                 height={100}
-                className="rounded-full mr-4 w-28 h-28 object-cover shrink-0"
                 alt={author.authorName}
               />
             )}
-            <div className="w-full">
-              <h2 className="text-3xl leading-snug">{author.authorName}</h2>
-              <h5 className="bg-[#dfdfdf] px-2 py-1">{author.jobTitle}</h5>
-              <p className="mt-4">{author.bio}</p>
+            <div>
+              <h2>{author.authorName}</h2>
+              <h5>{author.jobTitle}</h5>
+              <p>{author.bio}</p>
             </div>
           </div>
         </article>
