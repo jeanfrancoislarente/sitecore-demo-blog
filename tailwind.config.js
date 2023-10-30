@@ -45,6 +45,10 @@ module.exports = {
         xs: '475px',
         '2xl': '1352px',
       },
+      fontSize: {
+        '3xl': '2rem',
+        '4xl': '2.375rem',
+      },
     },
   },
 };

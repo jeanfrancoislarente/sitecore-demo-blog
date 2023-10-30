@@ -1,0 +1,37 @@
+html,
+body {
+  @apply font-sans;
+
+  * {
+    @apply leading-normal;
+  }
+
+  h1 {
+    @apply text-5xl font-bold;
+  }
+
+  h2 {
+    @apply text-4xl font-bold;
+  }
+
+  h3 {
+    @apply text-3xl font-semibold;
+  }
+
+  h4 {
+    @apply text-2xl font-semibold;
+  }
+
+  h5 {
+    @apply text-xl font-semibold;
+  }
+
+  h6 {
+    @apply text-lg font-semibold uppercase tracking-widest;
+  }
+
+  p,
+  li {
+    @apply text-lg;
+  }
+}
