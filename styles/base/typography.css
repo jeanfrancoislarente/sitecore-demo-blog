@@ -2,36 +2,45 @@ html,
 body {
   @apply font-sans;
 
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
   * {
     @apply leading-normal;
   }
 
   h1 {
-    @apply text-5xl font-bold;
+    @apply text-4xl leading-normal font-bold;
+    @apply md:text-5xl md:leading-normal;
   }
 
   h2 {
-    @apply text-4xl font-bold;
+    @apply text-3xl leading-normal font-bold;
+    @apply md:text-4xl md:leading-normal;
   }
 
   h3 {
-    @apply text-3xl font-semibold;
+    @apply text-2xl leading-normal font-semibold;
+    @apply md:text-3xl md:leading-normal;
   }
 
   h4 {
-    @apply text-2xl font-semibold;
+    @apply text-xl leading-normal font-semibold;
+    @apply md:text-2xl md:leading-normal;
   }
 
   h5 {
-    @apply text-xl font-semibold;
+    @apply text-lg leading-normal font-semibold;
+    @apply md:text-xl md:leading-normal;
   }
 
   h6 {
-    @apply text-lg font-semibold uppercase tracking-widest;
+    @apply text-lg leading-normal font-semibold uppercase tracking-widest;
   }
 
   p,
   li {
-    @apply text-lg;
+    @apply text-lg leading-normal;
   }
 }

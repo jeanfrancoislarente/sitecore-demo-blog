@@ -8,9 +8,7 @@ export default function Layout({ children }: PropsWithChildren) {
     <>
       <Meta />
       <Header />
-      <div className="min-h-screen">
-        <main>{children}</main>
-      </div>
+      <main>{children}</main>
       <Footer />
     </>
   );

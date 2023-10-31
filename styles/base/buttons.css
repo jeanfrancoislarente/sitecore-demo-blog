@@ -1,0 +1,7 @@
+.arrow-btn {
+  @apply flex gap-4 text-lg font-semibold uppercase tracking-widest;
+
+  svg {
+    @apply w-4;
+  }
+}

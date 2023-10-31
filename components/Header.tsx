@@ -16,7 +16,7 @@ export default function Header() {
         <div className="container header-container">
           <Link href="/" className="header-logo">
             <Image
-              src="/assets/blog/shared/site-title-web.png"
+              src="/assets/blog/shared/site-title.webp"
               width={330}
               height={40}
               alt={BLOG_NAME}

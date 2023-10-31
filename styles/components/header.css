@@ -14,7 +14,7 @@
   }
 
   &-menu {
-    @apply fixed -top-[100%] left-0 right-0 bottom-[100%] bg-violet text-white transition-all z-50;
+    @apply fixed -top-[100%] left-0 right-0 bottom-[100%] bg-violet text-white transition-all ease-out duration-300 z-50;
 
     &.visible {
       @apply top-0 left-0 right-0 bottom-0;
