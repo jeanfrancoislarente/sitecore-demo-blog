@@ -37,7 +37,7 @@ const Homepage = ({ allFeaturedBlogs, allNonFeaturedBlogs }: Props) => {
           allFeaturedBlogs.length > 0 &&
           allFeaturedBlogs.map((heroPost) => <HeroPost key={heroPost.id} {...heroPost} />)}
         {allNonFeaturedBlogs && allNonFeaturedBlogs.length > 0 && (
-          <MoreStories posts={allNonFeaturedBlogs} title="More Stories" />
+          <MoreStories posts={allNonFeaturedBlogs} title="More Articles" />
         )}
       </Container>
     </Layout>

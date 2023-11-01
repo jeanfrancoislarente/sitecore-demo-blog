@@ -238,3 +238,17 @@
     font-style: italic;
   }
 }
+
+@layer utilities {
+  .absolute-center {
+    @apply absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%];
+  }
+
+  .absolute-center-x {
+    @apply absolute left-[50%] -translate-x-[50%];
+  }
+
+  .absolute-center-y {
+    @apply absolute top-[50%] -translate-y-[50%];
+  }
+}

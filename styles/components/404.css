@@ -7,6 +7,12 @@
 
     .arrow-btn {
       @apply mb-4 text-violet;
+
+      &:hover {
+        svg {
+          @apply -translate-x-2;
+        }
+      }
     }
   }
 

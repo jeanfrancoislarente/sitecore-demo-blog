@@ -1,3 +1,5 @@
 @import './components/404.css';
-@import './components/footer.css';
-@import './components/header.css';
+@import './components/Footer.css';
+@import './components/Header.css';
+@import './components/MoreStories.css';
+@import './components/PostPreview.css';

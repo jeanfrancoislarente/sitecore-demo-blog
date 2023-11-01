@@ -1,7 +1,13 @@
 .arrow-btn {
   @apply flex gap-4 text-lg font-semibold uppercase tracking-widest;
 
+  &:hover {
+    svg {
+      @apply translate-x-2;
+    }
+  }
+
   svg {
-    @apply w-4;
+    @apply w-4 transition-transform ease-in-out;
   }
 }
