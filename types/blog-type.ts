@@ -2,6 +2,7 @@ import { JSONContent } from '@tiptap/core';
 import { AuthorResults } from './author-type';
 import { RepositoryResults } from './repository-type';
 import { MediaResults } from './Common/media-type';
+import { ProductResults } from './product-type';
 
 export type TextContent = {
   text: JSONContent;
@@ -33,6 +34,7 @@ type Blog = {
   isFeatured: boolean;
   primaryTopic: string;
   repositories: RepositoryResults;
+  products: ProductResults;
 };
 
 export default Blog;
