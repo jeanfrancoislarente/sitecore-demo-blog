@@ -1,5 +1,5 @@
 .more-stories {
-  @apply my-20;
+  @apply container my-20;
   @apply lg:grid lg:grid-cols-4 lg:gap-4 lg:my-32;
 
   &-title {

@@ -2,4 +2,6 @@
 @import './components/Footer.css';
 @import './components/Header.css';
 @import './components/MoreStories.css';
+@import './components/PostHero.css';
+@import './components/PostHeroSlider.css';
 @import './components/PostPreview.css';
