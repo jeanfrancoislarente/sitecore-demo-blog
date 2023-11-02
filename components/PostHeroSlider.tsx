@@ -23,7 +23,7 @@ export default function PostHeroSlider({ posts }: { posts: Blog[] }) {
         pagination={{
           type: 'fraction',
           el: '.post-hero-slider-pagination',
-          renderFraction: function (currentClass, totalClass) {
+          renderFraction: function (currentClass: string, totalClass: string) {
             return `<span class="${currentClass}"></span><span>/</span><span class="${totalClass}"></span>`;
           },
         }}

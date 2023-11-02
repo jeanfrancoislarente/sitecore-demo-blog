@@ -26,15 +26,16 @@ type Props = {
 };
 
 const Homepage = ({ featuredBlogs, nonFeaturedBlogs }: Props) => {
+  const hasFeaturedBlogs = featuredBlogs && featuredBlogs.length > 0;
+  const hasNonFeaturedBlogs = nonFeaturedBlogs && nonFeaturedBlogs.length > 0;
+
   return (
     <Layout>
       <Head>
         <title>{BLOG_NAME}</title>
       </Head>
-      {featuredBlogs && featuredBlogs.length > 0 && <PostHeroSlider posts={featuredBlogs} />}
-      {nonFeaturedBlogs && nonFeaturedBlogs.length > 0 && (
-        <MoreStories posts={nonFeaturedBlogs} title="More Articles" />
-      )}
+      {hasFeaturedBlogs && <PostHeroSlider posts={featuredBlogs} />}
+      {hasNonFeaturedBlogs && <MoreStories posts={nonFeaturedBlogs} title="More Articles" />}
     </Layout>
   );
 };
