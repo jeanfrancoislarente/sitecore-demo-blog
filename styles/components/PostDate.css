@@ -1,0 +1,11 @@
+.post-date {
+  @apply flex items-center w-full gap-4 mb-3;
+
+  time {
+    @apply text-base font-semibold text-charcoal uppercase tracking-widest shrink-0;
+  }
+
+  hr {
+    @apply w-full text-gray-light;
+  }
+}

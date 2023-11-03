@@ -1,0 +1,33 @@
+.social-share {
+  @apply flex gap-4;
+
+  &-button {
+    @apply flex justify-center items-center w-12 h-12 border border-gray-light rounded-full transition-colors;
+
+    &:hover {
+      @apply border-gray;
+    }
+
+    svg {
+      @apply text-gray;
+    }
+  }
+
+  &-facebook {
+    svg {
+      @apply w-4;
+    }
+  }
+
+  &-linkedin {
+    svg {
+      @apply h-7;
+    }
+  }
+
+  &-twitter {
+    svg {
+      @apply h-6;
+    }
+  }
+}

@@ -3,15 +3,9 @@
   @apply md:pt-12;
   @apply lg:pt-16;
 
-  &-date {
-    @apply flex items-center w-full gap-4 mb-3;
-
+  .post-date {
     time {
-      @apply text-lg font-semibold text-charcoal uppercase tracking-widest shrink-0;
-    }
-
-    hr {
-      @apply w-full text-gray-light;
+      @apply text-lg;
     }
   }
 

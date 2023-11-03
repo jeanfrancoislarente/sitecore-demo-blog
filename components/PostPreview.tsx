@@ -1,17 +1,14 @@
-import DateFormatter from './DateFormatter';
 import Blog from '../types/blog-type';
 import { ArrowButton } from './Buttons';
 import PostProductsList from './PostProductsList';
+import PostDate from './PostDate';
 
 export default function PostPreview(blog: Blog) {
   const hasProducts = blog.products.results && blog.products.results.length > 0;
 
   return (
     <article className="post-preview">
-      <div className="post-preview-date">
-        <DateFormatter dateString={blog.issueDate} />
-        <hr />
-      </div>
+      <PostDate date={blog.issueDate} />
       <div className="post-preview-content">
         <div className="post-preview-body">
           <h3 className="post-preview-title">{blog.title}</h3>

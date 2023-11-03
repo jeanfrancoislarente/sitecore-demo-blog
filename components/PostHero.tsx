@@ -1,17 +1,14 @@
-import DateFormatter from './DateFormatter';
 import Blog from '../types/blog-type';
 import { ArrowButton } from './Buttons';
 import PostProductsList from './PostProductsList';
+import PostDate from './PostDate';
 
 export default function PostHero(blog: Blog) {
   const hasProducts = blog.products.results && blog.products.results.length > 0;
 
   return (
     <article className="post-hero">
-      <div className="post-hero-date">
-        <DateFormatter dateString={blog.issueDate} />
-        <hr />
-      </div>
+      <PostDate date={blog.issueDate} />
       <div className="post-hero-content">
         <div className="post-hero-body">
           <h1 className="post-hero-title">{blog.title}</h1>

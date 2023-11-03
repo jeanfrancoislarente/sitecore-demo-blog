@@ -1,8 +1,13 @@
 @import './components/404.css';
+@import './components/AuthorAvatar.css';
 @import './components/Footer.css';
 @import './components/Header.css';
 @import './components/MoreStories.css';
+@import './components/PostBody.css';
+@import './components/PostDate.css';
+@import './components/PostHeader.css';
 @import './components/PostHero.css';
 @import './components/PostHeroSlider.css';
 @import './components/PostPreview.css';
 @import './components/PostProductsList.css';
+@import './components/SocialShare.css';

@@ -35,7 +35,11 @@ export default function Header() {
               <FontAwesomeIcon icon={faClose} onClick={() => setMenuOpen(false)} />
             </button>
             <ul>
-              <li className={router.pathname == '/' ? 'active' : ''}>
+              <li
+                className={
+                  router.pathname == '/' || router.pathname.startsWith('/posts') ? 'active' : ''
+                }
+              >
                 <Link href={`/`}>Blog</Link>
               </li>
               <li className={router.pathname.startsWith('/products') ? 'active' : ''}>

@@ -1,0 +1,65 @@
+.post-body {
+  @apply grid grid-cols-4 gap-4;
+
+  &-sidebar {
+    @apply relative col-span-1;
+
+    &-inner {
+      @apply sticky top-6 flex flex-col gap-14;
+    }
+
+    h6 {
+      @apply text-base text-charcoal mb-4;
+    }
+
+    hr {
+      @apply w-28 text-gray-light mb-14;
+    }
+
+    &-products {
+      li {
+        @apply text-xl font-semibold;
+
+        a {
+          @apply flex items-center gap-4;
+
+          span {
+            @apply border-b border-transparent transition-colors;
+          }
+
+          &:hover {
+            span {
+              @apply border-b border-black;
+            }
+          }
+        }
+
+        + li {
+          @apply mt-6;
+        }
+      }
+    }
+
+    &-repositories {
+      a {
+        @apply inline-block border-b border-transparent transition-colors;
+
+        &:hover {
+          @apply border-b border-black;
+        }
+      }
+
+      li {
+        @apply font-mono text-lg;
+
+        + li {
+          @apply mt-4;
+        }
+      }
+    }
+  }
+
+  &-content {
+    @apply col-span-3 max-w-[50rem] mx-auto;
+  }
+}

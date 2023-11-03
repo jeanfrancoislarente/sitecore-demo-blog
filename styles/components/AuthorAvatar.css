@@ -1,0 +1,17 @@
+.author-avatar {
+  a {
+    @apply flex flex-col items-start;
+  }
+
+  &-img {
+    @apply w-20 h-20 rounded-full mb-4 object-cover;
+  }
+
+  &-name {
+    @apply text-[1.375rem];
+  }
+
+  &-jobtitle {
+    @apply text-base mt-2;
+  }
+}

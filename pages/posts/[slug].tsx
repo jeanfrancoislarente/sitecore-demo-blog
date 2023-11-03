@@ -6,7 +6,6 @@ import Head from 'next/head';
 import { richTextProfile } from '../../lib/Common/richTextConfiguration';
 import { generateHTML } from '@tiptap/html';
 import Layout from '../../components/Layout';
-import Container from '../../components/Container';
 import { BLOG_NAME } from '../../lib/constants';
 import PostHeader from '../../components/PostHeader';
 import PostBody from '../../components/PostBody';
@@ -75,17 +74,15 @@ const Post = ({ blog }: Props) => {
       <Head>
         <title>{`${blog.title} | ${BLOG_NAME}`}</title>
       </Head>
-      <Container>
-        <article>
-          <PostHeader title={blog.title} primaryTopic={blog.primaryTopic} />
-          <PostBody
-            body={content}
-            date={blog.issueDate}
-            author={blog.author.results[0]}
-            repositories={blog.repositories.results}
-          />
-        </article>
-      </Container>
+      <article className="container">
+        <PostHeader title={blog.title} summary={blog.summary} date={blog.issueDate} />
+        <PostBody
+          body={content}
+          author={blog.author.results[0]}
+          repositories={blog.repositories.results}
+          products={blog.products.results}
+        />
+      </article>
     </Layout>
   );
 };

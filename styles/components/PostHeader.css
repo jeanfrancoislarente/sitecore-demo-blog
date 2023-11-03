@@ -1,0 +1,32 @@
+.post-header {
+  @apply grid grid-cols-1 gap-x-4 gap-y-16 mt-16 mb-14;
+  @apply lg:grid-cols-3;
+
+  &-content {
+    @apply lg:col-span-2;
+
+    h1 {
+      @apply mb-6;
+    }
+
+    p {
+      @apply text-2xl font-light leading-normal max-w-[50rem];
+    }
+  }
+
+  &-share {
+    @apply self-end justify-self-end;
+
+    h6 {
+      @apply text-base text-charcoal text-right mb-2;
+    }
+  }
+
+  .post-date {
+    @apply lg:col-span-3;
+
+    time {
+      @apply text-lg;
+    }
+  }
+}
