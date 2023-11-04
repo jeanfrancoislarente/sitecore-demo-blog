@@ -19,7 +19,6 @@ export default function PostBody({ author, repositories, products, body }: PostB
         <div className="post-body-sidebar-inner">
           <Link href={`/team/${author.id}`}>
             <AuthorAvatar
-              id={author?.id}
               name={author?.authorName}
               picture={author?.authorFace.results[0].fileUrl}
               jobTitle={author?.jobTitle}

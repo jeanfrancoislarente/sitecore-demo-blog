@@ -6,6 +6,6 @@
   }
 
   hr {
-    @apply w-full text-gray-light;
+    @apply w-full;
   }
 }

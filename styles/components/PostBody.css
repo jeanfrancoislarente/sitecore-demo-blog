@@ -1,5 +1,5 @@
 .post-body {
-  @apply grid grid-cols-4 gap-4;
+  @apply grid grid-cols-4 gap-4 mt-14 mb-32;
 
   &-sidebar {
     @apply relative col-span-1;
@@ -13,7 +13,7 @@
     }
 
     hr {
-      @apply w-28 text-gray-light mb-14;
+      @apply w-28 mb-14;
     }
 
     &-products {
@@ -61,5 +61,79 @@
 
   &-content {
     @apply col-span-3 max-w-[50rem] mx-auto;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply mt-[1em] mb-[0.5em];
+
+      &:first-child {
+        @apply mt-0;
+      }
+    }
+
+    p {
+      @apply leading-[1.75] mb-8;
+    }
+
+    ul,
+    ol {
+      @apply list-outside mb-8;
+    }
+
+    ul {
+      @apply list-disc;
+    }
+
+    ol {
+      @apply list-decimal;
+
+      li::marker {
+        @apply font-bold;
+      }
+    }
+
+    li {
+      @apply ml-9;
+
+      > p {
+        @apply pl-3 mb-2;
+      }
+    }
+
+    a {
+      @apply text-violet border-b border-violet border-dotted px-1;
+
+      &:hover {
+        @apply bg-violet bg-opacity-10;
+      }
+    }
+
+    hr {
+      @apply my-8;
+    }
+
+    blockquote {
+      @apply relative text-lg italic pt-12 pb-4 pl-24 my-8;
+
+      &::before {
+        @apply content-[''] absolute top-0 bottom-0 left-0 w-20 bg-violet bg-opacity-10;
+      }
+
+      &::after {
+        @apply content-['"'] absolute top-0 left-[3.25rem] text-violet text-[5.5rem] leading-[1] not-italic font-bold;
+      }
+
+      p {
+        @apply mb-0;
+      }
+    }
+
+    p code {
+      @apply font-mono text-teal-dark;
+    }
   }
 }
