@@ -4,15 +4,15 @@ import Author from '../types/author-type';
 import Repository from '../types/repository-type';
 import Product from '../types/product-type';
 import Image from 'next/image';
+import { PropsWithChildren } from 'react';
 
-type PostBodyProps = {
+type PostBodyProps = PropsWithChildren & {
   author: Author;
   repositories: Repository[];
   products: Product[];
-  body: string;
 };
 
-export default function PostBody({ author, repositories, products, body }: PostBodyProps) {
+export default function PostBody({ author, repositories, products, children }: PostBodyProps) {
   return (
     <section className="post-body">
       <aside className="post-body-sidebar">
@@ -60,7 +60,7 @@ export default function PostBody({ author, repositories, products, body }: PostB
           )}
         </div>
       </aside>
-      <div dangerouslySetInnerHTML={{ __html: body }} className="post-body-content" />
+      {children}
     </section>
   );
 }

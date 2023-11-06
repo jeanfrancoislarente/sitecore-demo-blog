@@ -1,0 +1,27 @@
+.code-block {
+  @apply relative;
+
+  pre {
+    @apply rounded-md !p-4;
+
+    .linenumber {
+      @apply opacity-50;
+    }
+  }
+
+  button {
+    @apply absolute top-0 right-0 p-2;
+
+    svg {
+      @apply w-4 m-1 basis-1/4;
+
+      &.check-icon {
+        @apply text-teal;
+      }
+
+      &.copy-icon {
+        @apply text-white transition-colors hover:opacity-60;
+      }
+    }
+  }
+}

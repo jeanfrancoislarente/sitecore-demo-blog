@@ -124,7 +124,7 @@
       }
 
       &::after {
-        @apply content-['"'] absolute top-0 left-[3.25rem] text-violet text-[5.5rem] leading-[1] not-italic font-bold;
+        @apply content-['"'] absolute top-0 left-[3.125rem] text-violet text-[5.5rem] leading-[1] not-italic font-bold;
       }
 
       p {
@@ -134,6 +134,10 @@
 
     p code {
       @apply font-mono text-teal-dark;
+    }
+
+    .code-block {
+      @apply mb-8;
     }
   }
 }
