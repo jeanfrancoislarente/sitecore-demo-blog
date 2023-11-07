@@ -5,6 +5,7 @@
 @import './components/Header.css';
 @import './components/Modal.css';
 @import './components/MoreStories.css';
+@import './components/PageHeader.css';
 @import './components/PostBody.css';
 @import './components/PostBodyContent.css';
 @import './components/PostBodyImageSlider.css';

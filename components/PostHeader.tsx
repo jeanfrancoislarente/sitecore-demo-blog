@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import PostDate from './PostDate';
 import SocialShare from './SocialShare';
+import PageHeader from './PageHeader';
 
 type PostHeaderProps = {
   title: string;
@@ -12,16 +13,12 @@ export default function PostHeader({ title, summary, date }: PostHeaderProps) {
   const url = useMemo(() => (typeof window !== 'undefined' ? window.location.href : ''), []);
 
   return (
-    <section className="post-header">
-      <div className="post-header-content">
-        <h1>{title}</h1>
-        <p>{summary}</p>
-      </div>
-      <div className="post-header-share">
+    <>
+      <PageHeader title={title} description={summary} className="post-header">
         <h6>Share</h6>
         <SocialShare title={title} url={url} />
-      </div>
+      </PageHeader>
       <PostDate date={date} />
-    </section>
+    </>
   );
 }

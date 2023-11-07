@@ -14,3 +14,8 @@ export default Repository;
 export type RepositoryResults = {
   results: Repository[];
 };
+
+export type Repositories = {
+  description: string;
+  repositories: Repository[];
+};

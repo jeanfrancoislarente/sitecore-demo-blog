@@ -1,10 +1,13 @@
-import Repository from '../../types/repository-type';
+import Repository, { Repositories } from '../../types/repository-type';
 import { fetchAPI } from '../Common/api';
 import { REPOSITORY_QUERY, REPOSITORIES_QUERY } from '../../graphQl/Blog/repository-query';
 
-export async function getAllRepositories(): Promise<Repository[]> {
+export async function getAllRepositories(): Promise<Repositories> {
   const data = await fetchAPI(`${REPOSITORIES_QUERY}`);
-  return data.data.data.repositories.results;
+  return {
+    description: data.data.data.description,
+    repositories: data.data.data.repositories.results,
+  };
 }
 
 export async function getRepositoryById(id: string): Promise<Repository> {
