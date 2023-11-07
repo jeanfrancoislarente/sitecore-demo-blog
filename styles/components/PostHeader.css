@@ -15,15 +15,17 @@
   }
 
   &-share {
-    @apply self-end justify-self-end;
+    @apply lg:self-end lg:justify-self-end;
 
     h6 {
-      @apply text-base text-charcoal text-right mb-2;
+      @apply text-base text-charcoal mb-2;
+      @apply lg:text-right;
     }
   }
 
   .post-date {
-    @apply lg:col-span-3;
+    @apply flex-row-reverse;
+    @apply lg:col-span-3 lg:flex-row;
 
     time {
       @apply text-lg;

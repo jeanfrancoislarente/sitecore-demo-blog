@@ -1,143 +1,14 @@
 .post-body {
-  @apply grid grid-cols-4 gap-4 mt-14 mb-32;
+  @apply flex flex-col-reverse gap-4 mt-14 mb-32;
+  @apply lg:grid lg:grid-cols-3;
+  @apply xl:grid-cols-4;
 
   &-sidebar {
-    @apply relative col-span-1;
-
-    &-inner {
-      @apply sticky top-6 flex flex-col gap-14;
-    }
-
-    h6 {
-      @apply text-base text-charcoal mb-4;
-    }
-
-    hr {
-      @apply w-28 mb-14;
-    }
-
-    &-products {
-      li {
-        @apply text-xl font-semibold;
-
-        a {
-          @apply flex items-center gap-4;
-
-          span {
-            @apply border-b border-transparent transition-colors;
-          }
-
-          &:hover {
-            span {
-              @apply border-b border-black;
-            }
-          }
-        }
-
-        + li {
-          @apply mt-6;
-        }
-      }
-    }
-
-    &-repositories {
-      a {
-        @apply inline-block border-b border-transparent transition-colors;
-
-        &:hover {
-          @apply border-b border-black;
-        }
-      }
-
-      li {
-        @apply font-mono text-lg;
-
-        + li {
-          @apply mt-4;
-        }
-      }
-    }
+    @apply lg:col-span-1;
   }
 
   &-content {
-    @apply col-span-3 max-w-[50rem] mx-auto;
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      @apply mt-[1em] mb-[0.5em];
-
-      &:first-child {
-        @apply mt-0;
-      }
-    }
-
-    p {
-      @apply leading-[1.75] mb-8;
-    }
-
-    ul,
-    ol {
-      @apply list-outside mb-8;
-    }
-
-    ul {
-      @apply list-disc;
-    }
-
-    ol {
-      @apply list-decimal;
-
-      li::marker {
-        @apply font-bold;
-      }
-    }
-
-    li {
-      @apply ml-9;
-
-      > p {
-        @apply pl-3 mb-2;
-      }
-    }
-
-    a {
-      @apply text-violet border-b border-violet border-dotted px-1;
-
-      &:hover {
-        @apply bg-violet bg-opacity-10;
-      }
-    }
-
-    hr {
-      @apply my-8;
-    }
-
-    blockquote {
-      @apply relative text-lg italic pt-12 pb-4 pl-24 my-8;
-
-      &::before {
-        @apply content-[''] absolute top-0 bottom-0 left-0 w-20 bg-violet bg-opacity-10;
-      }
-
-      &::after {
-        @apply content-['"'] absolute top-0 left-[3.125rem] text-violet text-[5.5rem] leading-[1] not-italic font-bold;
-      }
-
-      p {
-        @apply mb-0;
-      }
-    }
-
-    p code {
-      @apply font-mono text-teal-dark;
-    }
-
-    .code-block {
-      @apply mb-8;
-    }
+    @apply lg:col-span-2;
+    @apply xl:col-span-3;
   }
 }

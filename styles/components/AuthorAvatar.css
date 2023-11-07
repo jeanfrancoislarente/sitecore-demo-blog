@@ -1,10 +1,9 @@
 .author-avatar {
-  a {
-    @apply flex flex-col items-start;
-  }
+  @apply flex flex-row items-center gap-4;
+  @apply lg:flex-col lg:items-start;
 
   &-img {
-    @apply w-20 h-20 rounded-full mb-4 object-cover;
+    @apply w-20 h-20 rounded-full object-cover;
   }
 
   &-name {

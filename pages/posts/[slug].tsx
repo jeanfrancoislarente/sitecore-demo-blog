@@ -7,7 +7,6 @@ import Layout from '../../components/Layout';
 import { BLOG_NAME } from '../../lib/constants';
 import PostHeader from '../../components/PostHeader';
 import PostBody from '../../components/PostBody';
-import PostBodyContent from '../../components/PostBodyContent';
 
 type Params = {
   params: {
@@ -56,13 +55,7 @@ const Post = ({ blog }: Props) => {
       </Head>
       <article className="container">
         <PostHeader title={blog.title} summary={blog.summary} date={blog.issueDate} />
-        <PostBody
-          author={blog.author.results[0]}
-          repositories={blog.repositories.results}
-          products={blog.products.results}
-        >
-          <PostBodyContent blog={blog} />
-        </PostBody>
+        <PostBody blog={blog} />
       </article>
     </Layout>
   );

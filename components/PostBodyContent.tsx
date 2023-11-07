@@ -4,7 +4,7 @@ import Blog from '../types/blog-type';
 import { generateHTML } from '@tiptap/html';
 import { richTextProfile } from '../lib/Common/richTextConfiguration';
 import PostBodyImage from './PostBodyImage';
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import PostBodyImageSlider from './PostBodyImageSlider';
 import { Media } from '../types/Common/media-type';
 
@@ -21,20 +21,22 @@ export default function PostBodyContent({ blog }: PostBodyContentProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [displayedSliderImage, setDisplayedSliderImage] = useState<number>(0);
 
-  const handleClick = useCallback((imageIndex: number) => {
+  const handleImageClick = useCallback((imageIndex: number) => {
     setDisplayedSliderImage(imageIndex);
     setIsModalOpen(true);
   }, []);
 
-  const images: Media[] = [];
+  const images: Media[] = useMemo(() => [], []);
 
-  const body = `${blog?.body ? generateHTML(blog.body, [richTextProfile]) : ''}${
-    blog?.content?.results
-      ? blog.content.results
-          .map(
-            (contentSection) => `${
-              !!contentSection.text ? generateHTML(contentSection.text, [richTextProfile]) : ''
-            }
+  const body = useMemo(
+    () =>
+      `${blog?.body ? generateHTML(blog.body, [richTextProfile]) : ''}${
+        blog?.content?.results
+          ? blog.content.results
+              .map(
+                (contentSection) => `${
+                  !!contentSection.text ? generateHTML(contentSection.text, [richTextProfile]) : ''
+                }
           ${
             !!contentSection.images
               ? contentSection.images.results
@@ -45,10 +47,12 @@ export default function PostBodyContent({ blog }: PostBodyContentProps) {
                   .join('')
               : ''
           }${!!contentSection.text2 ? generateHTML(contentSection.text2, [richTextProfile]) : ''}`
-          )
-          .join('')
-      : ''
-  }`;
+              )
+              .join('')
+          : ''
+      }`,
+    [blog.body, blog.content.results, images]
+  );
 
   const options: HTMLReactParserOptions = {
     replace(domNode) {
@@ -66,7 +70,7 @@ export default function PostBodyContent({ blog }: PostBodyContentProps) {
           <PostBodyImage
             image={image}
             index={images.findIndex((img) => img.fileUrl === domNode.attribs.src)}
-            onClick={handleClick}
+            onClick={handleImageClick}
           />
         );
       }
