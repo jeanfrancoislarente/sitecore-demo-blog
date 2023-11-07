@@ -11,3 +11,15 @@
     @apply w-4 transition-transform ease-in-out;
   }
 }
+
+.external-link-btn {
+  @apply flex gap-4 text-lg font-semibold uppercase tracking-widest text-violet transition-colors;
+
+  &:hover {
+    @apply opacity-80;
+  }
+
+  svg {
+    @apply w-4;
+  }
+}

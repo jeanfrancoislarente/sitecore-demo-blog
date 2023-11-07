@@ -1,5 +1,5 @@
 .page-header {
-  @apply container grid grid-cols-1 gap-x-4 gap-y-10 mt-16 mb-14;
+  @apply container grid grid-cols-1 gap-x-4 gap-y-10 mt-16 mb-16;
   @apply lg:grid-cols-3 lg:gap-y-16;
 
   &-content {

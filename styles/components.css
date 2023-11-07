@@ -16,4 +16,6 @@
 @import './components/PostHeroSlider.css';
 @import './components/PostPreview.css';
 @import './components/PostProductsList.css';
+@import './components/RepositoryGrid.css';
+@import './components/RepositoryPreview.css';
 @import './components/SocialShare.css';
