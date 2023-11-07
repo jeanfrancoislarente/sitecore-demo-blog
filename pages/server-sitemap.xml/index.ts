@@ -16,7 +16,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
           : new Date().toISOString(),
       };
     }),
-    ...repos.map((repository) => {
+    ...repos.repositories.map((repository) => {
       return {
         loc: `https://blog.sitecoredemo.com/repositories/${repository.id}`,
         lastmod: repository.lastUpdateDate
