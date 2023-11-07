@@ -1,0 +1,28 @@
+.post-body-image-slider {
+  @apply h-full;
+
+  img {
+    @apply w-full h-full object-contain;
+  }
+}
+
+.image-slider-navigation-prev,
+.image-slider-navigation-next {
+  @apply absolute absolute-center-y z-10;
+
+  svg {
+    @apply text-white w-6;
+  }
+
+  &[class*='prev'] {
+    @apply left-0;
+  }
+
+  &[class*='next'] {
+    @apply right-0;
+  }
+
+  &.swiper-button-disabled {
+    @apply opacity-50;
+  }
+}

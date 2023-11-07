@@ -3,8 +3,10 @@
 @import './components/CodeBlock.css';
 @import './components/Footer.css';
 @import './components/Header.css';
+@import './components/Modal.css';
 @import './components/MoreStories.css';
 @import './components/PostBody.css';
+@import './components/PostBodyImageSlider.css';
 @import './components/PostDate.css';
 @import './components/PostHeader.css';
 @import './components/PostHero.css';
