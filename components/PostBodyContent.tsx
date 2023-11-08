@@ -79,7 +79,7 @@ export default function PostBodyContent({ blog }: PostBodyContentProps) {
 
   return (
     <>
-      <div className="post-body-content">{parse(body, options)}</div>
+      <div className="post-body-content rich-text">{parse(body, options)}</div>
       <PostBodyImageSlider
         images={images}
         initialSlide={displayedSliderImage}

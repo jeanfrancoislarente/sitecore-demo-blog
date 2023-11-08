@@ -11,8 +11,8 @@ export default function Four0four() {
       <Head>
         <title>Sitecore Demo Blog - This is not the page you are looking for...</title>
       </Head>
-      <div className="not-found">
-        <div className="container not-found-container">
+      <section className="error not-found">
+        <div className="error-container">
           <Link href="/" className="arrow-btn">
             <FontAwesomeIcon icon={faArrowLeft} />
             Back to Blog
@@ -30,7 +30,7 @@ export default function Four0four() {
           height={633}
           alt={'404'}
         />
-      </div>
+      </section>
     </Layout>
   );
 }

@@ -5,8 +5,13 @@
   &-content {
     @apply lg:col-span-2;
 
-    p {
+    &-body {
       @apply text-2xl font-light leading-normal max-w-[50rem] mt-6;
+
+      p,
+      li {
+        @apply text-2xl font-light leading-normal;
+      }
     }
   }
 }

@@ -1,0 +1,18 @@
+.error {
+  @apply relative flex flex-col h-full;
+
+  &-container {
+    @apply container flex flex-col;
+    @apply sm:h-full;
+
+    .arrow-btn {
+      @apply mb-4 text-violet;
+
+      &:hover {
+        svg {
+          @apply -translate-x-2;
+        }
+      }
+    }
+  }
+}

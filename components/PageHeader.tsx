@@ -1,9 +1,9 @@
 import { PropsWithChildren, ReactNode } from 'react';
 
 type PageHeaderProps = PropsWithChildren & {
-  title: string;
+  title: ReactNode;
   subtitle?: string;
-  description?: string | ReactNode;
+  description?: ReactNode;
   className?: string;
 };
 
@@ -19,7 +19,7 @@ export default function PageHeader({
       <div className="page-header-content">
         <h1>{title}</h1>
         <h5>{subtitle}</h5>
-        <p>{description}</p>
+        <div className="page-header-content-body rich-text">{description}</div>
       </div>
       <div className="page-header-extra">{children}</div>
     </section>

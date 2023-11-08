@@ -2,7 +2,6 @@ import Repository from '../types/repository-type';
 import RepositoryPreview from './RepositoryPreview';
 
 export default function RepositoryGrid({ repositories }: { repositories: Repository[] }) {
-  console.log(repositories);
   return (
     <section className="repository-grid">
       <hr />

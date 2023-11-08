@@ -23,3 +23,40 @@
     @apply w-4;
   }
 }
+
+.main-btn {
+  @apply inline-block bg-violet text-white text-xl font-bold px-8 py-6 rounded-full transition-all;
+
+  &:hover {
+    @apply bg-opacity-90;
+  }
+}
+
+.icon-expand-btn {
+  @apply inline-block px-5 py-4;
+  @apply lg:p-5;
+
+  &:hover {
+    @apply bg-violet;
+
+    .btn-label {
+      @apply lg:w-[11rem] lg:h-auto lg:pl-2 lg:pr-4;
+    }
+  }
+
+  &-inner {
+    @apply flex flex-row-reverse items-center;
+    @apply lg:flex-row;
+
+    .btn-label {
+      @apply pl-4 pr-2;
+      @apply lg:pl-2 lg:pr-4;
+      @apply lg:w-0 lg:h-0 lg:flex-grow-0 lg:px-0 lg:overflow-hidden lg:whitespace-nowrap lg:transition-all lg:ease-in-out lg:duration-300;
+    }
+  }
+
+  svg {
+    @apply w-8 text-white;
+    @apply lg:w-9;
+  }
+}

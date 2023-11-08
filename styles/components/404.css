@@ -1,21 +1,4 @@
 .not-found {
-  @apply relative flex flex-col h-full;
-
-  &-container {
-    @apply flex flex-col;
-    @apply sm:h-full;
-
-    .arrow-btn {
-      @apply mb-4 text-violet;
-
-      &:hover {
-        svg {
-          @apply -translate-x-2;
-        }
-      }
-    }
-  }
-
   img {
     @apply max-w-[95%] ml-auto mt-auto;
     @apply md:absolute md:bottom-0 md:right-0 md:max-w-[70%];
