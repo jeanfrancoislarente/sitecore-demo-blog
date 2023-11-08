@@ -12,9 +12,7 @@ import PageHeader from '../../components/PageHeader';
 import { IconExpandButton } from '../../components/Buttons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useMemo } from 'react';
-import { generateHTML } from '@tiptap/html';
-import { richTextProfile } from '../../lib/Common/richTextConfiguration';
-import parse from 'html-react-parser';
+import RichText from '../../components/RichText';
 
 type Params = {
   params: {
@@ -79,7 +77,7 @@ export default function RepositoryPage({ repo, posts }: Props) {
     return (
       <>
         <p>{repo.summary}</p>
-        {parse(generateHTML(repo.body, [richTextProfile]))}
+        <RichText content={repo.body} />
       </>
     );
   }, [repo.body, repo.summary]);

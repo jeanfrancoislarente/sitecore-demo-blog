@@ -36,7 +36,11 @@
       @apply text-3xl;
 
       a {
-        @apply inline-block px-1 py-[2px];
+        @apply inline-block px-1 py-[2px] transition-all;
+
+        &:hover {
+          @apply opacity-80;
+        }
       }
 
       &.active a {

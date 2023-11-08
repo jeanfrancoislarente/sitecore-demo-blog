@@ -19,7 +19,7 @@ export default function PageHeader({
       <div className="page-header-content">
         <h1>{title}</h1>
         <h5>{subtitle}</h5>
-        <div className="page-header-content-body rich-text">{description}</div>
+        <div className="page-header-content-body">{description}</div>
       </div>
       <div className="page-header-extra">{children}</div>
     </section>

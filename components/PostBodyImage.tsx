@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import { Media } from '../types/Common/media-type';
 
-interface Props {
-  image: Media | undefined;
+type PostBodyImageProps = {
+  image: Media;
   index: number;
   onClick: (index: number) => void;
-}
+};
 
-const PostBodyImage = ({ image, index, onClick }: Props) => {
+const PostBodyImage = ({ image, index, onClick }: PostBodyImageProps) => {
   return (
     <Image
       src={image?.fileUrl || ''}

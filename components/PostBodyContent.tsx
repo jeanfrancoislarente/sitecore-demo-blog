@@ -1,21 +1,12 @@
-import parse, { HTMLReactParserOptions, Element } from 'html-react-parser';
-import CodeBlock from './CodeBlock';
 import Blog from '../types/blog-type';
-import { generateHTML } from '@tiptap/html';
-import { richTextProfile } from '../lib/Common/richTextConfiguration';
-import PostBodyImage from './PostBodyImage';
 import { useCallback, useMemo, useState } from 'react';
 import PostBodyImageSlider from './PostBodyImageSlider';
 import { Media } from '../types/Common/media-type';
+import RichText from './RichText';
 
 type PostBodyContentProps = {
   blog: Blog;
 };
-
-interface NodeWithChildrenAndData extends Element {
-  data: string;
-  children: NodeWithChildrenAndData[];
-}
 
 export default function PostBodyContent({ blog }: PostBodyContentProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,60 +17,22 @@ export default function PostBodyContent({ blog }: PostBodyContentProps) {
     setIsModalOpen(true);
   }, []);
 
-  const images: Media[] = useMemo(() => [], []);
-
-  const body = useMemo(
+  const images: Media[] = useMemo(
     () =>
-      `${blog?.body ? generateHTML(blog.body, [richTextProfile]) : ''}${
-        blog?.content?.results
-          ? blog.content.results
-              .map(
-                (contentSection) => `${
-                  !!contentSection.text ? generateHTML(contentSection.text, [richTextProfile]) : ''
-                }
-          ${
-            !!contentSection.images
-              ? contentSection.images.results
-                  .map((image) => {
-                    images.push(image);
-                    return `<p><img src="${image.fileUrl}" /></p>`;
-                  })
-                  .join('')
-              : ''
-          }${!!contentSection.text2 ? generateHTML(contentSection.text2, [richTextProfile]) : ''}`
-              )
-              .join('')
-          : ''
-      }`,
-    [blog.body, blog.content.results, images]
+      blog.content.results
+        .map((section) => section.images && section.images.results.map((image) => image))
+        .flat(),
+    [blog.content.results]
   );
-
-  const options: HTMLReactParserOptions = {
-    replace(domNode) {
-      if (domNode instanceof Element && domNode.attribs && domNode.tagName === 'pre') {
-        const preNode = domNode as NodeWithChildrenAndData;
-        const codeNode = preNode.childNodes[0] as NodeWithChildrenAndData;
-
-        return <CodeBlock code={codeNode.children[0].data} language={codeNode.attribs.class} />;
-      }
-
-      if (domNode instanceof Element && domNode.attribs && domNode.tagName === 'img') {
-        const image = images.find((img) => img.fileUrl === domNode.attribs.src);
-
-        return (
-          <PostBodyImage
-            image={image}
-            index={images.findIndex((img) => img.fileUrl === domNode.attribs.src)}
-            onClick={handleImageClick}
-          />
-        );
-      }
-    },
-  };
 
   return (
     <>
-      <div className="post-body-content rich-text">{parse(body, options)}</div>
+      <RichText
+        content={blog.body}
+        sections={blog.content.results}
+        imageClickHandler={handleImageClick}
+        className="post-body-content"
+      />
       <PostBodyImageSlider
         images={images}
         initialSlide={displayedSliderImage}
