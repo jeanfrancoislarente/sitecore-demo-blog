@@ -81,7 +81,7 @@ export default function AuthorPage({ author, posts }: Props) {
         description={headerDescription}
         className="author-header"
       >
-        {author.profilePhoto && (
+        {author.profilePhoto && author.profilePhoto.results.length > 0 && (
           <AuthorProfilePhoto
             photo={author.profilePhoto.results[0]}
             background={author.profileBackground.results[0]}

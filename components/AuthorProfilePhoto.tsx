@@ -18,9 +18,9 @@ export default function AuthorProfilePhoto({
     <div className={`author-profile-photo ${largeVariant ? 'large' : ''}`}>
       <div
         className="profile-background"
-        style={{ backgroundImage: `url("${background.fileUrl}")` }}
+        style={{ backgroundImage: `url("${background?.fileUrl}")` }}
       ></div>
-      <Image src={photo.fileUrl} width={208} height={208} alt={name} className="profile-photo" />
+      <Image src={photo?.fileUrl} width={208} height={208} alt={name} className="profile-photo" />
     </div>
   );
 }
