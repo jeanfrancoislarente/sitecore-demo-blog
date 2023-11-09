@@ -9,19 +9,19 @@ type SocialShareProps = {
 
 export default function SocialShare({ url, title }: SocialShareProps) {
   return (
-    <div className="social-share">
-      <FacebookShareButton url={url} quote={title} className="social-share-facebook">
-        <div className="social-share-button">
+    <div className="social-brands">
+      <FacebookShareButton url={url} quote={title}>
+        <div className="social-brands-button social-brands-facebook">
           <FontAwesomeIcon icon={faFacebookF} />
         </div>
       </FacebookShareButton>
-      <LinkedinShareButton url={url} className="social-share-linkedin">
-        <div className="social-share-button">
+      <LinkedinShareButton url={url}>
+        <div className="social-brands-button social-brands-linkedin">
           <FontAwesomeIcon icon={faLinkedinIn} />
         </div>
       </LinkedinShareButton>
-      <TwitterShareButton url={url} title={title} className="social-share-twitter">
-        <div className="social-share-button">
+      <TwitterShareButton url={url} title={title}>
+        <div className="social-brands-button social-brands-twitter">
           <FontAwesomeIcon icon={faXTwitter} />
         </div>
       </TwitterShareButton>

@@ -1,0 +1,53 @@
+.author-profile-photo {
+  @apply relative w-52 h-52 max-w-full;
+
+  &::before {
+    @apply content-[""] absolute bottom-0 left-0 w-44 h-40 max-w-full bg-violet bg-opacity-10 transition-all duration-300;
+  }
+
+  .profile-background {
+    @apply absolute bottom-0 left-0 w-44 h-40 max-w-full bg-[length:13rem_13rem] bg-left-bottom opacity-0 transition-all duration-300;
+  }
+
+  .profile-photo {
+    @apply relative w-52 h-52 max-w-full object-contain object-left-bottom z-10;
+  }
+
+  &:hover {
+    &::before {
+      @apply w-full h-full;
+    }
+
+    .profile-background {
+      @apply w-full h-full opacity-100;
+    }
+  }
+
+  &.large {
+    @apply w-80 h-80;
+
+    &::before {
+      @apply w-72 h-56;
+      @apply lg:right-0 lg:left-auto;
+    }
+
+    .profile-background {
+      @apply w-72 h-56 bg-[length:20rem_20rem];
+      @apply lg:right-0 lg:left-auto lg:bg-right-bottom;
+    }
+
+    .profile-photo {
+      @apply w-80 h-80;
+    }
+
+    &:hover {
+      &::before {
+        @apply w-full h-full;
+      }
+
+      .profile-background {
+        @apply w-full h-full opacity-100;
+      }
+    }
+  }
+}

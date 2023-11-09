@@ -1,30 +1,29 @@
 import Link from 'next/link';
 import { Media } from '../types/Common/media-type';
-import Image from 'next/image';
+import AuthorProfilePhoto from './AuthorProfilePhoto';
 
 type AuthorPreviewProps = {
   name: string;
   photo: Media;
+  background: Media;
   jobTitle: string;
-  bio: string;
   slug: string;
 };
 
-export default function AuthorPreview({ name, photo, jobTitle, bio, slug }: AuthorPreviewProps) {
+export default function AuthorPreview({
+  name,
+  photo,
+  background,
+  jobTitle,
+  slug,
+}: AuthorPreviewProps) {
   return (
-    <div>
-      {photo && (
-        <Link href={`/team/${slug}`}>
-          <Image src={photo.fileUrl} width={100} height={100} alt={photo.name} />
-        </Link>
-      )}
+    <Link href={`/team/${slug}`} className="author-preview">
+      {photo && <AuthorProfilePhoto photo={photo} background={background} name={name} />}
       <div>
-        <h2>
-          <Link href={`/team/${slug}`}>{name}</Link>
-        </h2>
-        <h5>{jobTitle}</h5>
-        <p>{bio}</p>
+        <h3>{name}</h3>
+        <p>{jobTitle}</p>
       </div>
-    </div>
+    </Link>
   );
 }

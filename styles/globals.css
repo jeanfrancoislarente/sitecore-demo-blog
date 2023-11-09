@@ -239,6 +239,51 @@
   }
 }
 
+@layer components {
+  .listing-grid {
+    @apply container mb-32;
+
+    &-inner {
+      @apply grid grid-cols-1 gap-x-4 gap-y-20 mt-16;
+      @apply lg:grid-cols-2;
+    }
+  }
+
+  .social-brands {
+    @apply flex gap-4;
+
+    &-button {
+      @apply flex justify-center items-center w-12 h-12 border border-gray-light rounded-full transition-colors;
+
+      &:hover {
+        @apply border-gray;
+      }
+
+      svg {
+        @apply text-gray;
+      }
+    }
+
+    &-facebook {
+      svg {
+        @apply w-4;
+      }
+    }
+
+    &-linkedin {
+      svg {
+        @apply h-7;
+      }
+    }
+
+    &-twitter {
+      svg {
+        @apply h-6;
+      }
+    }
+  }
+}
+
 @layer utilities {
   .absolute-center {
     @apply absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%];

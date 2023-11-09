@@ -8,8 +8,9 @@ import Blog from '../../types/blog-type';
 import { getBlogsByAuthor } from '../../lib/Blog/blog-lib';
 import { getAllAuthors, getAuthorById } from '../../lib/Blog/author-lib';
 import Author from '../../types/author-type';
-import Image from 'next/image';
 import PageHeader from '../../components/PageHeader';
+import AuthorProfilePhoto from '../../components/AuthorProfilePhoto';
+import AuthorSocials from '../../components/AuthorSocials';
 
 type Params = {
   params: {
@@ -36,10 +37,10 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const authors = await getAllAuthors();
+  const allAuthors = await getAllAuthors();
 
   return {
-    paths: authors.map((author) => {
+    paths: allAuthors.authors.map((author) => {
       return {
         params: {
           slug: author.id,
@@ -62,22 +63,32 @@ export default function AuthorPage({ author, posts }: Props) {
     return <ErrorPage statusCode={404} />;
   }
 
+  const headerDescription = (
+    <>
+      {author.bio}
+      <AuthorSocials linkedin="#" twitter="#" />
+    </>
+  );
+
   return (
     <Layout>
       <Head>
         <title>{`${author.authorName} | ${BLOG_NAME}`}</title>
       </Head>
-      <PageHeader title={author.authorName} subtitle={author.jobTitle} description={author.bio}>
-        <div>
-          {author.authorFace && (
-            <Image
-              src={author.authorFace.results[0].fileUrl}
-              width={100}
-              height={100}
-              alt={author.authorName}
-            />
-          )}
-        </div>
+      <PageHeader
+        title={author.authorName}
+        subtitle={author.jobTitle}
+        description={headerDescription}
+        className="author-header"
+      >
+        {author.profilePhoto && (
+          <AuthorProfilePhoto
+            photo={author.profilePhoto.results[0]}
+            background={author.profileBackground.results[0]}
+            name={author.authorName}
+            largeVariant
+          />
+        )}
       </PageHeader>
       {posts && posts.length > 0 && <MoreStories posts={posts} title="Related posts" />}
     </Layout>

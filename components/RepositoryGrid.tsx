@@ -3,9 +3,9 @@ import RepositoryPreview from './RepositoryPreview';
 
 export default function RepositoryGrid({ repositories }: { repositories: Repository[] }) {
   return (
-    <section className="repository-grid">
+    <section className="listing-grid">
       <hr />
-      <div className="repository-grid-inner">
+      <div className="listing-grid-inner">
         {repositories.map((repository) => (
           <RepositoryPreview
             key={repository.id}

@@ -2,26 +2,22 @@ import Layout from '../components/Layout';
 import Head from 'next/head';
 import { BLOG_NAME } from '../lib/constants';
 import { getAllRepositories } from '../lib/Blog/repository-lib';
-import Repository from '../types/repository-type';
+import { Repositories } from '../types/repository-type';
 import PageHeader from '../components/PageHeader';
 import RepositoryGrid from '../components/RepositoryGrid';
 
 export async function getStaticProps() {
-  const repositories = await getAllRepositories();
+  const { description, repositories } = await getAllRepositories();
 
   return {
     props: {
-      ...repositories,
+      description,
+      repositories,
     },
   };
 }
 
-type RepositoriesPageProps = {
-  repositories: Repository[];
-  description: string;
-};
-
-export default function RepositoriesPage({ repositories, description }: RepositoriesPageProps) {
+export default function RepositoriesPage({ repositories, description }: Repositories) {
   return (
     <Layout>
       <Head>

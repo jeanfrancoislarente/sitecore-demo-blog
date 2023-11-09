@@ -1,5 +1,8 @@
 @import './components/404.css';
 @import './components/AuthorAvatar.css';
+@import './components/AuthorHeader.css';
+@import './components/AuthorPreview.css';
+@import './components/AuthorProfilePhoto.css';
 @import './components/CodeBlock.css';
 @import './components/ContentPageContent.css';
 @import './components/Error.css';
@@ -18,7 +21,5 @@
 @import './components/PostHeroSlider.css';
 @import './components/PostPreview.css';
 @import './components/PostProductsList.css';
-@import './components/RepositoryGrid.css';
 @import './components/RepositoryHeader.css';
 @import './components/RepositoryPreview.css';
-@import './components/SocialShare.css';

@@ -22,9 +22,9 @@ export default function Header() {
               alt={BLOG_NAME}
             />
           </Link>
-          <button className="header-button">
+          {/* <button className="header-button">
             <FontAwesomeIcon icon={faSearch} />
-          </button>
+          </button> */}
           <button className="header-button" onClick={() => setMenuOpen(true)}>
             <FontAwesomeIcon icon={faBars} />
           </button>

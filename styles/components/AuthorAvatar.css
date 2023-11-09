@@ -3,7 +3,7 @@
   @apply lg:flex-col lg:items-start;
 
   &-img {
-    @apply w-20 h-20 rounded-full object-cover;
+    @apply w-20 h-20 rounded-full object-cover bg-violet bg-opacity-10;
   }
 
   &-name {

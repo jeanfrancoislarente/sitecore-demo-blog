@@ -18,7 +18,7 @@ export default function PostBodySidebar({ author, repositories, products }: Post
         <Link href={`/team/${author.id}`} className="post-body-sidebar-author">
           <AuthorAvatar
             name={author?.authorName}
-            picture={author?.authorFace.results[0].fileUrl}
+            picture={author?.profilePhoto.results[0].fileUrl}
             jobTitle={author?.jobTitle}
           />
         </Link>
