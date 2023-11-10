@@ -21,5 +21,7 @@
 @import './components/PostHeroSlider.css';
 @import './components/PostPreview.css';
 @import './components/PostProductsList.css';
+@import './components/ProductHeader.css';
+@import './components/ProductHexGrid.css';
 @import './components/RepositoryHeader.css';
 @import './components/RepositoryPreview.css';

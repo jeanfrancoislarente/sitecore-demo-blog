@@ -19,6 +19,7 @@ export const AUTHOR_QUERY = `
 
 export const AUTHORS_QUERY = `{
   data: authors (id: "Yc63KHSVxUiq4ukX4fqIjw") {
+    name
     description
     authors {
       results {

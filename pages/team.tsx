@@ -7,23 +7,24 @@ import PageHeader from '../components/PageHeader';
 import AuthorGrid from '../components/AuthorGrid';
 
 export async function getStaticProps() {
-  const { description, authors } = await getAllAuthors();
+  const { name, description, authors } = await getAllAuthors();
 
   return {
     props: {
+      name,
       description,
       authors,
     },
   };
 }
 
-export default function TeamPage({ description, authors }: Authors) {
+export default function TeamPage({ name, description, authors }: Authors) {
   return (
     <Layout>
       <Head>
         <title>{`Our Team | ${BLOG_NAME}`}</title>
       </Head>
-      <PageHeader title="Our Team" description={description} />
+      <PageHeader title={name || 'Our Team'} description={description} />
       <AuthorGrid authors={authors} />
     </Layout>
   );

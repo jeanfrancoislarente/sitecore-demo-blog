@@ -1,31 +1,31 @@
 import Layout from '../components/Layout';
 import Head from 'next/head';
 import { BLOG_NAME } from '../lib/constants';
-import { getAllRepositories } from '../lib/Blog/repository-lib';
-import { Repositories } from '../types/repository-type';
 import PageHeader from '../components/PageHeader';
-import RepositoryGrid from '../components/RepositoryGrid';
+import { getAllProducts } from '../lib/Blog/product-lib';
+import { Products } from '../types/product-type';
+import ProductHexGrid from '../components/ProductHexGrid';
 
 export async function getStaticProps() {
-  const { name, description, repositories } = await getAllRepositories();
+  const { name, description, products } = await getAllProducts();
 
   return {
     props: {
       name,
       description,
-      repositories,
+      products,
     },
   };
 }
 
-export default function RepositoriesPage({ name, repositories, description }: Repositories) {
+export default function RepositoriesPage({ name, description, products }: Products) {
   return (
     <Layout>
       <Head>
         <title>{`Our Repositories | ${BLOG_NAME}`}</title>
       </Head>
       <PageHeader title={name || 'Our Repositories'} description={description} />
-      <RepositoryGrid repositories={repositories} />
+      <ProductHexGrid products={products} />
     </Layout>
   );
 }

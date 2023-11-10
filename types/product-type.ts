@@ -14,3 +14,9 @@ export default Product;
 export type ProductResults = {
   results: Product[];
 };
+
+export type Products = {
+  name: string;
+  description: string;
+  products: Product[];
+};

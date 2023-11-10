@@ -16,6 +16,7 @@ export type RepositoryResults = {
 };
 
 export type Repositories = {
+  name: string;
   description: string;
   repositories: Repository[];
 };

@@ -16,6 +16,7 @@ export type AuthorResults = {
 };
 
 export type Authors = {
+  name: string;
   description: string;
   authors: Author[];
 };

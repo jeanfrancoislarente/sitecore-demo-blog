@@ -25,10 +25,30 @@
 }
 
 .main-btn {
-  @apply inline-block bg-violet text-white text-xl font-bold px-8 py-6 rounded-full transition-all;
+  @apply flex flex-row items-center gap-4 bg-violet text-white text-xl font-bold px-5 py-4 rounded-full transition-all;
+  @apply lg:p-5;
 
   &:hover {
     @apply bg-opacity-90;
+  }
+
+  svg {
+    @apply w-8 text-white;
+    @apply lg:h-9;
+  }
+}
+
+.simple-btn {
+  @apply flex flex-row items-center gap-4 bg-white border border-white text-violet text-xl font-bold px-5 py-4 rounded-full transition-colors;
+  @apply lg:p-5;
+
+  &:hover {
+    @apply border-violet;
+  }
+
+  svg {
+    @apply w-8 text-violet;
+    @apply lg:h-9;
   }
 }
 
@@ -36,11 +56,12 @@
   @apply inline-block px-5 py-4;
   @apply lg:p-5;
 
-  &:hover {
+  &:hover,
+  &.expanded {
     @apply bg-violet;
 
     .btn-label {
-      @apply lg:w-[11rem] lg:h-auto lg:pl-2 lg:pr-4;
+      @apply lg:max-w-[11rem] lg:h-auto lg:pl-2 lg:pr-4;
     }
   }
 
@@ -51,12 +72,44 @@
     .btn-label {
       @apply pl-4 pr-2;
       @apply lg:pl-2 lg:pr-4;
-      @apply lg:w-0 lg:h-0 lg:flex-grow-0 lg:px-0 lg:overflow-hidden lg:whitespace-nowrap lg:transition-all lg:ease-in-out lg:duration-300;
+      @apply lg:max-w-0 lg:h-0 lg:flex-grow-0 lg:px-0 lg:overflow-hidden lg:whitespace-nowrap lg:transition-all lg:ease-in-out lg:duration-300;
     }
   }
 
   svg {
     @apply w-8 text-white;
     @apply lg:w-9;
+  }
+}
+
+.multi-action-button {
+  &-main-container {
+    @apply relative flex flex-col items-start mb-4 bg-white z-20;
+    @apply lg:items-end;
+
+    .main-btn {
+      @apply relative z-30;
+    }
+  }
+
+  &-extra-container {
+    @apply flex flex-col items-start gap-4 max-h-0 transition-all duration-500;
+    @apply lg:max-h-0 lg:items-end;
+
+    .simple-btn {
+      @apply flex-row-reverse transition-transform duration-500 z-10;
+      @apply lg:flex-row;
+    }
+  }
+
+  &.expanded {
+    .multi-action-button-extra-container {
+      @apply max-h-screen;
+      @apply lg:max-h-0;
+    }
+
+    .simple-btn {
+      @apply !translate-y-0;
+    }
   }
 }

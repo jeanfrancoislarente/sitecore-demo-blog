@@ -5,6 +5,7 @@ import { REPOSITORY_QUERY, REPOSITORIES_QUERY } from '../../graphQl/Blog/reposit
 export async function getAllRepositories(): Promise<Repositories> {
   const data = await fetchAPI(`${REPOSITORIES_QUERY}`);
   return {
+    name: data.data.data.name,
     description: data.data.data.description,
     repositories: data.data.data.repositories.results,
   };

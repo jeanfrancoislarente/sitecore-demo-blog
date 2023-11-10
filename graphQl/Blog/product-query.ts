@@ -13,18 +13,19 @@ export const PRODUCT_QUERY = `
   exploreProductLink
 `;
 
-// TODO: Do the same but for Products
-// export const REPOSITORIES_QUERY = `{
-//   data: repositories (id: "-zEfrwok5kGxyf7g504yYw") {
-//     repositories {
-//       results {
-//         ... on Repository {
-//           ${REPOSITORY_QUERY}
-//         }
-//       }
-//     }
-//   }
-// }
-// `;
+export const PRODUCTS_QUERY = `{
+  data: products (id: "A7QLG1aiQEmXM7HaIe2y1w") {
+    name
+    description
+    products {
+      results {
+        ... on Product {
+          ${PRODUCT_QUERY}
+        }
+      }
+    }
+  }
+}
+`;
 
 export default PRODUCT_QUERY;

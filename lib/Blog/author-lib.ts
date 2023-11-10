@@ -5,6 +5,7 @@ import { AUTHORS_QUERY, AUTHOR_QUERY } from '../../graphQl/Blog/author-query';
 export async function getAllAuthors(): Promise<Authors> {
   const data = await fetchAPI(`${AUTHORS_QUERY}`);
   return {
+    name: data.data.data.name,
     description: data.data.data.description,
     authors: data.data.data.authors.results,
   };
