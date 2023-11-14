@@ -7,6 +7,8 @@ type Author = {
   profileBackground: MediaResults;
   jobTitle: string;
   bio: string;
+  linkedin: string;
+  twitter: string;
 };
 
 export default Author;

@@ -15,6 +15,8 @@ export const AUTHOR_QUERY = `
   }
   jobTitle
   bio
+  linkedin
+  twitter
 `;
 
 export const AUTHORS_QUERY = `{

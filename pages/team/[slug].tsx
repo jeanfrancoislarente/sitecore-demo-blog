@@ -66,7 +66,7 @@ export default function AuthorPage({ author, posts }: Props) {
   const headerDescription = (
     <>
       {author.bio}
-      <AuthorSocials linkedin="#" twitter="#" />
+      <AuthorSocials linkedin={author.linkedin} twitter={author.twitter} />
     </>
   );
 
