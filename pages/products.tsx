@@ -18,13 +18,13 @@ export async function getStaticProps() {
   };
 }
 
-export default function RepositoriesPage({ name, description, products }: Products) {
+export default function ProductsPage({ name, description, products }: Products) {
   return (
     <Layout>
       <Head>
-        <title>{`Our Repositories | ${BLOG_NAME}`}</title>
+        <title>{`Products | ${BLOG_NAME}`}</title>
       </Head>
-      <PageHeader title={name || 'Our Repositories'} description={description} />
+      <PageHeader title={name || 'Products'} description={description} />
       <ProductHexGrid products={products} />
     </Layout>
   );
