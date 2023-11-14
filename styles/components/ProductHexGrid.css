@@ -1,5 +1,6 @@
 .product-hex-grid {
-  @apply container -mt-16;
+  @apply hidden container -mt-16;
+  @apply md:block;
 
   &-list {
     @apply relative grid p-0 m-0 gap-x-4 gap-y-2 max-w-5xl ml-auto mr-0;

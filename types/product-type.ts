@@ -21,4 +21,5 @@ export type Products = {
   name: string;
   description: string;
   products: Product[];
+  otherProducts: Product[];
 };

@@ -6,12 +6,12 @@ type MoreStoriesProps = {
   title: string;
 };
 
-export default function MoreStories(props: MoreStoriesProps) {
+export default function MoreStories({ posts, title }: MoreStoriesProps) {
   return (
     <section className="more-stories">
-      <h2 className="more-stories-title">{props.title}</h2>
+      <h2 className="more-stories-title">{title}</h2>
       <div className="more-stories-list">
-        {props.posts.map((post) => (
+        {posts.map((post) => (
           <PostPreview key={post.id} {...post} />
         ))}
       </div>

@@ -9,6 +9,7 @@
 @import './components/Footer.css';
 @import './components/Header.css';
 @import './components/Modal.css';
+@import './components/MoreProducts.css';
 @import './components/MoreStories.css';
 @import './components/PageHeader.css';
 @import './components/PostBody.css';
@@ -23,5 +24,6 @@
 @import './components/PostProductsList.css';
 @import './components/ProductHeader.css';
 @import './components/ProductHexGrid.css';
+@import './components/ProductPreview.css';
 @import './components/RepositoryHeader.css';
 @import './components/RepositoryPreview.css';

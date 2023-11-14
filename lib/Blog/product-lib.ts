@@ -4,11 +4,11 @@ import Product, { Products } from '../../types/product-type';
 
 export async function getAllProducts(): Promise<Products> {
   const data = await fetchAPI(`${PRODUCTS_QUERY}`);
-  console.log(data.data.data.products.results);
   return {
     name: data.data.data.name,
     description: data.data.data.description,
     products: data.data.data.products.results,
+    otherProducts: data.data.data.otherProducts.results,
   };
 }
 

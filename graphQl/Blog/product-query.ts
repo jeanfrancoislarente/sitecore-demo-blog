@@ -29,6 +29,13 @@ export const PRODUCTS_QUERY = `{
         }
       }
     }
+    otherProducts {
+      results {
+        ... on Product {
+          ${PRODUCT_QUERY}
+        }
+      }
+    }
   }
 }
 `;
