@@ -6,7 +6,7 @@ export default function PostProductsList({ products }: { products: Product[] }) 
     <ul className="post-products-list">
       {products.map((product) => (
         <li key={product.id}>
-          <Image src={product.logo.results[0].fileUrl} width={32} height={36} alt={product.name} />
+          <Image src={product.logo.results[0].fileUrl} width={70} height={70} alt={product.name} />
           <span>{product.name}</span>
         </li>
       ))}

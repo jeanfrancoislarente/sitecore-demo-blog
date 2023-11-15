@@ -5,6 +5,10 @@
   li {
     @apply relative pt-2;
 
+    img {
+      @apply h-9 w-auto;
+    }
+
     span {
       @apply absolute-center-x -top-[100%] whitespace-nowrap text-base font-semibold py-1 px-4 border border-gray-light rounded-lg bg-white opacity-0 invisible transition-opacity;
     }
