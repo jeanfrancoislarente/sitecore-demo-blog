@@ -1,0 +1,83 @@
+.rich-text {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply mt-[1em] mb-[0.5em];
+
+    &:first-child {
+      @apply mt-0;
+    }
+  }
+
+  p {
+    @apply leading-[1.75] mb-8;
+  }
+
+  ul,
+  ol {
+    @apply list-outside mb-8;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+
+    li::marker {
+      @apply font-bold;
+    }
+  }
+
+  li {
+    @apply ml-9;
+
+    > p {
+      @apply pl-3 mb-2;
+    }
+  }
+
+  a {
+    @apply text-violet border-b border-violet border-dotted px-1 transition-all;
+
+    &:hover {
+      @apply bg-violet bg-opacity-10;
+    }
+
+    &:visited {
+      @apply text-violet-dark border-violet-dark;
+    }
+  }
+
+  hr {
+    @apply my-8;
+  }
+
+  blockquote {
+    @apply relative text-lg italic pt-12 pb-4 pl-24 my-8;
+
+    &::before {
+      @apply content-[''] absolute top-0 bottom-0 left-0 w-20 bg-violet bg-opacity-10;
+    }
+
+    &::after {
+      @apply content-['"'] absolute top-0 left-[3.125rem] text-violet text-[5.5rem] leading-[1] not-italic font-bold;
+    }
+
+    p {
+      @apply mb-0;
+    }
+  }
+
+  p code {
+    @apply font-mono text-teal-dark;
+  }
+
+  .code-block {
+    @apply mb-8;
+  }
+}

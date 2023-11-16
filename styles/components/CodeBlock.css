@@ -1,5 +1,5 @@
 .code-block {
-  @apply relative;
+  @apply relative text-base;
 
   pre {
     @apply rounded-md !p-4;
