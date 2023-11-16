@@ -20,7 +20,13 @@ export default function AuthorProfilePhoto({
         className="profile-background"
         style={{ backgroundImage: `url("${background?.fileUrl}")` }}
       ></div>
-      <Image src={photo?.fileUrl} width={208} height={208} alt={name} className="profile-photo" />
+      <Image
+        src={photo?.fileUrl}
+        width={largeVariant ? 320 : 208}
+        height={largeVariant ? 320 : 208}
+        alt={name}
+        className="profile-photo"
+      />
     </div>
   );
 }

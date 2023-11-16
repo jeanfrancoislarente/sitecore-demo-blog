@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Blog from '../types/blog-type';
 import { ArrowButton } from './Buttons';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import PostCard from './PostCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -21,10 +21,12 @@ export default function PostSuggestions({ relatedEntities }: PostSuggestionsProp
   const [currentEntity, setCurrentEntity] = useState(relatedEntities[0]);
   const [optionsVisible, setOptionsVisible] = useState(false);
 
+  useEffect(() => setCurrentEntity(relatedEntities[0]), [relatedEntities]);
+
   const suggestionsContent = useMemo(() => {
     return currentEntity.relatedPosts.length > 0 ? (
       <div className="post-suggestions-content">
-        {currentEntity.relatedPosts.map((post) => (
+        {currentEntity.relatedPosts.slice(0, 3).map((post) => (
           <PostCard key={post.id} {...post} />
         ))}
       </div>

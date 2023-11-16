@@ -2,7 +2,8 @@
   @apply my-32;
 
   &-title {
-    @apply flex gap-2 mb-12 font-bold text-3xl;
+    @apply relative flex flex-wrap gap-2 mb-12 font-bold text-2xl;
+    @apply md:text-3xl;
 
     h3 {
       @apply font-bold;
@@ -10,7 +11,16 @@
   }
 
   &-content {
-    @apply grid grid-cols-3 gap-16;
+    @apply grid grid-cols-1 gap-16;
+    @apply md:grid-cols-2;
+    @apply xl:grid-cols-3;
+
+    .post-card {
+      &:last-child {
+        @apply md:col-span-2;
+        @apply xl:col-span-1;
+      }
+    }
   }
 
   &-link {
@@ -18,10 +28,10 @@
   }
 
   &-select {
-    @apply relative;
+    @apply md:relative;
 
     button {
-      @apply text-violet border-b border-violet border-dotted px-1 font-bold transition-all;
+      @apply text-violet border-b border-violet border-dotted px-1 font-bold whitespace-nowrap transition-all;
 
       &:hover {
         @apply bg-violet bg-opacity-10;
@@ -40,10 +50,12 @@
   }
 
   &-options {
-    @apply hidden flex-col gap-4 items-start bg-violet p-10 absolute-center-y;
+    @apply hidden absolute container left-0 right-0 top-[calc(100%+0.5rem)] flex-col gap-7 items-start bg-violet px-4 py-8;
+    @apply md:absolute-center-y md:right-auto md:left-auto md:w-auto md:p-10;
 
     button {
-      @apply flex items-center gap-4 text-[1.75rem] text-white font-bold opacity-80 transition-all;
+      @apply flex items-center gap-4 text-2xl text-white font-bold opacity-80 transition-all;
+      @apply md:text-[1.75rem];
 
       svg {
         @apply hidden w-6;

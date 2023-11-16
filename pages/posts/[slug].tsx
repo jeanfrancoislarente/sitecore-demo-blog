@@ -84,8 +84,13 @@ const Post = ({ blog, relatedEntities }: Props) => {
       <article className="container">
         <PostHeader title={blog.title} summary={blog.summary} date={blog.issueDate} />
         <PostBody blog={blog} />
-        <hr />
-        <PostSuggestions relatedEntities={relatedEntities} />
+
+        {relatedEntities.length > 0 && (
+          <>
+            <hr />
+            <PostSuggestions relatedEntities={relatedEntities} />
+          </>
+        )}
       </article>
     </Layout>
   );
