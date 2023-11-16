@@ -93,7 +93,7 @@ body {
   }
 
   a {
-    @apply text-violet border-b border-violet border-dotted px-1;
+    @apply text-violet border-b border-violet border-dotted px-1 transition-all;
 
     &:hover {
       @apply bg-violet bg-opacity-10;

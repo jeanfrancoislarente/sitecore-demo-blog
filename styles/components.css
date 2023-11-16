@@ -16,12 +16,14 @@
 @import './components/PostBodyContent.css';
 @import './components/PostBodyImageSlider.css';
 @import './components/PostBodySidebar.css';
+@import './components/PostCard.css';
 @import './components/PostDate.css';
 @import './components/PostHeader.css';
 @import './components/PostHero.css';
 @import './components/PostHeroSlider.css';
 @import './components/PostPreview.css';
 @import './components/PostProductsList.css';
+@import './components/PostSuggestions.css';
 @import './components/ProductHeader.css';
 @import './components/ProductHexGrid.css';
 @import './components/ProductPreview.css';

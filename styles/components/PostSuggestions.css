@@ -1,0 +1,65 @@
+.post-suggestions {
+  @apply my-32;
+
+  &-title {
+    @apply flex gap-2 mb-12 font-bold text-3xl;
+
+    h3 {
+      @apply font-bold;
+    }
+  }
+
+  &-content {
+    @apply grid grid-cols-3 gap-16;
+  }
+
+  &-link {
+    @apply flex justify-center mt-16;
+  }
+
+  &-select {
+    @apply relative;
+
+    button {
+      @apply text-violet border-b border-violet border-dotted px-1 font-bold transition-all;
+
+      &:hover {
+        @apply bg-violet bg-opacity-10;
+      }
+    }
+
+    &.options-visible {
+      .post-suggestions-options {
+        @apply flex;
+
+        &-backdrop {
+          @apply fixed top-0 bottom-0 left-0 right-0 bg-black bg-opacity-30;
+        }
+      }
+    }
+  }
+
+  &-options {
+    @apply hidden flex-col gap-4 items-start bg-violet p-10 absolute-center-y;
+
+    button {
+      @apply flex items-center gap-4 text-[1.75rem] text-white font-bold opacity-80 transition-all;
+
+      svg {
+        @apply hidden w-6;
+      }
+
+      &:hover {
+        @apply opacity-100;
+      }
+
+      &.selected {
+        @apply opacity-100;
+
+        svg {
+          @apply inline-block;
+        }
+      }
+    }
+  }
+}
