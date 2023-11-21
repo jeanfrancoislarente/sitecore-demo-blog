@@ -12,7 +12,11 @@ export default function PostCard(blog: Blog) {
         <div className="post-card-content">
           <PostDate date={blog.issueDate} />
           <h4 className="post-card-title">{blog.title}</h4>
-          <p className="post-card-author">by {blog.author?.results[0]?.authorName}</p>
+          <p className="post-card-author">
+            <Link href={`/team/${blog.author?.results[0]?.id}`} className="author-preview">
+              by {blog.author?.results[0]?.authorName}
+            </Link>
+          </p>
           <p className="post-card-summary">{blog.summary}</p>
           {hasProducts && (
             <ul className="post-card-products">
