@@ -1,0 +1,12 @@
+.not-found {
+  img {
+    @apply max-w-[95%] ml-auto mt-auto;
+    @apply md:absolute md:bottom-0 md:right-0 md:max-w-[70%];
+    @apply lg:max-w-[60%];
+  }
+
+  &-404 {
+    @apply text-9xl mt-8 mb-8;
+    @apply lg:mt-auto lg:mb-8 lg:text-[12rem];
+  }
+}

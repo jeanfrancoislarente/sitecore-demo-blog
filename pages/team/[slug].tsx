@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
-import Container from '../../components/Container';
 import MoreStories from '../../components/MoreStories';
 import Layout from '../../components/Layout';
 import { BLOG_NAME } from '../../lib/constants';
@@ -9,7 +8,9 @@ import Blog from '../../types/blog-type';
 import { getBlogsByAuthor } from '../../lib/Blog/blog-lib';
 import { getAllAuthors, getAuthorById } from '../../lib/Blog/author-lib';
 import Author from '../../types/author-type';
-import Image from 'next/image';
+import PageHeader from '../../components/PageHeader';
+import AuthorProfilePhoto from '../../components/AuthorProfilePhoto';
+import AuthorSocials from '../../components/AuthorSocials';
 
 type Params = {
   params: {
@@ -36,10 +37,10 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const authors = await getAllAuthors();
+  const allAuthors = await getAllAuthors();
 
   return {
-    paths: authors.map((author) => {
+    paths: allAuthors.authors.map((author) => {
       return {
         params: {
           slug: author.id,
@@ -62,32 +63,34 @@ export default function AuthorPage({ author, posts }: Props) {
     return <ErrorPage statusCode={404} />;
   }
 
+  const headerDescription = (
+    <>
+      {author.bio}
+      <AuthorSocials linkedin={author.linkedin} twitter={author.twitter} />
+    </>
+  );
+
   return (
     <Layout>
       <Head>
         <title>{`${author.authorName} | ${BLOG_NAME}`}</title>
       </Head>
-      <Container>
-        <article className="mb-32 w-full">
-          <div className="flex flex-col items-start gap-4 mb-12 md:flex-row">
-            {author.authorFace && (
-              <Image
-                src={author.authorFace.results[0].fileUrl}
-                width={100}
-                height={100}
-                className="rounded-full mr-4 w-28 h-28 object-cover shrink-0"
-                alt={author.authorName}
-              />
-            )}
-            <div className="w-full">
-              <h2 className="text-3xl leading-snug">{author.authorName}</h2>
-              <h5 className="bg-[#dfdfdf] px-2 py-1">{author.jobTitle}</h5>
-              <p className="mt-4">{author.bio}</p>
-            </div>
-          </div>
-        </article>
-        {posts && posts.length > 0 && <MoreStories posts={posts} title="Related posts" />}
-      </Container>
+      <PageHeader
+        title={author.authorName}
+        subtitle={author.jobTitle}
+        description={headerDescription}
+        className="author-header"
+      >
+        {author.profilePhoto && author.profilePhoto.results.length > 0 && (
+          <AuthorProfilePhoto
+            photo={author.profilePhoto.results[0]}
+            background={author.profileBackground.results[0]}
+            name={author.authorName}
+            largeVariant
+          />
+        )}
+      </PageHeader>
+      {posts && posts.length > 0 && <MoreStories posts={posts} title="Related posts" />}
     </Layout>
   );
 }

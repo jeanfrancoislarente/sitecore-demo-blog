@@ -1,0 +1,15 @@
+.author-header {
+  .page-header-content {
+    @apply mt-auto row-start-2;
+    @apply lg:row-start-1;
+  }
+
+  .author-profile-photo {
+    @apply row-start-1 max-w-full;
+    @apply lg:ml-auto lg:mt-auto;
+  }
+
+  .social-brands {
+    @apply mt-8;
+  }
+}

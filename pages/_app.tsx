@@ -1,6 +1,4 @@
 import '../styles/index.css';
-import '../styles/bootstrap.css';
-// TODO: Get rid of bootstrap by converting the little things that use it to Tailwind
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { IS_PRODUCTION } from '../lib/constants';

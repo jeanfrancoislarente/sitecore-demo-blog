@@ -1,0 +1,34 @@
+.post-preview {
+  &-content {
+    @apply md:grid md:grid-cols-9 md:items-start;
+  }
+
+  .post-products-list {
+    @apply col-span-2;
+  }
+
+  &-body {
+    @apply col-span-7;
+  }
+
+  &-title {
+    @apply font-bold mb-2;
+  }
+
+  &-author {
+    @apply font-medium;
+  }
+
+  &-summary {
+    @apply mt-6 mb-2;
+  }
+
+  &-link {
+    @apply inline-block mt-6;
+  }
+
+  + .post-preview {
+    @apply mt-20;
+    @apply lg:mt-32;
+  }
+}

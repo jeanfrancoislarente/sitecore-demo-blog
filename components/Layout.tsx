@@ -1,15 +1,16 @@
 import { PropsWithChildren } from 'react';
 import Header from '../components/Header';
 import Meta from '../components/Meta';
+import Footer from './Footer';
+import 'swiper/css/bundle';
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
     <>
       <Meta />
       <Header />
-      <div className="min-h-screen">
-        <main>{children}</main>
-      </div>
+      <main>{children}</main>
+      <Footer />
     </>
   );
 }

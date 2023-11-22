@@ -1,0 +1,18 @@
+.more-products {
+  @apply container my-20;
+  @apply lg:grid lg:grid-cols-4 lg:gap-4 lg:my-32;
+
+  &-title {
+    @apply mb-10;
+  }
+
+  &-list {
+    @apply grid grid-cols-1 gap-20;
+    @apply md:grid-cols-2 md:gap-24;
+    @apply lg:col-span-3 lg:pt-6;
+  }
+
+  &.hex-grid-replacement {
+    @apply md:hidden;
+  }
+}

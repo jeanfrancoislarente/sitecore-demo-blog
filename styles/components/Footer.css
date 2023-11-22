@@ -1,0 +1,11 @@
+.footer {
+  @apply bg-white-dark;
+
+  &-container {
+    @apply flex justify-between items-center flex-wrap-reverse gap-2 py-4;
+  }
+
+  p {
+    @apply flex gap-2 items-center text-base;
+  }
+}

@@ -1,0 +1,44 @@
+.post-hero {
+  @apply container;
+  @apply md:pt-12;
+  @apply lg:pt-16;
+
+  .post-date {
+    time {
+      @apply text-lg;
+    }
+  }
+
+  &-content {
+    @apply md:grid md:grid-cols-4 md:items-start;
+  }
+
+  .post-products-list {
+    @apply col-span-1;
+  }
+
+  &-body {
+    @apply col-span-3;
+  }
+
+  &-title {
+    @apply font-bold mb-2;
+  }
+
+  &-author {
+    @apply font-medium;
+  }
+
+  &-summary {
+    @apply text-2xl leading-normal font-light mt-6 mb-2;
+  }
+
+  &-link {
+    @apply inline-block mt-6;
+  }
+
+  + .post-preview {
+    @apply mt-20;
+    @apply lg:mt-32;
+  }
+}

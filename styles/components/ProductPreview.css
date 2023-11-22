@@ -1,0 +1,22 @@
+.product-preview {
+  &-logo {
+    @apply flex items-center gap-4 mb-6;
+
+    img {
+      @apply h-8 w-auto;
+    }
+
+    hr {
+      @apply w-full;
+    }
+  }
+
+  &-title {
+    @apply mb-2;
+  }
+
+  &-summary {
+    @apply line-clamp-2;
+    @apply md:line-clamp-3;
+  }
+}

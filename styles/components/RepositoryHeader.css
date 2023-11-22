@@ -1,0 +1,15 @@
+.repository-header {
+  @apply lg:grid-cols-4;
+
+  h1 {
+    @apply font-mono;
+  }
+
+  .page-header-content {
+    @apply lg:col-span-3;
+  }
+
+  .page-header-extra {
+    @apply lg:flex lg:justify-end lg:items-start;
+  }
+}

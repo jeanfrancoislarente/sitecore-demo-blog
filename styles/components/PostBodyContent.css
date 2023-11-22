@@ -1,0 +1,7 @@
+.post-body-content {
+  @apply max-w-[50rem] mx-auto;
+
+  img {
+    @apply cursor-pointer;
+  }
+}

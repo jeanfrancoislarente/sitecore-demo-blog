@@ -1,0 +1,4 @@
+.author-preview {
+  @apply flex flex-col gap-5;
+  @apply sm:flex-row sm:items-end;
+}

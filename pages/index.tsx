@@ -3,17 +3,16 @@ import { getAllFeaturedBlogs, getAllNonFeaturedBlogs } from '../lib/Blog/blog-li
 import Blog from '../types/blog-type';
 import { BLOG_NAME } from '../lib/constants';
 import Layout from '../components/Layout';
-import Container from '../components/Container';
 import MoreStories from '../components/MoreStories';
-import HeroPost from '../components/HeroPost';
+import PostHeroSlider from '../components/PostHeroSlider';
 
 export async function getStaticProps() {
-  const [allFeaturedBlogs, allNonFeaturedBlogs] = await Promise.all([
+  const [featuredBlogs, nonFeaturedBlogs] = await Promise.all([
     getAllFeaturedBlogs(),
     getAllNonFeaturedBlogs(),
   ]);
   return {
-    props: { allFeaturedBlogs, allNonFeaturedBlogs },
+    props: { featuredBlogs, nonFeaturedBlogs },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // - At most once every 10 seconds
@@ -22,24 +21,21 @@ export async function getStaticProps() {
 }
 
 type Props = {
-  allFeaturedBlogs: Blog[];
-  allNonFeaturedBlogs: Blog[];
+  featuredBlogs: Blog[];
+  nonFeaturedBlogs: Blog[];
 };
 
-const Homepage = ({ allFeaturedBlogs, allNonFeaturedBlogs }: Props) => {
+const Homepage = ({ featuredBlogs, nonFeaturedBlogs }: Props) => {
+  const hasFeaturedBlogs = featuredBlogs && featuredBlogs.length > 0;
+  const hasNonFeaturedBlogs = nonFeaturedBlogs && nonFeaturedBlogs.length > 0;
+
   return (
     <Layout>
       <Head>
         <title>{BLOG_NAME}</title>
       </Head>
-      <Container>
-        {allFeaturedBlogs &&
-          allFeaturedBlogs.length > 0 &&
-          allFeaturedBlogs.map((heroPost) => <HeroPost key={heroPost.id} {...heroPost} />)}
-        {allNonFeaturedBlogs && allNonFeaturedBlogs.length > 0 && (
-          <MoreStories posts={allNonFeaturedBlogs} title="More Stories" />
-        )}
-      </Container>
+      {hasFeaturedBlogs && <PostHeroSlider posts={featuredBlogs} />}
+      {hasNonFeaturedBlogs && <MoreStories posts={nonFeaturedBlogs} title="More Articles" />}
     </Layout>
   );
 };
