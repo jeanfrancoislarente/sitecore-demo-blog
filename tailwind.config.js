@@ -1,33 +1,53 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
-  purge: ['./components/**/*.tsx', './pages/**/*.tsx'],
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    container: {
+      center: true,
+      padding: '1rem',
+    },
+    colors: {
+      transparent: 'rgba(255,255,255,0)',
+      current: 'currentColor',
+      white: {
+        DEFAULT: '#ffffff',
+        dark: '#F9F9F9',
+      },
+      black: '#000000',
+      violet: {
+        DEFAULT: '#5548D9',
+        dark: '#333378',
+      },
+      red: {
+        DEFAULT: '#EB1F1F',
+        dark: '#AA0000',
+      },
+      teal: {
+        DEFAULT: '#02999A',
+        dark: '#085E6E',
+      },
+      charcoal: {
+        DEFAULT: '#545859',
+        dark: '#212621',
+      },
+      gray: {
+        light: '#C8C8C8',
+        DEFAULT: '#969696',
+      },
+    },
+    fontFamily: {
+      sans: '"AvenirNext", "OpenSans", Helvetica, Arial, system-ui, -apple-system, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+      mono: '"SF Mono", monospace',
+    },
     extend: {
-      colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1',
-      },
-      spacing: {
-        28: '7rem',
-      },
-      letterSpacing: {
-        tighter: '-.04em',
-      },
-      lineHeight: {
-        tight: 1.2,
+      screens: {
+        xs: '475px',
+        '2xl': '1352px',
       },
       fontSize: {
-        '5xl': '2.5rem',
-        '6xl': '2.75rem',
-        '7xl': '4.5rem',
-        '8xl': '6.25rem',
-      },
-      boxShadow: {
-        sm: '0 5px 10px rgba(0, 0, 0, 0.12)',
-        md: '0 8px 30px rgba(0, 0, 0, 0.12)',
+        '3xl': '2rem',
+        '4xl': '2.375rem',
       },
     },
   },

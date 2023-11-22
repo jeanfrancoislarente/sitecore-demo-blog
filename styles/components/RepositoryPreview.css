@@ -1,0 +1,23 @@
+.repository-preview {
+  &-title {
+    @apply font-mono flex items-center gap-4;
+
+    h4 {
+      @apply border-b border-transparent transition-colors max-w-full overflow-hidden text-ellipsis;
+    }
+
+    svg {
+      @apply w-12 flex-shrink-0;
+    }
+
+    &:hover {
+      h4 {
+        @apply border-black;
+      }
+    }
+  }
+
+  &-body {
+    @apply mt-4 mb-6;
+  }
+}

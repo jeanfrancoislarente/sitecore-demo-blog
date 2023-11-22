@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { BLOG_NAME } from '../lib/constants';
+import { BLOG_DESCRIPTION } from '../lib/constants';
 
 export default function Meta() {
   return (
@@ -12,7 +12,7 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta name="description" content={BLOG_NAME} />
+      <meta name="description" content={BLOG_DESCRIPTION} />
     </Head>
   );
 }

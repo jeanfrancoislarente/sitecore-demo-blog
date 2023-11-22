@@ -1,0 +1,21 @@
+.post-header {
+  @apply gap-y-16;
+
+  .page-header-extra {
+    @apply lg:self-end lg:justify-self-end;
+
+    h6 {
+      @apply text-base text-charcoal mb-2;
+      @apply lg:text-right;
+    }
+  }
+
+  + .post-date {
+    @apply flex-row-reverse;
+    @apply lg:flex-row;
+
+    time {
+      @apply text-lg;
+    }
+  }
+}

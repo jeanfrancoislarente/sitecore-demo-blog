@@ -1,10 +1,14 @@
-import Author from '../../types/author-type';
+import Author, { Authors } from '../../types/author-type';
 import { fetchAPI } from '../Common/api';
-import { ALL_AUTHOR_QUERY, AUTHOR_QUERY } from '../../graphQl/Blog/author-query';
+import { AUTHORS_QUERY, AUTHOR_QUERY } from '../../graphQl/Blog/author-query';
 
-export async function getAllAuthors(): Promise<Author[]> {
-  const data = await fetchAPI(`${ALL_AUTHOR_QUERY}`);
-  return data.data.data.results;
+export async function getAllAuthors(): Promise<Authors> {
+  const data = await fetchAPI(`${AUTHORS_QUERY}`);
+  return {
+    name: data.data.data.name,
+    description: data.data.data.description,
+    authors: data.data.data.authors.results,
+  };
 }
 
 export async function getAuthorById(id: string): Promise<Author> {

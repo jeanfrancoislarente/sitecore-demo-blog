@@ -1,27 +1,32 @@
-import Avatar from '../components/Avatar';
-import DateFormatter from './DateFormatter';
-import Link from 'next/link';
 import Blog from '../types/blog-type';
+import { ArrowButton } from './Buttons';
+import PostProductsList from './PostProductsList';
+import PostDate from './PostDate';
+import Link from 'next/link';
 
 export default function PostPreview(blog: Blog) {
+  const hasProducts = blog.products.results && blog.products.results.length > 0;
+
   return (
-    <div>
-      <h3 className="text-3xl mb-3 leading-snug">
-        <Link as={`/posts/${blog.id}`} href="/posts/[slug]" className="hover:underline">
-          {blog.title}
-        </Link>
-      </h3>
-      <div className={`mb-8 blog-title-block blog-title-block-${blog.primaryTopic}`}>
-        {blog.primaryTopic}
+    <article className="post-preview">
+      <PostDate date={blog.issueDate} />
+      <div className="post-preview-content">
+        <div className="post-preview-body">
+          <Link href={`/posts/${blog.id}`}>
+            <h3 className="post-preview-title">{blog.title}</h3>
+          </Link>
+          <p className="post-preview-author">
+            <Link href={`/team/${blog.author?.results[0]?.id}`} className="author-preview">
+              by {blog.author?.results[0]?.authorName}
+            </Link>
+          </p>
+          <p className="post-preview-summary">{blog.summary}</p>
+        </div>
+        {hasProducts && <PostProductsList products={blog.products.results} />}
       </div>
-      <div className="text-lg mb-4 fst-italic">
-        <DateFormatter dateString={blog.issueDate} />
+      <div className="post-preview-link">
+        <ArrowButton label="Read more" href={`/posts/${blog.id}`} />
       </div>
-      <p className="text-xl leading-relaxed mb-4">{blog.summary}</p>
-      <Avatar
-        name={blog.author?.results[0]?.authorName}
-        picture={blog.author.results[0]?.authorFace?.results[0]?.fileUrl}
-      />
-    </div>
+    </article>
   );
 }

@@ -1,0 +1,17 @@
+.post-card {
+  &-author {
+    @apply text-base mt-2;
+  }
+
+  &-summary {
+    @apply mt-4 mb-6 line-clamp-3;
+  }
+
+  &-products {
+    @apply flex flex-wrap gap-4;
+
+    img {
+      @apply h-8 w-auto;
+    }
+  }
+}

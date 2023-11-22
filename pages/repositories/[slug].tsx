@@ -1,18 +1,18 @@
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
-import Container from '../../components/Container';
-import RepositoryHeader from '../../components/RepositoryHeader';
-import RepositoryBody from '../../components/RepositoryBody';
 import MoreStories from '../../components/MoreStories';
 import Layout from '../../components/Layout';
 import { BLOG_NAME } from '../../lib/constants';
 import { getAllRepositories, getRepositoryById } from '../../lib/Blog/repository-lib';
 import Repository from '../../types/repository-type';
-import { richTextProfile } from '../../lib/Common/richTextConfiguration';
-import { generateHTML } from '@tiptap/html';
 import Blog from '../../types/blog-type';
 import { getBlogsByRepository } from '../../lib/Blog/blog-lib';
+import PageHeader from '../../components/PageHeader';
+import { IconExpandButton } from '../../components/Buttons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { useMemo } from 'react';
+import RichText from '../../components/RichText';
 
 type Params = {
   params: {
@@ -39,10 +39,10 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const repos = await getAllRepositories();
+  const allRepositories = await getAllRepositories();
 
   return {
-    paths: repos.map((repo) => {
+    paths: allRepositories.repositories.map((repo) => {
       return {
         params: {
           slug: repo.id,
@@ -61,24 +61,40 @@ type Props = {
 export default function RepositoryPage({ repo, posts }: Props) {
   const router = useRouter();
 
+  const headerTitle = useMemo(
+    () =>
+      repo.name.split('.').map((str, i) => (
+        <span key={str}>
+          {i !== 0 && '.'}
+          <wbr />
+          {str}
+        </span>
+      )),
+    [repo.name]
+  );
+
+  const headerDescription = useMemo(() => {
+    return (
+      <>
+        <p>{repo.summary}</p>
+        <RichText content={repo.body} />
+      </>
+    );
+  }, [repo.body, repo.summary]);
+
   if (!repo || (!router.isFallback && !repo?.id)) {
     return <ErrorPage statusCode={404} />;
   }
-
-  const body = repo?.body ? generateHTML(repo.body, [richTextProfile]) : '';
 
   return (
     <Layout>
       <Head>
         <title>{`${repo.name} | ${BLOG_NAME}`}</title>
       </Head>
-      <Container>
-        <article className="mb-32">
-          <RepositoryHeader title={repo.name} url={repo.url} />
-          <RepositoryBody content={body} />
-        </article>
-        {posts && posts.length > 0 && <MoreStories posts={posts} title="Related posts" />}
-      </Container>
+      <PageHeader title={headerTitle} description={headerDescription} className="repository-header">
+        <IconExpandButton href={repo.url} label="View on Github" icon={faGithub} />
+      </PageHeader>
+      {posts && posts.length > 0 && <MoreStories posts={posts} title="Related posts" />}
     </Layout>
   );
 }

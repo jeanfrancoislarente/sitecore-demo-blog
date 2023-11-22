@@ -1,0 +1,15 @@
+.modal-overlay {
+  @apply h-screen w-screen fixed z-[1000] left-0 top-0 bg-black bg-opacity-80 overflow-x-hidden;
+}
+
+.modal-content {
+  @apply container relative w-full h-full pt-20 pb-16 px-8 text-center;
+}
+
+.modal-close {
+  @apply absolute top-14 right-14 text-white;
+
+  svg {
+    @apply w-5;
+  }
+}

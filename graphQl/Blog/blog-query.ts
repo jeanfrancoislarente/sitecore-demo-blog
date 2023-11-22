@@ -1,5 +1,6 @@
 import MEDIA_QUERY from '../Common/media-query';
 import { AUTHOR_QUERY } from './author-query';
+import PRODUCT_QUERY from './product-query';
 import { REPOSITORY_QUERY } from './repository-query';
 
 export const BLOG_QUERY = `
@@ -38,6 +39,13 @@ export const BLOG_QUERY = `
       }
     }
   }
+  products {
+    results {
+      ... on Product {
+        ${PRODUCT_QUERY}
+      }
+    }
+  }
 `;
 
 export const LISTING_BLOG_QUERY = `
@@ -59,6 +67,13 @@ export const LISTING_BLOG_QUERY = `
     results {
       ... on Repository {
         ${REPOSITORY_QUERY}
+      }
+    }
+  }
+  products {
+    results {
+      ... on Product {
+        ${PRODUCT_QUERY}
       }
     }
   }

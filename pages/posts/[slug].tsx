@@ -1,15 +1,23 @@
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Blog from '../../types/blog-type';
-import { getBlogById, getAllBlogs } from '../../lib/Blog/blog-lib';
+import {
+  getBlogById,
+  getAllBlogs,
+  getBlogsByProduct,
+  getBlogsByRepository,
+} from '../../lib/Blog/blog-lib';
 import Head from 'next/head';
-import { richTextProfile } from '../../lib/Common/richTextConfiguration';
-import { generateHTML } from '@tiptap/html';
 import Layout from '../../components/Layout';
-import Container from '../../components/Container';
 import { BLOG_NAME } from '../../lib/constants';
 import PostHeader from '../../components/PostHeader';
 import PostBody from '../../components/PostBody';
+import PostSuggestions, { RelatedEntity } from '../../components/PostSuggestions';
+import {
+  addHrefToItems,
+  createRelatedEntity,
+  fetchRelatedPosts,
+} from '../../helpers/relatedEntitiesHelper';
 
 type Params = {
   params: {
@@ -20,9 +28,25 @@ type Params = {
 export async function getStaticProps({ params }: Params) {
   const blog = await getBlogById(params.slug);
 
+  const relatedProducts = addHrefToItems(blog.products.results, 'products');
+  const relatedRepos = addHrefToItems(blog.repositories.results, 'repositories');
+
+  const productRelatedPosts = await fetchRelatedPosts(relatedProducts, getBlogsByProduct);
+  const repoRelatedPosts = await fetchRelatedPosts(relatedRepos, getBlogsByRepository);
+
+  const relatedEntities = [
+    ...relatedProducts.map((product, i) =>
+      createRelatedEntity(product, 'products', productRelatedPosts[i], params.slug)
+    ),
+    ...relatedRepos.map((repo, i) =>
+      createRelatedEntity(repo, 'repositories', repoRelatedPosts[i], params.slug)
+    ),
+  ];
+
   return {
     props: {
       blog,
+      relatedEntities,
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
@@ -42,50 +66,33 @@ export async function getStaticPaths() {
 
 type Props = {
   blog: Blog;
+  relatedEntities: RelatedEntity[];
 };
 
-const Post = ({ blog }: Props) => {
+const Post = ({ blog, relatedEntities }: Props) => {
   const router = useRouter();
 
   if (!blog || (!router.isFallback && !blog?.id)) {
     return <ErrorPage statusCode={404} />;
   }
 
-  const content = `${blog?.body ? generateHTML(blog.body, [richTextProfile]) : ''}${
-    blog?.content?.results
-      ? blog.content.results
-          .map(
-            (contentSection) => `${
-              !!contentSection.text ? generateHTML(contentSection.text, [richTextProfile]) : ''
-            }
-          ${
-            !!contentSection.images
-              ? contentSection.images.results
-                  .map((image) => `<p><img src="${image.fileUrl}" /></p>`)
-                  .join('')
-              : ''
-          }${!!contentSection.text2 ? generateHTML(contentSection.text2, [richTextProfile]) : ''}`
-          )
-          .join('')
-      : ''
-  }`;
-
   return (
     <Layout>
       <Head>
         <title>{`${blog.title} | ${BLOG_NAME}`}</title>
+        <meta name="description" content={blog.summary} />
       </Head>
-      <Container>
-        <article className="mb-32">
-          <PostHeader title={blog.title} primaryTopic={blog.primaryTopic} />
-          <PostBody
-            body={content}
-            date={blog.issueDate}
-            author={blog.author.results[0]}
-            repositories={blog.repositories.results}
-          />
-        </article>
-      </Container>
+      <article className="container">
+        <PostHeader title={blog.title} summary={blog.summary} date={blog.issueDate} />
+        <PostBody blog={blog} />
+
+        {relatedEntities.length > 0 && (
+          <>
+            <hr />
+            <PostSuggestions relatedEntities={relatedEntities} />
+          </>
+        )}
+      </article>
     </Layout>
   );
 };

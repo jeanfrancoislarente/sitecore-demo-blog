@@ -9,6 +9,8 @@ export const REPOSITORY_QUERY = `
 
 export const REPOSITORIES_QUERY = `{
   data: repositories (id: "-zEfrwok5kGxyf7g504yYw") {
+    name
+    description
     repositories {
       results {
         ... on Repository {
@@ -19,5 +21,3 @@ export const REPOSITORIES_QUERY = `{
   }
 }
 `;
-
-export default REPOSITORIES_QUERY;

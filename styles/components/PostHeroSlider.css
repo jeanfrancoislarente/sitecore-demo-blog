@@ -1,0 +1,41 @@
+.post-hero-slider {
+  &-navigation-container {
+    @apply container h-0;
+  }
+
+  &-navigation {
+    @apply relative flex justify-end gap-2 w-1/4 -translate-y-[100%] ml-auto z-10;
+
+    span {
+      @apply w-auto;
+    }
+
+    svg {
+      @apply w-3;
+    }
+  }
+
+  &-pagination {
+    @apply font-bold text-lg;
+
+    span + span {
+      @apply ml-[2px];
+    }
+  }
+
+  .swiper-slide {
+    @apply h-auto;
+
+    .post-hero {
+      @apply flex flex-col h-full;
+
+      &-content {
+        @apply mb-auto;
+      }
+
+      &-link {
+        @apply self-start;
+      }
+    }
+  }
+}

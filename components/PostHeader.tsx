@@ -1,15 +1,24 @@
-import PostTitle from './PostTitle';
+import { useMemo } from 'react';
+import PostDate from './PostDate';
+import SocialShare from './SocialShare';
+import PageHeader from './PageHeader';
 
 type PostHeaderProps = {
   title: string;
-  primaryTopic: string;
+  summary: string;
+  date: string;
 };
 
-export default function PostHeader({ title, primaryTopic }: PostHeaderProps) {
+export default function PostHeader({ title, summary, date }: PostHeaderProps) {
+  const url = useMemo(() => (typeof window !== 'undefined' ? window.location.href : ''), []);
+
   return (
     <>
-      <PostTitle>{title}</PostTitle>
-      <div className={`mb-8 blog-title-block blog-title-block-${primaryTopic}`}>{primaryTopic}</div>
+      <PageHeader title={title} description={summary} className="post-header">
+        <h6>Share</h6>
+        <SocialShare title={title} url={url} />
+      </PageHeader>
+      <PostDate date={date} />
     </>
   );
 }

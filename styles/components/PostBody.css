@@ -1,0 +1,14 @@
+.post-body {
+  @apply flex flex-col-reverse gap-4 mt-14 mb-32;
+  @apply lg:grid lg:grid-cols-3;
+  @apply xl:grid-cols-4;
+
+  &-sidebar {
+    @apply lg:col-span-1;
+  }
+
+  &-content {
+    @apply lg:col-span-2;
+    @apply xl:col-span-3;
+  }
+}

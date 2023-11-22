@@ -1,7 +1,9 @@
-import Container from '../components/Container';
 import Layout from '../components/Layout';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function Four0four() {
   return (
@@ -9,23 +11,26 @@ export default function Four0four() {
       <Head>
         <title>Sitecore Demo Blog - This is not the page you are looking for...</title>
       </Head>
-      <Container>
-        <h1>Uh Oh!</h1>
-        <h3>We know this is not the page you want to see. </h3>
-        <p>We could not find the page you are looking for. It could have:</p>
-        <ul>
-          <li>moved to another place</li>
-          <li>renamed to a better name</li>
-          <li>been deemed useless and have been deleted, or</li>
-          <li>never existed in the first place</li>
-        </ul>
-        <p>
-          <Link href="/">
-            Please click here and go back to the home page and read all the other useful blogs we
-            have to offer.
+      <section className="error not-found">
+        <div className="error-container">
+          <Link href="/" className="arrow-btn">
+            <FontAwesomeIcon icon={faArrowLeft} />
+            Back to Blog
           </Link>
-        </p>
-      </Container>
+          <h1>
+            Oops!
+            <br />
+            You&apos;ve wandered off the digital path.
+          </h1>
+          <h1 className="not-found-404">404</h1>
+        </div>
+        <Image
+          src="/assets/blog/shared/404-illustration.svg"
+          width={944}
+          height={633}
+          alt={'404'}
+        />
+      </section>
     </Layout>
   );
 }

@@ -50,6 +50,13 @@ export async function getBlogsByAuthor(authorId: string): Promise<Blog[]> {
   );
 }
 
+export async function getBlogsByProduct(productId: string): Promise<Blog[]> {
+  const blogs = await getAllBlogs();
+  return blogs.filter(
+    (blog) => blog?.products?.results?.filter((product) => product?.id === productId).length > 0
+  );
+}
+
 function extractBlogs({ data }: { data: BlogResults }) {
   return data?.results?.map((blog: Blog) => blog);
 }
