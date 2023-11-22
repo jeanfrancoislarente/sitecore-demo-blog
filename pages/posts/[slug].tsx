@@ -80,6 +80,7 @@ const Post = ({ blog, relatedEntities }: Props) => {
     <Layout>
       <Head>
         <title>{`${blog.title} | ${BLOG_NAME}`}</title>
+        <meta name="description" content={blog.summary} />
       </Head>
       <article className="container">
         <PostHeader title={blog.title} summary={blog.summary} date={blog.issueDate} />
