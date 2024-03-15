@@ -37,7 +37,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: '"AvenirNext", "OpenSans", Helvetica, Arial, system-ui, -apple-system, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+      sans: '"Open Sans", Helvetica, Arial, system-ui, -apple-system, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
       mono: '"SF Mono", monospace',
     },
     extend: {
